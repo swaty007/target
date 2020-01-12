@@ -1,0 +1,34 @@
+/*
+ Theme Name: Chornobyl
+ Author: Andrey Zdrobilko, Alexey Lialiushko
+ Version: 1.0
+*/
+
+@import "libs";
+
+/* Utils */
+@import "utils/variables";
+@import "utils/mixins";
+@import "utils/grid";
+@import "utils/extends";
+@import "utils/fonts";
+
+
+/* Base */
+@import "base/base";
+
+/* Components */
+@import "components/buttons";
+@import "components/modal";
+
+/* Icludes */
+
+@import "includes/footer";
+@import "includes/header";
+
+/* Sections */
+@import "sections/main-screen";
+@import "sections/reviews";
+@import "sections/success-story";
+@import "sections/blog";
+@import "sections/facts";
