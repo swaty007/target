@@ -1,7 +1,7 @@
 <?php
 
 //require get_theme_file_path('/inc/search-lots-route.php');
-//require get_theme_file_path('/inc/filter-lots-route.php');
+require get_theme_file_path('/inc/custom-header.php');
 
 
 if ( ! function_exists( 'target_setup' ) ) :
@@ -51,9 +51,9 @@ endif;
 add_action( 'after_setup_theme', 'target_setup' );
 
 function target_files() {
-  wp_enqueue_script('main-chornobyl-js', get_template_directory_uri() .'/js/scripts-bundled.js','','',true);
-  wp_enqueue_style('custom-google-fonts', '//fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600i,600,700,700i&amp;subset=cyrillic,cyrillic-ext,latin-ext');
-//  wp_enqueue_style('font-awesome', '//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css');
+//  wp_enqueue_script('main-target-js', get_template_directory_uri() .'/js/scripts-bundled.js','','',true);
+  wp_enqueue_script('slick-js', get_template_directory_uri() .'/js/slick.min.js','','',true);
+  wp_enqueue_script('main-target-js', get_template_directory_uri() .'/js/main.js','','',true);
   wp_enqueue_style('carua_main_styles', get_stylesheet_uri());
   wp_localize_script('main-chornobyl-js', 'targetData', array(
     'root_url' => get_site_url(),
@@ -62,8 +62,14 @@ function target_files() {
 //      'language' => pll_current_language()
   ));
 }
-
 add_action('wp_enqueue_scripts', 'target_files');
+
+function cc_mime_types($mime_types) {
+//    $mime_types['svg'] = 'image/svg+xml';
+    $mime_types['svg'] = 'image/svg';
+    return $mime_types;
+}
+add_filter('upload_mimes', 'cc_mime_types');
 
 
 
@@ -79,8 +85,6 @@ function menuActivePage($pageslug){
 		return 'menu__list-item--active';
 	}
 }
-
-
 
 //create array of photos for lot
 function lot_album_url_array(){
@@ -134,8 +138,8 @@ function do_buy_tire() {
 add_action("wp_enqueue_scripts", "my_jquery_enqueue", 11);
 function my_jquery_enqueue() {
     wp_deregister_script('jquery');
-//    wp_register_script('jquery', "//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js", false, null);
-//    wp_enqueue_script('jquery');
+    wp_register_script('jquery', "//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js", false, null);
+    wp_enqueue_script('jquery');
 }
 
 
