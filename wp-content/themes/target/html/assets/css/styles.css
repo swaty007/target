@@ -216,6 +216,10 @@ body.overflow-hidden {
   font-size: 16px;
   line-height: 28px;
 }
+.nav__list .nav__item .nav__link:hover {
+  opacity: 0.7;
+  transition: 0.4s;
+}
 .nav__list .nav__item .link__menu,
 .nav__list .nav__item .menu-item--treatment {
   display: none;
@@ -224,6 +228,15 @@ body.overflow-hidden {
   background: #FFFFFF;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
   z-index: 1;
+  padding-left: 0;
+  top: 65px;
+  list-style: none;
+}
+.nav__list .nav__item .link__menu a,
+.nav__list .nav__item .menu-item--treatment a {
+  padding: 0;
+  text-decoration: none;
+  color: #00A863;
 }
 .nav__list .nav__item .link__menu img,
 .nav__list .nav__item .menu-item--treatment img {
@@ -232,10 +245,10 @@ body.overflow-hidden {
   top: 22px;
 }
 .nav__list .nav__item .link__menu .link__menu-item,
-.nav__list .nav__item .link__menu a,
+.nav__list .nav__item .link__menu .treatment__name,
 .nav__list .nav__item .menu-item--treatment .link__menu-item,
-.nav__list .nav__item .menu-item--treatment a {
-  padding: 17px 20px 12px;
+.nav__list .nav__item .menu-item--treatment .treatment__name {
+  padding: 17px 20px 15px;
   border-top: 1px solid rgba(0, 167, 98, 0.1);
   cursor: pointer;
   color: #00A863;
@@ -251,8 +264,33 @@ body.overflow-hidden {
 .nav__list .nav__item .menu-item--treatment .menu-item--treatment .treatment__name {
   display: block;
 }
+.nav__list .nav__item .link--menu {
+  position: relative;
+}
+.nav__list .nav__item .link--menu:after {
+  content: url("../images/fe-arrow-down.svg");
+  display: block;
+  position: absolute;
+  right: -15px;
+  top: -4px;
+}
+.nav__list .nav__item .menu--treatment:after {
+  content: url("../images/fe-arrow-down-green.svg");
+  display: block;
+  position: absolute;
+  right: 19px;
+  top: 16px;
+}
 .nav__list .nav__item .link__menu {
   z-index: 4;
+}
+.nav__list .nav__item .link__menu:after {
+  content: "";
+  position: absolute;
+  left: 20px;
+  top: -19px;
+  border: 10px solid transparent;
+  border-bottom: 10px solid #fff;
 }
 .nav .nav--mobile__phones,
 .nav .container-for-mob-menu {
@@ -510,7 +548,7 @@ body.overflow-hidden {
   background: linear-gradient(103.53deg, #EEEEEE 24.58%, rgba(227, 227, 227, 0) 88.57%), url("../../assets/images/molecular-pro.png");
 }
 .section.bg-img-cancer-treatment {
-  background: linear-gradient(103.53deg, #EEEEEE 24.58%, rgba(227, 227, 227, 0) 88.57%), url("../../assets/images/cancer-treatment.png");
+  background: linear-gradient(88.91deg, #E3E3E3 15.75%, rgba(196, 196, 196, 0) 97.47%), url("../../assets/images/cancer-treatment.png");
 }
 .section.bg-img-treatment {
   background: linear-gradient(276.84deg, rgba(255, 255, 255, 0) 36.89%, #E3E3E3 47.3%), url("../../assets/images/thinkst.png");
@@ -520,6 +558,11 @@ body.overflow-hidden {
 }
 .section.bg-img-contacts {
   background: linear-gradient(103.53deg, #EEEEEE 24.58%, rgba(227, 227, 227, 0) 88.57%), url("../../assets/images/contacts-bg.png");
+}
+.section.bg-img-faq {
+  background: linear-gradient(90.53deg, #EEEEEE 45.58%, rgba(227, 227, 227, 0) 82.57%), url(../../assets/images/faq.jpg);
+  background-position: right !important;
+  background-size: contain !important;
 }
 
 @media screen and (max-width: 800px) {
@@ -1019,6 +1062,44 @@ body.overflow-hidden {
   color: #000000;
   text-decoration: none;
 }
+.appointment.appointment-faq {
+  padding-top: 84px;
+  padding-bottom: 70px;
+}
+.appointment.appointment-faq .appointment__text h3.title--small {
+  margin-bottom: 39px;
+}
+.appointment.appointment-faq .appointment-faq__form {
+  max-width: 363px;
+}
+.appointment.appointment-faq .appointment-faq__form label {
+  width: 100%;
+  max-width: none;
+}
+.appointment.appointment-faq .appointment-faq__form input,
+.appointment.appointment-faq .appointment-faq__form textarea {
+  padding: 12px 16px;
+  background: #FFFFFF;
+  border: 1px solid #CACACA;
+  box-sizing: border-box;
+  border-radius: 3px;
+  width: 100%;
+  max-width: none;
+  margin-bottom: 16px;
+}
+.appointment.appointment-faq .appointment-faq__form input:placeholder-shown,
+.appointment.appointment-faq .appointment-faq__form textarea:placeholder-shown {
+  color: #CACACA;
+}
+.appointment.appointment-faq .appointment-faq__form .button--primary {
+  display: block;
+  width: 100%;
+  max-width: none;
+}
+.appointment.appointment-faq .image {
+  max-width: 549.48px;
+  top: 53px;
+}
 
 .slider,
 .slick-vertical {
@@ -1225,6 +1306,54 @@ body.overflow-hidden {
   color: #2B83B4;
 }
 
+.content-toggle__item {
+  position: relative;
+  background: #FFFFFF;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.08);
+  border-radius: 2px;
+  margin-bottom: 24px;
+}
+.content-toggle__item .toggle-item__header {
+  padding: 19.5px;
+  background: #00A863;
+  color: #ffffff;
+  border-radius: 2px;
+  position: relative;
+  cursor: pointer;
+}
+.content-toggle__item .toggle-item__header:after {
+  content: "";
+  position: absolute;
+  right: 22px;
+  display: block;
+  width: 33px;
+  height: 33px;
+  border: 2px solid #FFFFFF;
+  border-radius: 100%;
+  top: 14px;
+}
+.content-toggle__item .toggle-item__header:before {
+  content: "";
+  background-image: url("../images/fe-arrow-down.svg");
+  transition: 0.4s;
+  background-size: 100%;
+  display: block;
+  position: absolute;
+  width: 17px;
+  height: 11px;
+  right: 32px;
+  top: 26px;
+}
+.content-toggle__item .toggle-item__header.active:before {
+  transform: rotate(180deg);
+  transition: 0.4s;
+  top: 29px;
+}
+.content-toggle__item .toggle-item__body {
+  padding: 26px 32px 0.1px;
+  display: none;
+}
+
 footer {
   background: linear-gradient(180deg, #14AC68 0%, #00A863 100%);
   position: relative;
@@ -1425,16 +1554,16 @@ footer .footer-content__item .list-title {
     max-height: 100vh;
     background: #02A863;
     z-index: 45;
+    overflow: auto;
+    padding-bottom: 60px;
   }
   .nav .logo {
     max-width: 82px;
   }
   .nav .nav__list {
     padding-top: 46px;
-    max-width: 500px;
     flex-direction: column;
     align-items: inherit;
-    max-height: 432px;
     overflow: auto;
   }
   .nav .nav__list .nav__item {
@@ -1463,6 +1592,9 @@ footer .footer-content__item .list-title {
 .nav .nav__list .nav__item .link__menu-item a {
     color: #ffffff;
   }
+  .nav .nav__list .nav__item .link__menu:after {
+    display: none;
+  }
   .nav .nav__list .nav__item .menu-item--treatment {
     left: -75px;
     width: calc(100% + 48px * 2);
@@ -1471,6 +1603,9 @@ footer .footer-content__item .list-title {
     padding-left: 109px;
     border-top: 1.5px solid rgba(125, 225, 184, 0.2);
     border-bottom: 1.5px solid rgba(125, 225, 184, 0.2);
+  }
+  .nav .nav__list .nav__item .menu--treatment:after {
+    content: url("../images/fe-arrow-down.svg");
   }
   .nav .button-open-menu {
     width: 31px;
@@ -1540,7 +1675,7 @@ footer .footer-content__item .list-title {
     border-width: 10px;
   }
   .appointment .image {
-    max-width: 370px;
+    max-width: 370px !important;
     width: 100%;
     bottom: -150px;
     top: auto;
@@ -1554,6 +1689,11 @@ footer .footer-content__item .list-title {
   }
   .appointment__text h3.title--small {
     margin: 0 auto 30px;
+  }
+  .appointment .appointment-faq .image {
+    right: 0;
+    left: auto;
+    top: 132px;
   }
 
   .section.title-block {
@@ -1668,6 +1808,11 @@ footer .footer-content__item .list-title {
     width: 100%;
     height: auto;
   }
+  .section.bg-img-faq {
+    background: linear-gradient(90.53deg, #EEEEEE 12.58%, rgba(227, 227, 227, 0) 82.57%), url("../../assets/images/faq.jpg");
+    background-size: cover !important;
+    background-position: center !important;
+  }
 
   .about-clinic.section--large-text {
     padding-top: 36px;
@@ -1709,6 +1854,25 @@ footer .footer-content__item .list-title {
 
   .section--map {
     padding: 45px 10px;
+  }
+
+  .content-toggle__item .toggle-item__header {
+    padding: 11px 70.5px 11px 12px;
+  }
+  .content-toggle__item .toggle-item__header:after {
+    top: 6px;
+  }
+  .content-toggle__item .toggle-item__header:before {
+    top: 18px;
+  }
+  .content-toggle__item .toggle-item__header.active:before {
+    top: 19px;
+  }
+  .content-toggle__item .toggle-item__body {
+    padding: 11px 12px 0.1px;
+  }
+  .content-toggle__item .toggle-item__body p.text {
+    margin-bottom: 12px;
   }
 }
 @media (max-width: 600px) {
@@ -1780,6 +1944,14 @@ footer .footer-content__item .list-title {
   .contact-info .address-block,
 .contact-info .phones {
     flex-direction: column;
+    margin-bottom: 0;
+  }
+  .contact-info .address-block a,
+.contact-info .phones a {
+    margin: 0 auto 16px;
+  }
+  .contact-info .phones {
+    margin-bottom: 21px;
   }
 
   .content-image-box .content-block {

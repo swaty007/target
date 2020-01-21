@@ -265,6 +265,11 @@ body {
         color: #ffffff;
         text-decoration: none;
         @include txt-size-16;
+
+        &:hover {
+          opacity: 0.7;
+          transition: 0.4s;
+        }
       }
 
       .link__menu,
@@ -275,6 +280,15 @@ body {
         background: #FFFFFF;
         box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
         z-index: 1;
+        padding-left: 0;
+        top: 65px;
+        list-style: none;
+
+        a {
+          padding: 0;
+          text-decoration: none;
+          color: #00A863;
+        }
 
         img {
           position: absolute;
@@ -283,8 +297,8 @@ body {
         }
 
         .link__menu-item,
-        a {
-          padding: 17px 20px 12px;
+        .treatment__name {
+          padding: 17px 20px 15px;
           border-top: 1px solid rgba(0, 167, 98, 0.1);
           cursor: pointer;
           color: #00A863;
@@ -302,8 +316,40 @@ body {
         }
       }
 
+      .link--menu {
+        position: relative;
+
+        &:after {
+          content: url("../images/fe-arrow-down.svg");
+          display: block;
+          position: absolute;
+          right: -15px;
+          top: -4px;
+        }
+      }
+
+      .menu--treatment {
+
+        &:after {
+          content: url("../images/fe-arrow-down-green.svg");
+          display: block;
+          position: absolute;
+          right: 19px;
+          top: 16px;
+        }
+      }
+
       .link__menu {
         z-index: 4;
+
+        &:after {
+          content: '';
+          position: absolute;
+          left: 20px;
+          top: -19px;
+          border: 10px solid transparent;
+          border-bottom: 10px solid #fff;
+        }
       }
     }
   }
@@ -672,7 +718,7 @@ body {
     }
 
     &cancer-treatment {
-      background: linear-gradient(103.53deg, #EEEEEE 24.58%, rgba(227, 227, 227, 0) 88.57%),
+      background: linear-gradient(88.91deg, #E3E3E3 15.75%, rgba(196, 196, 196, 0) 97.47%),
       url('../../assets/images/cancer-treatment.png');
     }
 
@@ -688,6 +734,13 @@ body {
     &contacts {
       background: linear-gradient(103.53deg, #EEEEEE 24.58%, rgba(227, 227, 227, 0) 88.57%),
       url('../../assets/images/contacts-bg.png');
+    }
+
+    &faq {
+      background: linear-gradient(90.53deg, #EEEEEE 45.58%, rgba(227, 227, 227, 0) 82.57%),
+      url(../../assets/images/faq.jpg);
+      background-position: right !important;
+      background-size: contain !important;
     }
   }
 }
@@ -941,6 +994,7 @@ body {
   .phones {
     margin-bottom: 34px;
     flex-wrap: wrap;
+
     a {
       position: relative;
       font-weight: 500;
@@ -1342,6 +1396,53 @@ body {
       }
     }
   }
+
+  &.appointment-faq {
+    padding-top: 84px;
+    padding-bottom: 70px;
+
+    .appointment__text {
+      h3.title--small {
+        margin-bottom: 39px;
+      }
+    }
+
+    .appointment-faq__form {
+      max-width: 363px;
+
+      label {
+        width: 100%;
+        max-width: none;
+      }
+
+      input,
+      textarea {
+        padding: 12px 16px;
+        background: #FFFFFF;
+        border: 1px solid #CACACA;
+        box-sizing: border-box;
+        border-radius: 3px;
+        width: 100%;
+        max-width: none;
+        margin-bottom: 16px;
+
+        &:placeholder-shown {
+          color: #CACACA;
+        }
+      }
+
+      .button--primary {
+        display: block;
+        width: 100%;
+        max-width: none;
+      }
+    }
+
+    .image {
+      max-width: 549.48px;
+      top: 53px;
+    }
+  }
 }
 
 //Slider
@@ -1598,6 +1699,65 @@ body {
   }
 }
 
+
+//  toggle content block style
+
+.content-toggle {
+  &__item {
+    position: relative;
+    background: #FFFFFF;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.08);
+    border-radius: 2px;
+    margin-bottom: 24px;
+
+    .toggle-item__header {
+      padding: 19.5px;
+      background: #00A863;
+      color: #ffffff;
+      border-radius: 2px;
+      position: relative;
+      cursor: pointer;
+
+      &:after {
+        content: '';
+        position: absolute;
+        right: 22px;
+        display: block;
+        width: 33px;
+        height: 33px;
+        border: 2px solid #FFFFFF;
+        border-radius: 100%;
+        top: 14px;
+      }
+
+      &:before {
+        content: '';
+        background-image: url("../images/fe-arrow-down.svg");
+        transition: 0.4s;
+        background-size: 100%;
+        display: block;
+        position: absolute;
+        width: 17px;
+        height: 11px;
+        right: 32px;
+        top: 26px;
+      }
+
+      &.active {
+        &:before {
+          transform: rotate(180deg);
+          transition: 0.4s;
+          top: 29px
+        }
+      }
+    }
+
+    .toggle-item__body {
+      padding: 26px 32px 0.1px;
+      display: none;
+    }
+  }
+}
 
 //Footer
 
@@ -1864,6 +2024,8 @@ footer {
       max-height: 100vh;
       background: #02A863;
       z-index: 45;
+      overflow: auto;
+      padding-bottom: 60px;
     }
 
     .logo {
@@ -1872,10 +2034,8 @@ footer {
 
     .nav__list {
       padding-top: 46px;
-      max-width: 500px;
       flex-direction: column;
       align-items: inherit;
-      max-height: 432px;
       overflow: auto;
 
       .nav__item {
@@ -1906,6 +2066,12 @@ footer {
           }
         }
 
+        .link__menu {
+          &:after {
+            display: none;
+          }
+        }
+
         .menu-item--treatment {
           left: -75px;
           width: calc(100% + 48px * 2);
@@ -1914,6 +2080,13 @@ footer {
             padding-left: 109px;
             border-top: 1.5px solid rgba(125, 225, 184, 0.2);
             border-bottom: 1.5px solid rgba(125, 225, 184, 0.2);
+          }
+        }
+
+        .menu--treatment {
+
+          &:after {
+            content: url("../images/fe-arrow-down.svg");
           }
         }
       }
@@ -1996,6 +2169,7 @@ footer {
       max-width: 360px;
     }
   }
+
   .appointment {
     padding-top: 46px;
     min-height: 446px;
@@ -2003,7 +2177,7 @@ footer {
     border-width: 10px;
 
     .image {
-      max-width: 370px;
+      max-width: 370px !important;
       width: 100%;
       bottom: -150px;
       top: auto;
@@ -2018,6 +2192,14 @@ footer {
 
       h3.title--small {
         margin: 0 auto 30px;
+      }
+    }
+
+    .appointment-faq {
+      .image {
+        right: 0;
+        left: auto;
+        top: 132px;
       }
     }
   }
@@ -2184,6 +2366,15 @@ footer {
         }
       }
     }
+
+    &.bg-img- {
+      &faq {
+        background: linear-gradient(90.53deg, #EEEEEE 12.58%, rgba(227, 227, 227, 0) 82.57%),
+        url('../../assets/images/faq.jpg');
+        background-size: cover !important;
+        background-position: center !important;
+      }
+    }
   }
 
   .about-clinic {
@@ -2243,6 +2434,30 @@ footer {
 
   .section--map {
     padding: 45px 10px;
+  }
+
+  .content-toggle__item {
+    .toggle-item__header {
+      padding: 11px 70.5px 11px 12px;
+      &:after{
+        top: 6px;
+      }
+      &:before{
+        top: 18px;
+      }
+      &.active{
+        &:before {
+          top: 19px;
+        }
+      }
+    }
+    .toggle-item__body {
+      padding: 11px 12px 0.1px;
+
+      p.text {
+        margin-bottom: 12px;
+      }
+    }
   }
 
 }
@@ -2342,8 +2557,17 @@ footer {
 
   .contact-info {
     .address-block,
-    .phones{
+    .phones {
       flex-direction: column;
+      margin-bottom: 0;
+
+      a {
+        margin: 0 auto 16px;
+      }
+    }
+
+    .phones {
+      margin-bottom: 21px;
     }
   }
 

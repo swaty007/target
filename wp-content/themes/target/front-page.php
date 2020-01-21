@@ -135,7 +135,6 @@ get_header();
                 </div>
                 <div class="content-block info-box info-box--text flex-block">
                     <?php $loop = new WP_Query(array('post_type' => 'advantages', 'posts_per_page' => -1)); ?>
-
                     <?php while ($loop->have_posts()) : $loop->the_post(); ?>
 
                         <div class="info-box__item">

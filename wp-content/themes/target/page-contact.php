@@ -49,7 +49,7 @@ the_post();
                         <img src="../assets/images/location.png" class="text-big-img" alt="">
                         <?php the_content(); ?>
                     </section>
-                    <?php get_template_part('template-parts/sections', 'contact-form'); ?>
+                    <?php get_template_part('template-parts/sections', 'contact-form-callback'); ?>
                 </div>
             </div>
         </section>

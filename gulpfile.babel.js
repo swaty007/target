@@ -101,7 +101,7 @@ export const watchCode = done => {
 
 export const styles = () =>
   src(settings.paths.styles.src)
-    .pipe(gulpif(!production, sourcemaps.init()))
+    // .pipe(gulpif(!production, sourcemaps.init()))
     .pipe(plumber())
     .pipe(
       sass({
@@ -118,8 +118,8 @@ export const styles = () =>
       )
     )
     .pipe(
-      gulpif(
-        production,
+      // gulpif(
+      //   production,
         mincss({
           compatibility: "ie8",
           level: {
@@ -138,7 +138,7 @@ export const styles = () =>
             },
           },
         })
-      )
+      // )
     )
     // .pipe(
     //   gulpif(

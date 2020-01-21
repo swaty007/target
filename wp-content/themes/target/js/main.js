@@ -93,4 +93,25 @@ window.addEventListener('load', function () {
 $(window).resize(function () {
     resizeBlocks()
 });
-//
+
+//Content toggle
+$( '.toggle-item__header' ).click( function () {
+    if ($(event.target).hasClass('active')) {
+
+    }
+    if ( $(this).parent().find('.toggle-item__body').css('display')=='none' ) {
+        $('.toggle-item__body' ).slideUp(400);
+        $( '.toggle-item__header' ).removeClass( 'active' );
+
+        $( this ).addClass( 'active' );
+        $( this ).parent().find( '.toggle-item__body' ).slideDown(400);
+
+        console.log($(this))
+
+    } else {
+
+        $('.toggle-item__body' ).slideUp(400)
+        $( '.toggle-item__header' ).removeClass( 'active' );
+    }
+
+});

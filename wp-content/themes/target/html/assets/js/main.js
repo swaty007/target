@@ -8,7 +8,6 @@ $( '.menu--treatment' ).click(function () {
     $( '.menu-item--treatment' ).fadeToggle( 400 );
 });
 
-
 //Mobile Header
 $( '.button-open-menu' ).click( function () {
     $( this ).toggleClass( 'active' );
@@ -71,27 +70,55 @@ $( function () {
 });
 
 //Move blocks on resize to mob
+
 function resizeBlocks() {
     let width = $( window ).width();
 
-    if (width < 880) {
+    if ( width < 880 ) {
         $( "#nav-menu-mob" ).appendTo( "#move_nav-menu-mob" );
 
-    } else if (width > 880) {
+    } else if ( width > 880 ) {
         $( "#nav-menu-mob" ).appendTo( "#profile-menu-mob" );
     }
 
 }
 
-window.addEventListener('load', function () {
+window.onload = function () {
     resizeBlocks();
+
     $( window ).resize(function () {
         resizeBlocks();
     });
-    // $('.gallery-content').fadeOut(10);
-});
 
-$(window).resize(function () {
+    // $('.gallery-content').fadeOut(10);
+};
+
+$( window ).resize( function () {
+
     resizeBlocks()
+
 });
 //
+
+//Content toggle
+
+$( '.toggle-item__header' ).click( function () {
+    if ($(event.target).hasClass('active')) {
+
+    }
+    if ( $(this).parent().find('.toggle-item__body').css('display')=='none' ) {
+        $('.toggle-item__body' ).slideUp(400);
+        $( '.toggle-item__header' ).removeClass( 'active' );
+
+        $( this ).addClass( 'active' );
+        $( this ).parent().find( '.toggle-item__body' ).slideDown(400);
+
+        console.log($(this))
+
+    } else {
+
+        $('.toggle-item__body' ).slideUp(400)
+        $( '.toggle-item__header' ).removeClass( 'active' );
+    }
+
+});

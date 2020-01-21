@@ -147,7 +147,7 @@ the_post(); ?>
                             <img class="simple-gallery__item " src="../assets/images/DSC_9745.png" alt="">
                             <img class="simple-gallery__item " src="../assets/images/DSC_9687.png" alt="">
                         </div>
-                        <?php get_template_part('template-parts/sections', 'contact-form'); ?>
+                        <?php get_template_part('template-parts/sections', 'contact-form-callback'); ?>
                     </div>
                 </div>
             </div>

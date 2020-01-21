@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="../assets/css/slick-theme.css">
     <link rel="stylesheet" href="../assets/css/styles.css">
 </head>
+<body>
 <header>
     <div class="header__content">
         <div class="wrapper flex-block">
@@ -53,28 +54,29 @@
                         </a>
                     </li>
                     <li class="nav__item">
-                        <div class="nav__link link--menu">
+                        <a class="nav__link link--menu">
                             Услуги
-                            <img src="../assets/images/fe-arrow-down.svg" alt="">
-                        </div>
-                        <div class="link__menu">
-                            <div class="link__menu-item menu--treatment">
+                        </a>
+                        <ul class="link__menu">
+                            <li class="link__menu-item menu--treatment">
                                 Лечение рака
-                                <img src="../assets/images/fe-arrow-down-green.svg" class="hide-on-mob" alt="">
-                                <img src="../assets/images/fe-arrow-down.svg" class="show-on-mob" alt="">
-                                <div class="menu-item--treatment">
-                                    <a href="" class="treatment__name">
-                                        Рак легких
-                                    </a>
-                                    <a href="" class="treatment__name">
-                                        Рак желудка
-                                    </a>
-                                </div>
-                            </div>
-                            <div class="link__menu-item">
-                                Услуга 1
-                            </div>
-                        </div>
+                                <ul class="menu-item--treatment">
+                                    <li>
+                                        <a href="" class="treatment__name">
+                                            Рак легких
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="" class="treatment__name">
+                                            Рак желудка
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="link__menu-item">
+                                <a href="">Услуга 1</a>
+                            </li>
+                        </ul>
                     </li>
                     <li class="nav__item">
                         <a href="" class="nav__link">
@@ -119,7 +121,6 @@
         <div id="move_nav-menu-mob"></div>
     </div>
 </nav>
-<body>
 <main class="content">
     <section class="section title-block default-title default-title-small bg-img-contacts">
         <div class="wrapper">
@@ -204,5 +205,89 @@
         </div>
     </section>
 </main>
+<footer>
+    <div class="wrapper">
+        <img src="../assets/images/bg-type-img.svg" class="bg-img" alt="">
+        <div class="footer-content flex-block">
+            <img src="../assets/images/bg-footer.svg" class="bg-img-footer" alt="">
+            <div class="footer-content__item item--contacts">
+                <img src="../assets/images/logo.svg" alt="">
+                <a href="tel:+380443392221">+38 (044) 339 2221</a>
+                <a href="tel:+380506967311">+38 (050) 696 7311</a>
+                <a href="tel:+380982334019">+38 (098) 233 4019</a>
+            </div>
+            <div class="footer-content__item item--info">
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam quam id urna, in sit consequat.
+                </p>
+                <div class="item__address">
+                    <img src="../assets/images/fa-regular_clock-wh.svg" alt="location">
+                    Киев, п-р Воздухофлотский 71/3
+                </div>
+                <div class="item__address">
+                    <img src="../assets/images/fa-solid_map-marker-alt.svg" alt="location">
+                    Пн-Пт с 08:00 до 17:00
+                </div>
+                <a href="" target="_blank" class="link">
+                    Как добраться
+                </a>
+                <button type="button" class="button button--secondary button--white">
+                    Записаться на прием
+                </button>
+            </div>
+            <div class="footer-content__item">
+                <p class="list-title text--18">
+                    Навигация
+                </p>
+                <ul>
+                    <li>
+                        <a href="">
+                            Главная
+                        </a>
+                    </li>
+                    <li>
+                        <a href="">
+                            О клинике
+                        </a>
+                    </li>
+                    <li>
+                        <a href="">
+                            Врачи
+                        </a>
+                    </li>
+                    <li>
+                        <a href="">
+                            Методы лечения
+                        </a>
+                    </li>
+                    <li>
+                        <a href="">
+                            Пациентам/Блог
+                        </a>
+                    </li>
+                    <li>
+                        <a href="">
+                            Контакты
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <div class="footer-content__item">
+                <p class="list-title text--18">Лечение рака</p>
+                <ul>
+                    <li><a href="">Химиотерапия</a></li>
+                    <li><a href="">Иммунотерапия</a></li>
+                    <li><a href="">Химиотерапия</a></li>
+                    <li><a href="">Жидкосная биопсия</a></li>
+                    <li><a href="">Молекулярное пофилирование</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</footer>
+
 </body>
+<script src="../assets/js/jquery.min.js"></script>
+<script src="../assets/js/slick.min.js"></script>
+<script src="../assets/js/main.js"></script>
 </html>

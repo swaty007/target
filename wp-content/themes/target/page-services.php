@@ -105,7 +105,7 @@ the_post();
                         eu, pharetra congue quam. Magna quis mi nisl sed purus dolor ultricies sed pharetra.
                     </p>
                 </div>
-                <?php get_template_part('template-parts/sections', 'contact-form'); ?>
+                <?php get_template_part('template-parts/sections', 'contact-form-callback'); ?>
             </div>
         </div>
     </section>
