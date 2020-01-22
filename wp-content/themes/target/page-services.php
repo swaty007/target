@@ -40,9 +40,7 @@ the_post();
                 <?php while ($loop->have_posts()) : $loop->the_post(); ?>
                     <div class="info-box__item">
                         <div class="left-img-text">
-                            <?php if (has_post_thumbnail()) {
-                                the_post_thumbnail();
-                            } ?>
+                            <img src="<?= get_url_from_img_id(get_post_meta( $post->ID, 'icon', true )) ;?>" />
                             <p class="title-img">
                                 <?php the_title(); ?>
                             </p>

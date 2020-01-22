@@ -87,13 +87,8 @@ function menuActivePage($pageslug){
 }
 
 //create array of photos for lot
-function lot_album_url_array(){
-  global $post;
-  //get all image ids of our gallery in array
-  $album_id_array = get_post_meta($post->ID,'lot_ua_photo', true);
-  //crate array with images
-  $album_url_array = [];
-  return array_map("get_url_from_img_id", $album_id_array);
+function lot_album_url_array($array){
+  return array_map("get_url_from_img_id", $array);
 }
 
 // Only for geting img url

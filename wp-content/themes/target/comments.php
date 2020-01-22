@@ -20,13 +20,13 @@ if ( post_password_required() ) {
 }
 ?>
 
-<div id="comments" class="comments-area">
+<div id="comments" class="comments order-num1">
+
 
 	<?php
 	// You can start editing here -- including this comment!
-	if ( have_comments() ) :
-		?>
-		<h2 class="comments-title">
+	if ( have_comments() ) :?>
+		<h3 class="title--small">
 			<?php
 			$gns_theme_comment_count = get_comments_number();
 			if ( '1' === $gns_theme_comment_count ) {
@@ -44,8 +44,71 @@ if ( post_password_required() ) {
 				);
 			}
 			?>
-		</h2><!-- .comments-title -->
+		</h3><!-- .comments-title -->
 
+        <div class="comments__form">
+            <form action="">
+                <img src="../assets/images/noavatar92.svg" alt="" class="user-img">
+                <label for="name">
+                    <input type="text" id="name" placeholder="Имя">
+                </label>
+                <textarea name="" id="" cols="30" rows="10"
+                          placeholder="Комментарий"></textarea>
+                <button type="submit" class="button--secondary button--green text--14">
+                    отправить
+                </button>
+            </form>
+        <?php comment_form();?>
+        </div>
+        <div class="comments__messages">
+            <div class="comments--message">
+                <img src="../assets/images/noavatar92.svg" alt="" class="user-img">
+                <p class="message--head text">
+                    <label class="user-name">Петя Петрович</label>
+                    <label class="message-time">18.05, 12:22</label>
+                </p>
+                <p class="message-text text">
+                    В апреле 2018 года я сдал свою Киа Сид по отзывной кампании в салон
+                    официального дилера.
+                    Там ее починили, сломали и снова починили. Я потерял немного времени, но
+                    зато ничего за
+                    это не платил. Пока машину чинили, ездил на подменном автомобиле от салона.
+                </p>
+                <button class="message-answer text">ОТВЕТИТЬ</button>
+            </div>
+            <div class="comments--message">
+                <img src="../assets/images/noavatar92.svg" alt="" class="user-img">
+                <p class="message--head text">
+                    <label class="user-name">Иван Гамаз</label>
+                    <label class="message-time">18.05, 12:22</label>
+                </p>
+                <p class="message-text text">
+                    В апреле 2018 года я сдал свою Киа Сид по отзывной кампании в салон
+                    официального дилера.
+                    Там ее починили, сломали и снова починили. Я потерял немного времени, но
+                    зато ничего за
+                    это не платил. Пока машину чинили, ездил на подменном автомобиле от салона.
+                </p>
+                <button class="message-answer text">ОТВЕТИТЬ</button>
+                <div class="comments--message comments--message--answer">
+                    <img src="../assets/images/noavatar92.svg" alt="" class="user-img">
+                    <p class="message--head text">
+                        <label class="user-name">Диана Шуригина</label>
+                        <label class="message-time">18.05, 12:22</label>
+                    </p>
+                    <p class="message-text text">
+                        Я не знаю эту историю, могу лишь предполагать. За все в этой жизни нам
+                        приходится
+                        платить. Если она действительно такая коварная, что сначала согласилась
+                        на близость
+                        с
+                        молодым человеком, а затем заявила, что этого не хотела, ей за это
+                        воздастся
+                    </p>
+                    <button class="message-answer text">ОТВЕТИТЬ</button>
+                </div>
+            </div>
+        </div>
 		<?php the_comments_navigation(); ?>
 
 		<ol class="comment-list">
@@ -65,11 +128,9 @@ if ( post_password_required() ) {
 			?>
 			<p class="no-comments"><?php esc_html_e( 'Comments are closed.', 'gns-theme' ); ?></p>
 			<?php
-		endif;
+		endif; ?>
 
-	endif; // Check for have_comments().
-
-	comment_form();
+	<?php endif; // Check for have_comments().
 	?>
 
 </div><!-- #comments -->

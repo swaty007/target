@@ -27,7 +27,7 @@ the_post();
         <section class="section section--default">
             <div class="wrapper">
                 <div class="wrapper-920-left">
-                    <section class="section--large-text">
+                    <section class="section--large-text section-treatment">
                         <?php the_content(); ?>
 
 
@@ -49,7 +49,7 @@ the_post();
                             <?php $loop = new WP_Query( array( 'post_type' => 'cancer', 'posts_per_page' => -1 ) ); ?>
                             <?php while ( $loop->have_posts() ) : $loop->the_post(); ?>
                                 <a class="cancel-types__item" href="<?php the_permalink(); ?>" target="_blank">
-                                    <img src="<?= get_url_from_img_id(get_post_meta( $post->ID, 'icon', true )) ;?>" alt="">
+                                    <img src="<?= get_url_from_img_id(get_post_meta( $post->ID, 'icon', true )) ;?>" />
                                     <p class="cancel-type__name"> <?php the_title(); ?></p>
                                 </a>
                             <?php endwhile; wp_reset_query(); ?>
