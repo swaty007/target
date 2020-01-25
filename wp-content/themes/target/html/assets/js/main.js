@@ -122,3 +122,7 @@ $( '.toggle-item__header' ).click( function () {
     }
 
 });
+
+$(window).scroll(function () {
+    $('body').scrollTop();
+});
