@@ -325,7 +325,7 @@ body {
         position: relative;
 
         &:after {
-          content: url("../images/fe-arrow-down.svg");
+          content: url("../img/fe-arrow-down.svg");
           display: block;
           position: absolute;
           right: -15px;
@@ -336,7 +336,7 @@ body {
       .menu--treatment {
 
         &:after {
-          content: url("../images/fe-arrow-down-green.svg");
+          content: url("../img/fe-arrow-down-green.svg");
           display: block;
           position: absolute;
           right: 19px;
@@ -373,7 +373,7 @@ body {
   &.title-block {
     //height: 100vh;
     min-height: 810px;
-    background-image: url("/target/assets/images/main_00000.svg");
+    background-image: url("../img/main_00000.svg");
     padding: 102px 10px 0;
 
     .wrapper {
@@ -1072,7 +1072,7 @@ body {
         border-color: #53B487;
 
         &:before {
-          content: url("../images/arrow-line-green.svg");
+          content: url("../img/arrow-line-green.svg");
           transform: rotate(90deg);
           left: -1px;
         }
@@ -1181,7 +1181,7 @@ body {
       padding-left: 24px;
 
       &:after {
-        content: url("../images/entypo-phone.svg");
+        content: url("../img/entypo-phone.svg");
         display: block;
         position: absolute;
         width: 17px;
@@ -1655,7 +1655,7 @@ body {
     left: auto;
 
     &:before {
-      content: url("/target/assets/images/arrow-line.svg");
+      content: url("../img/arrow-line.svg");
       display: block;
       opacity: 1;
       top: -3px;
@@ -1923,7 +1923,7 @@ body {
 
       &:before {
         content: '';
-        background-image: url("../images/fe-arrow-down.svg");
+        background-image: url("../img/fe-arrow-down.svg");
         transition: 0.4s;
         background-size: 100%;
         display: block;
@@ -2277,7 +2277,7 @@ footer {
         .menu--treatment {
 
           &:after {
-            content: url("../images/fe-arrow-down.svg");
+            content: url("../img/fe-arrow-down.svg");
           }
         }
       }
@@ -2562,7 +2562,7 @@ footer {
     &.bg-img- {
       &faq {
         background: linear-gradient(90.53deg, #EEEEEE 12.58%, rgba(227, 227, 227, 0) 82.57%),
-        url('../../assets/images/faq.jpg');
+        url('../img/faq.jpg');
         background-size: cover !important;
         background-position: center !important;
       }

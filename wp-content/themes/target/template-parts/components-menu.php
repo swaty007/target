@@ -32,7 +32,7 @@
 <nav class="nav <?=is_front_page() || is_page_template('page-doctors.php')?'nav--transparent':'';?>">
     <div class="wrapper flex-block">
         <a href="/">
-            <img class="logo" src="<?= get_template_directory_uri(); ?>/img/logo.svg" alt="">
+            <img class="logo" src="<?= get_url_from_img_id(get_theme_mod( 'custom_logo' ));?>" alt="">
         </a>
         <div id="profile-menu-mob" class="container-for-move">
             <div id="nav-menu-mob">

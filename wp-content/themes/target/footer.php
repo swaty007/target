@@ -4,7 +4,7 @@
         <div class="footer-content flex-block">
             <img src="<?= get_template_directory_uri(); ?>/img/bg/bg-footer.svg" class="bg-img-footer" alt="">
             <div class="footer-content__item item--contacts">
-                <img src="<?= get_template_directory_uri(); ?>/img/logo.svg" alt="">
+                <img src="<?= get_url_from_img_id(get_theme_mod( 'custom_logo' ));?>" alt="">
                 <a href="tel:+380443392221">+38 (044) 339 2221</a>
                 <a href="tel:+380506967311">+38 (050) 696 7311</a>
                 <a href="tel:+380982334019">+38 (098) 233 4019</a>
