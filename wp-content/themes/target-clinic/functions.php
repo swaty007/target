@@ -57,7 +57,7 @@ function target_files() {
   wp_enqueue_script('slick-js', get_template_directory_uri() .'/js/slick.min.js','','',true);
   wp_enqueue_script('main-target-js', get_template_directory_uri() .'/js/main.js','','',true);
   wp_enqueue_style('carua_main_styles', get_stylesheet_uri());
-  wp_localize_script('main-chornobyl-js', 'targetData', array(
+  wp_localize_script('main-target-js', 'targetData', array(
     'root_url' => get_site_url(),
     'nonce' => wp_create_nonce( 'protection' ),
     'ajaxurl' => admin_url( 'admin-ajax.php' ),
@@ -318,32 +318,35 @@ function my_jquery_enqueue() {
 
 
 
-add_action( 'wp_ajax_nopriv_contact_form', 'do_contact_form' );
 
+
+add_action( 'wp_ajax_contact_form', 'do_contact_form' );
 function do_contact_form() {
-    if ( isset($_POST['popupName']) && isset($_POST['popupPhone']) ) {
-        $name = $_POST['popupName']; $phone = $_POST['popupPhone'];
+    if ( isset($_POST['name']) && isset($_POST['phone']) ) {
+        $name = $_POST['name'];
+        $phone = $_POST['phone'];
         $send_to = "eugene.subota1984@gmail.com,swaty0007@gmail.com,office@car.ua,info@car.ua";
         $subject = "Заказ консультации";
         $message = "Пользователь сайта запросил консультацию менеджера.<br> Пользователь: " . $name . "<br>Номер телефона: " . $phone;
-        if (isset($_POST['pageLocation'])) {
-            $message.=  "<br>Ссылка на страницу: " . $_POST['pageLocation'];
+        if (isset($_POST['location'])) {
+            $message.=  "<br>Ссылка на страницу: " . $_POST['location'];
         }
         $headers = array('From: Car.ua <info@car.ua>', 'Content-Type: text/html; charset=UTF-8');
 
-        $telegram = new Telegram('551741867:AAH5kO3LnwrLjlLGb480c2KZ9iGYL-XY0QU');
+
+        $telegram = new Telegram('1072821683:AAFLRe-3Cd3c8EKLBAsYB8-oei3dCdwBT-0');
         $telegram->sendMessage([
-            'chat_id' => '132169247',
-            'text' => 'text',
+            'chat_id' => -379470267,
+            'text' => $message,
         ]);
+        wp_send_json(true);
 
-
-        $success = wp_mail($send_to,$subject,$message,$headers);
-        if ($success){
-            wp_send_json(true);
-        } else {
-            wp_send_json(false);
-        }
+//        $success = wp_mail($send_to,$subject,$message,$headers);
+//        if ($success){
+//            wp_send_json(true);
+//        } else {
+//            wp_send_json(false);
+//        }
     }
 
 }
