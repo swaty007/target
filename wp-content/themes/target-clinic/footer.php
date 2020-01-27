@@ -70,7 +70,7 @@
                 <input id="modal_page" type="hidden" name="page">
                 <input id="modal_name" type="text" name="name" placeholder="Имя">
                 <input id="modal_phone" type="number" name="tel" placeholder="Телефон">
-                <button type="button" class="button--primary" data-dismiss="modal">Отправить</button>
+                <button id="modal_contact_form" type="button" class="button--primary" data-dismiss="modal">Отправить</button>
             </div>
         </div>
     </div>
