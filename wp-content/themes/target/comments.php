@@ -23,9 +23,7 @@ if ( post_password_required() ) {
 <div id="comments" class="comments order-num1">
 
 
-	<?php
-	// You can start editing here -- including this comment!
-	if ( have_comments() ) :?>
+
 		<h3 class="title--small">
 			<?php comment_form_title() ?>
 		</h3><!-- .comments-title -->
@@ -45,6 +43,9 @@ if ( post_password_required() ) {
             'title_reply' => ''
         ]);?>
         </div>
+    <?php
+    // You can start editing here -- including this comment!
+    if ( have_comments() ) :?>
 		<?php the_comments_navigation(); ?>
         <?php the_comments_pagination(); ?>
     <div class="comments__messages">
