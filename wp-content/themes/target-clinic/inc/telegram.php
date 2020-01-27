@@ -1,12 +1,10 @@
 <?php
 
-namespace app\models;
-use yii\base\Model;
 
 /**
  * @author Akbar Joudi <akbar.joody@gmail.com>
  */
-class Telegram extends Model
+class Telegram
 {
     public $botToken;
     public $botUsername;

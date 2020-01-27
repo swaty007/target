@@ -146,4 +146,31 @@ $(document).on('click', '#modal_contact_form', function () {
     $('#modal_page')
     $('#modal_name')
     $('#modal_phone')
+    $.ajax({
+        type: "POST",
+        url: targetData.ajaxurl,
+        data: {
+            action: "contact_form",
+            popupName: popupName.val(),
+            popupPhone: popupPhone.val(),
+            pageLocation: location.href
+        },
+        success: function(satus) {
+            e.currentTarget.classList[1] == "main-popup__brand-btn"
+                ? $(".main-popup").addClass("main-popup--hide")
+                : $(".call-popup").removeClass("call-popup--active");
+            const popup_title = $(".thank-popup__title.second-title");
+            const popup_second_title = $(".thank-popup__info.main-text");
+            if (satus) {
+                popup_title.text(textHTML.success.popup_title);
+                popup_second_title.text(textHTML.success.popup_second_title);
+            } else {
+                popup_title.text(textHTML.success.popup_title);
+                popup_second_title.text(textHTML.success.popup_second_title);
+            }
+            $(".thank-popup").addClass("thank-popup--open");
+            popupName.val('');
+            popupPhone.val('')
+        },
+    });
 })

@@ -2,6 +2,7 @@
 
 //require get_theme_file_path('/inc/search-lots-route.php');
 require get_theme_file_path('/inc/custom-header.php');
+require get_theme_file_path('/inc/telegram.php');
 
 
 if ( ! function_exists( 'target_setup' ) ) :
@@ -316,6 +317,44 @@ function my_jquery_enqueue() {
 }
 
 
+
+add_action( 'wp_ajax_nopriv_contact_form', 'do_contact_form' );
+
+function do_contact_form() {
+    if ( isset($_POST['popupName']) && isset($_POST['popupPhone']) ) {
+        $name = $_POST['popupName']; $phone = $_POST['popupPhone'];
+        $send_to = "eugene.subota1984@gmail.com,swaty0007@gmail.com,office@car.ua,info@car.ua";
+        $subject = "Заказ консультации";
+        $message = "Пользователь сайта запросил консультацию менеджера.<br> Пользователь: " . $name . "<br>Номер телефона: " . $phone;
+        if (isset($_POST['pageLocation'])) {
+            $message.=  "<br>Ссылка на страницу: " . $_POST['pageLocation'];
+        }
+        $headers = array('From: Car.ua <info@car.ua>', 'Content-Type: text/html; charset=UTF-8');
+
+        $telegram = new Telegram('551741867:AAH5kO3LnwrLjlLGb480c2KZ9iGYL-XY0QU');
+        $telegram->sendMessage([
+            'chat_id' => '132169247',
+            'text' => 'text',
+        ]);
+
+
+        $success = wp_mail($send_to,$subject,$message,$headers);
+        if ($success){
+            wp_send_json(true);
+        } else {
+            wp_send_json(false);
+        }
+    }
+
+}
+
+
+
+
+
+
+
+
 add_action( 'wp_ajax_nopriv_buy_tire', 'do_buy_tire' );
 function do_buy_tire() {
 	if ( isset($_POST['tireName']) && isset($_POST['tirePhone']) ) {
@@ -367,6 +406,9 @@ add_action( 'rest_api_init', function (  ) {
         'callback' => 'send_pre_order'
     ));
 });
+
+
+
 function send_pre_order(WP_REST_Request $request){
 
     $send_to = 'tkacenkoandrej240@gmail.com,swaty0007@gmail.com';
