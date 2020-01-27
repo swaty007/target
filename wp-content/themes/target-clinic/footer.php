@@ -67,8 +67,9 @@
                     <span aria-hidden="true">&times;</span>
                 </button>
                 <h5 class="modal-title">Записаться на прием</h5>
-                <input type="text" name="name" placeholder="Имя">
-                <input type="number" name="tel" placeholder="Телефон">
+                <input id="modal_page" type="hidden" name="page">
+                <input id="modal_name" type="text" name="name" placeholder="Имя">
+                <input id="modal_phone" type="number" name="tel" placeholder="Телефон">
                 <button type="button" class="button--primary" data-dismiss="modal">Отправить</button>
             </div>
         </div>
