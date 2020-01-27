@@ -4,7 +4,7 @@
         <h3 class="title--small">
             Запись на консультацию в клинику 24/7
         </h3>
-        <button class="button button--primary">
+        <button class="button button--primary" data-toggle="modal" data-target="#modalContactForm">
             Записаться на прием
         </button>
         <p class="telephone">

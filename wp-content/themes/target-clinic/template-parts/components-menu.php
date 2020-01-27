@@ -19,7 +19,7 @@
                 <a href="tel:+380506967311">+38 (050) 696 7311</a>
                 <a href="tel:+380982334019">+38 (098) 233 4019</a>
             </div>
-            <button type="button" class="button button--secondary button--green text--14">
+            <button type="button" class="button button--secondary button--green text--14" data-toggle="modal" data-target="#modalContactForm">
                 Записаться на прием
             </button>
         </div>

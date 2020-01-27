@@ -24,7 +24,7 @@
                 <a href="" target="_blank" class="link">
                     Как добраться
                 </a>
-                <button type="button" class="button button--secondary button--white">
+                <button type="button" class="button button--secondary button--white" data-toggle="modal" data-target="#modalContactForm">
                     Записаться на прием
                 </button>
             </div>
@@ -58,6 +58,25 @@
         </div>
     </div>
 </footer>
+<div class="modal fade" id="modalContactForm" tabindex="-1" role="dialog" aria-labelledby="modalContactForm"
+     aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-body text-center">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+                <h5 class="modal-title">Записаться на прием</h5>
+                <input type="text" name="name" placeholder="Имя">
+                <input type="number" name="tel" placeholder="Телефон">
+                <button type="button" class="button--primary" data-dismiss="modal">Отправить</button>
+            </div>
+        </div>
+    </div>
+</div>
 		<?php wp_footer(); ?>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+        crossorigin="anonymous"></script>
 </body>
 </html>
