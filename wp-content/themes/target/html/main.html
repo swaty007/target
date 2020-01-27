@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Главная</title>
     <link rel="stylesheet" href="https://necolas.github.io/normalize.css/8.0.1/normalize.css">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <link rel="stylesheet" href="assets/css/slick.css">
     <link rel="stylesheet" href="assets/css/slick-theme.css">
     <link rel="stylesheet" href="assets/css/styles.css">
@@ -31,13 +33,14 @@
                 <a href="tel:+380506967311">+38 (050) 696 7311</a>
                 <a href="tel:+380982334019">+38 (098) 233 4019</a>
             </div>
-            <button type="button" class="button button--secondary button--green text--14">
+            <button type="button" class="button button--secondary button--green text--14" data-toggle="modal"
+                    data-target="#exampleModalCenter">
                 Записаться на прием
             </button>
         </div>
     </div>
 </header>
-<nav class="nav nav--transparent">
+<nav id="nav" class="nav nav--transparent">
     <div class="wrapper flex-block">
         <img class="logo" src="assets/images/logo.svg" alt="">
         <div id="profile-menu-mob" class="container-for-move">
@@ -56,13 +59,10 @@
                     <li class="nav__item">
                         <div class="nav__link link--menu">
                             Услуги
-                            <img src="assets/images/fe-arrow-down.svg" alt="">
                         </div>
                         <div class="link__menu">
                             <div class="link__menu-item menu--treatment">
                                 Лечение рака
-                                <img src="assets/images/fe-arrow-down-green.svg" class="hide-on-mob" alt="">
-                                <img src="assets/images/fe-arrow-down.svg" class="show-on-mob" alt="">
                                 <div class="menu-item--treatment">
                                     <a href="" class="treatment__name">
                                         Рак легких
@@ -137,7 +137,8 @@
             </div>
 
             <div class="flex-block">
-                <button type="button" class="button button--secondary button--white">
+                <button type="button" class="button button--secondary button--white" data-toggle="modal"
+                        data-target="#exampleModalCenter">
                     Записаться на прием
                 </button>
                 <div class="address-block flex-block text--14">
@@ -384,57 +385,61 @@
                     <div class="link-box__image">
                         <img src="assets/images/image-1.png" alt="">
                     </div>
-                    <div class="link-box__text">
-                        <h2 class="text--20">
-                            Таргетная терапия
-                        </h2>
-                        <p class="text--16">
-                            Tempus, a gravida vitae aliquet at laoreet penatibus pharetra.
-                        </p>
-                    </div>
-                    <div class="link-box__footer">
-                        <p class="link-box-date">
-                            30 Марта, 2019
-                        </p>
-                        <img src="assets/images/arrow-right.svg" alt="">
+                    <div class="link-box__content">
+                        <div class="link-box__text">
+                            <h2 class="text--20">
+                                Таргетная терапия </h2>
+                            <p class="text--16">
+                            </p>
+                            <p>Tempus, a gravida vitae aliquet at laoreet penatibus pharetra.</p>
+                            <p></p>
+                        </div>
+                        <div class="link-box__footer">
+                            <p class="link-box-date">
+                                25.01.2020 </p>
+                            <img src="assets/images/arrow-right.svg" alt="">
+                        </div>
                     </div>
                 </a>
                 <a href="" class="link-box">
                     <div class="link-box__image">
                         <img src="assets/images/image-2.svg" alt="">
                     </div>
-                    <div class="link-box__text">
-                        <h2 class="text--20">
-                            Таргетная терапия
-                        </h2>
-                        <p class="text--16">
-                            Tempus, a gravida vitae aliquet at laoreet penatibus pharetra.
-                        </p>
-                    </div>
-                    <div class="link-box__footer">
-                        <p class="link-box-date">
-                            30 Марта, 2019
-                        </p>
-                        <img src="assets/images/arrow-right.svg" alt="">
+                    <div class="link-box__content">
+                        <div class="link-box__text">
+                            <h2 class="text--20">
+                                Таргетная терапия </h2>
+                            <p class="text--16">
+                            </p>
+                            <p>Tempus, a gravida vitae aliquet at laoreet penatibus pharetra.</p>
+                            <p></p>
+                        </div>
+                        <div class="link-box__footer">
+                            <p class="link-box-date">
+                                25.01.2020 </p>
+                            <img src="assets/images/arrow-right.svg" alt="">
+                        </div>
                     </div>
                 </a>
                 <a href="" class="link-box">
                     <div class="link-box__image">
                         <img src="assets/images/image-3.png" alt="">
                     </div>
-                    <div class="link-box__text">
-                        <h2 class="text--20">
-                            Таргетная терапия
-                        </h2>
-                        <p class="text--16">
-                            Tempus, a gravida vitae aliquet at laoreet penatibus pharetra.
-                        </p>
-                    </div>
-                    <div class="link-box__footer">
-                        <p class="link-box-date">
-                            30 Марта, 2019
-                        </p>
-                        <img src="assets/images/arrow-right.svg" alt="">
+                    <div class="link-box__content">
+                        <div class="link-box__text">
+                            <h2 class="text--20">
+                                Таргетная терапия
+                            </h2>
+                            <p class="text--16">
+                                Tempus, a gravida vitae aliquet at laoreet penatibus pharetra.
+                            </p>
+                        </div>
+                        <div class="link-box__footer">
+                            <p class="link-box-date">
+                                30 Марта, 2019
+                            </p>
+                            <img src="assets/images/arrow-right.svg" alt="">
+                        </div>
                     </div>
                 </a>
             </div>
@@ -445,9 +450,6 @@
     </section>
 
 </main>
-
-</body>
-
 <footer>
     <div class="wrapper">
         <img src="assets/images/bg-type-img.svg" class="bg-img" alt="">
@@ -474,7 +476,8 @@
                 <a href="" target="_blank" class="link">
                     Как добраться
                 </a>
-                <button type="button" class="button button--secondary button--white">
+                <button type="button" class="button button--secondary button--white" data-toggle="modal"
+                        data-target="#exampleModalCenter">
                     Записаться на прием
                 </button>
             </div>
@@ -528,7 +531,30 @@
         </div>
     </div>
 </footer>
+
+<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
+     aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-body">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+                <h5 class="modal-title" id="exampleModalLongTitle" data-toggle="modal"
+                    data-target="#exampleModalCenter">Записаться на прием</h5>
+                <input type="text" name="name" placeholder="Имя">
+                <input type="number" name="tel" placeholder="Телефон">
+                <button type="button" class="btn button--primary" data-dismiss="modal">Отправить</button>
+
+            </div>
+        </div>
+    </div>
+</div>
+</body>
 <script src="assets/js/jquery.min.js"></script>
 <script src="assets/js/slick.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+        crossorigin="anonymous"></script>
 <script src="assets/js/main.js"></script>
 </html>

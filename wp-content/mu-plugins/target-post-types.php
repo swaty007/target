@@ -59,6 +59,8 @@ function target_post_types() {
     register_post_type('cancer', array(
         'supports' => array('title', 'editor', 'thumbnail', 'excerpt'),
         'public' => true,
+//        'rewrite' => array( 'slug' => 'cancer'),
+//        'has_archive' => false,
         'labels' => array(
             'name' => 'Cancer Types',
             'add_new_item' => 'Add Type',

@@ -11,7 +11,7 @@
             <div class="wrapper">
                 <div class="section__content">
                     <h3 class="text--18">
-                        Главная / <span class="cell-for-text">FAQ</span>
+                        <?php the_breadcrumb() ?>
                     </h3>
                     <h1 class="text--48 default-title__text">
                         <?php the_title(); ?>

@@ -10,7 +10,7 @@ the_post();
             <div class="wrapper">
                 <div class="section__content">
                     <h3 class="text--18">
-                        Главная / <span class="cell-for-text">Контакты</span>
+                        <?php the_breadcrumb() ?>
                     </h3>
                     <h1 class="text--48 default-title__text">
                         <?php the_title() ?>
@@ -46,7 +46,7 @@ the_post();
                         </div>
                     </div>
                     <section class="section--large-text">
-                        <img src="../assets/images/location.png" class="text-big-img" alt="">
+                        <?= $meta_data = get_post_meta($post->ID, 'map', true);?>
                         <?php the_content(); ?>
                     </section>
                     <?php get_template_part('template-parts/sections', 'contact-form-callback'); ?>

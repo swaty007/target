@@ -27,99 +27,37 @@ if ( post_password_required() ) {
 	// You can start editing here -- including this comment!
 	if ( have_comments() ) :?>
 		<h3 class="title--small">
-			<?php
-			$gns_theme_comment_count = get_comments_number();
-			if ( '1' === $gns_theme_comment_count ) {
-				printf(
-					/* translators: 1: title. */
-					esc_html__( 'One thought on &ldquo;%1$s&rdquo;', 'gns-theme' ),
-					'<span>' . get_the_title() . '</span>'
-				);
-			} else {
-				printf( // WPCS: XSS OK.
-					/* translators: 1: comment count number, 2: title. */
-					esc_html( _nx( '%1$s thought on &ldquo;%2$s&rdquo;', '%1$s thoughts on &ldquo;%2$s&rdquo;', $gns_theme_comment_count, 'comments title', 'gns-theme' ) ),
-					number_format_i18n( $gns_theme_comment_count ),
-					'<span>' . get_the_title() . '</span>'
-				);
-			}
-			?>
+			<?php comment_form_title() ?>
 		</h3><!-- .comments-title -->
-
         <div class="comments__form">
-            <form action="">
-                <img src="../assets/images/noavatar92.svg" alt="" class="user-img">
-                <label for="name">
-                    <input type="text" id="name" placeholder="Имя">
-                </label>
-                <textarea name="" id="" cols="30" rows="10"
-                          placeholder="Комментарий"></textarea>
-                <button type="submit" class="button--secondary button--green text--14">
-                    отправить
-                </button>
-            </form>
-        <?php comment_form();?>
-        </div>
-        <div class="comments__messages">
-            <div class="comments--message">
-                <img src="../assets/images/noavatar92.svg" alt="" class="user-img">
-                <p class="message--head text">
-                    <label class="user-name">Петя Петрович</label>
-                    <label class="message-time">18.05, 12:22</label>
-                </p>
-                <p class="message-text text">
-                    В апреле 2018 года я сдал свою Киа Сид по отзывной кампании в салон
-                    официального дилера.
-                    Там ее починили, сломали и снова починили. Я потерял немного времени, но
-                    зато ничего за
-                    это не платил. Пока машину чинили, ездил на подменном автомобиле от салона.
-                </p>
-                <button class="message-answer text">ОТВЕТИТЬ</button>
-            </div>
-            <div class="comments--message">
-                <img src="../assets/images/noavatar92.svg" alt="" class="user-img">
-                <p class="message--head text">
-                    <label class="user-name">Иван Гамаз</label>
-                    <label class="message-time">18.05, 12:22</label>
-                </p>
-                <p class="message-text text">
-                    В апреле 2018 года я сдал свою Киа Сид по отзывной кампании в салон
-                    официального дилера.
-                    Там ее починили, сломали и снова починили. Я потерял немного времени, но
-                    зато ничего за
-                    это не платил. Пока машину чинили, ездил на подменном автомобиле от салона.
-                </p>
-                <button class="message-answer text">ОТВЕТИТЬ</button>
-                <div class="comments--message comments--message--answer">
-                    <img src="../assets/images/noavatar92.svg" alt="" class="user-img">
-                    <p class="message--head text">
-                        <label class="user-name">Диана Шуригина</label>
-                        <label class="message-time">18.05, 12:22</label>
-                    </p>
-                    <p class="message-text text">
-                        Я не знаю эту историю, могу лишь предполагать. За все в этой жизни нам
-                        приходится
-                        платить. Если она действительно такая коварная, что сначала согласилась
-                        на близость
-                        с
-                        молодым человеком, а затем заявила, что этого не хотела, ей за это
-                        воздастся
-                    </p>
-                    <button class="message-answer text">ОТВЕТИТЬ</button>
-                </div>
-            </div>
+        <?php comment_form([
+                'fields' => [
+                    'author' => '<label for="author">
+                    <input id="author" name="author" placeholder="'. __( 'Name' ) . ( $req ? '*' : '' ) .'" type="text" value="' . esc_attr( $commenter['comment_author'] ) . '" size="30"' . $aria_req . ' /></label>',
+                    'email'  => '<label for="email">
+<input id="email" name="email" placeholder="' . __( 'Email' ) . ( $req ? '*' : '' ) .
+                        '" type="text" value="' . esc_attr(  $commenter['comment_author_email'] ) . '" size="30"' . $aria_req . ' /></label>',
+//                    'url'    => '<label for="url"><input id="url" name="url" placeholder="' . __( 'Website' ) . '" type="text" value="' . esc_attr( $commenter['comment_author_url'] ) . '" size="30" /></label>',
+//                    'cookies' => ''
+                ],
+            'comment_field' => '<textarea id="comment" name="comment" cols="45" rows="8" aria-required="true" placeholder="' . _x( 'Comment', 'noun' ) . '"></textarea>',
+            'submit_button' => '<input name="%1$s" type="submit" id="%2$s" class="%3$s button--secondary button--green text--14" value="%4$s" />',
+            'title_reply' => ''
+        ]);?>
         </div>
 		<?php the_comments_navigation(); ?>
-
-		<ol class="comment-list">
+        <?php the_comments_pagination(); ?>
+    <div class="comments__messages">
 			<?php
 			wp_list_comments( array(
-				'style'      => 'ol',
-				'short_ping' => true,
+				'style'      => 'div',
+//				'short_ping' => true,
+//                'per_page' => 1,
+                'callback' => 'mytheme_comment'
 			) );
 			?>
-		</ol><!-- .comment-list -->
-
+    </div><!-- .comment-list -->
+        <?php the_comments_pagination(); ?>
 		<?php
 		the_comments_navigation();
 

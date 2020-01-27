@@ -10,7 +10,7 @@ the_post();
         <div class="wrapper">
             <div class="section__content">
                 <h3 class="text--18">
-                    Главная / Врачи / <span class="cell-for-text">Киркилевский Станислав</span>
+                    <?php the_breadcrumb() ?>
                 </h3>
             </div>
             <div class="doc-presents doc-presents--main">

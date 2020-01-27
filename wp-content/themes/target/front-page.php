@@ -176,19 +176,20 @@ get_header();
                                 the_post_thumbnail();
                             } ?>
                         </div>
-                        <div class="link-box__text">
-                            <h2 class="text--20">
-                                <?php  the_title(); ?>
-                            </h2>
-                            <p class="text--16">
-                                <?php the_excerpt() ?>
-                            </p>
-                        </div>
-                        <div class="link-box__footer">
-                            <p class="link-box-date">
-                                <?php the_date(); ?>
-                            </p>
-                            <img src="assets/images/arrow-right.svg" alt="">
+                        <div class="link-box__content">
+                            <div class="link-box__text">
+                                <h2 class="text--20">
+                                    <?php  the_title(); ?>
+                                </h2>
+                                <p class="text--16">
+                                    <?php the_excerpt() ?>
+                                </p>
+                            </div>
+                            <div class="link-box__footer">
+                                <p class="link-box-date">
+                                    <?php the_date(); ?>
+                                </p>
+                            </div>
                         </div>
                     </a>
                 <?php endwhile; ?>

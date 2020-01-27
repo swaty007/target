@@ -56,7 +56,6 @@
                     <li class="nav__item">
                         <div class="nav__link link--menu">
                             Услуги
-                            <img src="../assets/images/fe-arrow-down.svg" alt="">
                         </div>
                         <div class="link__menu">
                             <div class="link__menu-item menu--treatment">
@@ -122,12 +121,12 @@
 </nav>
 <main class="content">
     <section class="section section--blog--list">
-        <div class="wrapper">
+        <div class="wrapper" style="background-image: url('../assets/images/blog-bg.svg')">
             <h3 class="text--18">
                 Главная / Блог /
                 <span class="cell-for-text"> Таргетная терапия — прицельный удар по болезни</span>
             </h3>
-            <div class="wrapper-920-left">
+            <div class="wrapper-920-left navigation">
                 <h1>
                     Блог
                 </h1>
@@ -136,7 +135,8 @@
                         <div class="image-box">
                             <a class="link-box__image" href=""
                                style="background-image:
-                           url('../assets/images/image-1.png')"></a>
+                           url('../assets/images/image-1.png')">
+                            </a>
                         </div>
                         <div class="content-box">
                             <h5 class="link-box-date">
@@ -150,7 +150,6 @@
                             </p>
                             <a class="button" href="">
                                 Читать статью
-                                <img src="../assets/images/arrow-right.svg" alt="">
                             </a>
                         </div>
                     </div>
@@ -172,11 +171,29 @@
                             </p>
                             <a class="button" href="">
                                 Читать статью
-                                <img src="../assets/images/arrow-right.svg" alt="">
                             </a>
                         </div>
                     </div>
                 </div>
+                <!--<div class="pagination-nav">
+                    <div class="pagination-nav__item prev-btn">Назад</div>
+                    <div class="pagination-nav__item active">1</div>
+                    <div class="pagination-nav__item">2</div>
+                    <div class="pagination-nav__item">3</div>
+                    <div class="pagination-nav__item">...</div>
+                    <div class="pagination-nav__item">8</div>
+                    <div class="pagination-nav__item">9</div>
+                    <div class="pagination-nav__item next-btn">Вперед</div>
+                </div>-->
+                <nav class="navigation pagination" role="navigation" aria-label="Записи">
+                    <h2 class="screen-reader-text">Навигация по записям</h2>
+                    <div class="nav-links">
+                        <a class="prev page-numbers" href="http://target.infinitum.tech/blog/">Назад</a>
+                        <span aria-current="page" class="page-numbers current">1</span>
+                        <a class="page-numbers" href="http://target.infinitum.tech/blog/page/2/">2</a>
+                        <a class="next page-numbers" href="http://target.infinitum.tech/blog/page/2/">Далее</a>
+                    </div>
+                </nav>
             </div>
         </div>
     </section>
@@ -262,4 +279,7 @@
     </div>
 </footer>
 </body>
+<script src="../assets/js/jquery.min.js"></script>
+<script src="../assets/js/slick.min.js"></script>
+<script src="../assets/js/main.js"></script>
 </html>

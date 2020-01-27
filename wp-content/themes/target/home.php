@@ -10,8 +10,7 @@ get_header();
         <section class="section section--blog--list">
             <div class="wrapper">
                 <h3 class="text--18">
-                    Главная / Блог /
-                    <span class="cell-for-text"> Таргетная терапия — прицельный удар по болезни</span>
+                    <?php the_breadcrumb() ?>
                 </h3>
                 <div class="wrapper-920-left">
                     <h1>
@@ -38,11 +37,13 @@ get_header();
                                     </p>
                                     <a class="button" href="<?php the_permalink();?>">
                                         Читать статью
-                                        <img src="../assets/images/arrow-right.svg" alt="">
                                     </a>
                                 </div>
                             </div>
-                        <?php endwhile; ?>
+                        <?php endwhile; the_posts_pagination([
+//                                'prev_text'          => '<i class="fa fa-angle-double-left"></i>',
+//                            'next_text'          => '<i class="fa fa-angle-double-right"></i>'
+                        ]); ?>
                     </div>
                 </div>
             </div>

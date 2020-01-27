@@ -20,7 +20,7 @@ body {
   background-color: #ffffff;
   font-family: 'Roboto', sans-serif;
   position: relative;
-  min-width: 260px;
+  min-width: 300px;
   margin: 0;
 
   &.overflow-hidden {
@@ -128,10 +128,11 @@ body {
     box-sizing: border-box;
     border-radius: 4px;
     text-align: center;
-    min-height: 46px;
+    line-height: 44px;
     width: 100%;
     max-width: 210px;
     background: #13AB67;
+    cursor: pointer;
     border: 2px solid #FFFFFF;
 
     &:hover {
@@ -237,10 +238,12 @@ body {
   padding: 37px 10px;
   background: #00A863;
   position: relative;
+  transition: 0.3s;
 
   &.nav--transparent {
     position: absolute;
     background-color: transparent;
+    transition: 0.3s;
   }
 
   .container-for-move {
@@ -248,6 +251,17 @@ body {
     max-width: 820px;
     width: 100%;
   }
+
+
+  &.sticky{
+    position: fixed;
+    top: 0;
+    background: #00A863;
+    box-shadow: 0 10px 10px rgba(33, 120, 84, 0.36);
+    z-index: 200;
+    transition: 0.3s;
+  }
+
 
   &__list {
     padding: 0;
@@ -545,6 +559,11 @@ body {
   &--blog--list {
     padding: 39px 10px 109px;
 
+    .wrapper {
+      background-repeat: no-repeat;
+      background-position: right top, top right;
+    }
+
     h3 {
       text-transform: none;
       color: #00A863;
@@ -595,6 +614,7 @@ body {
           padding: 39px 10px 46px 39px;
           position: relative;
           width: 100%;
+
           h5.link-box-date {
             font-size: 16px;
             line-height: 30px;
@@ -614,7 +634,7 @@ body {
             max-width: 466px;
           }
 
-          .button{
+          .button {
             font-size: 14px;
             line-height: 24px;
             letter-spacing: 0.05em;
@@ -623,10 +643,17 @@ body {
             position: absolute;
             bottom: 49px;
             text-decoration: none;
-            img {
+
+            &:after {
+              content: '';
+              background-image: url('../images/arrow-right.svg');
+              background-size: 31.87px 13.31px;
+              display: block;
               width: 31.87px;
               height: 13.31px;
-              top: 1px;
+              position: absolute;
+              right: -35px;
+              top: 4px;
             }
           }
         }
@@ -698,7 +725,9 @@ body {
       margin-bottom: 39px;
     }
   }
-
+  iframe {
+    width: 100%;
+  }
   .large-text-img {
     h3 {
       margin-bottom: 39px;
@@ -709,12 +738,13 @@ body {
     padding: 40px 15px 150px;
     min-height: 509px;
 
-    h3.text--18 {
+    h3,
+    .text--18 {
       margin: 0;
       text-transform: none;
       color: #00A863;
       max-width: none;
-
+      text-decoration: none;
       .cell-for-text {
         color: #AEAEAE;
       }
@@ -839,6 +869,82 @@ body {
     min-height: 399px;
     background: #E3E3E3;
     margin-bottom: 37px;
+  }
+
+  &--blog--list {
+    h1 {
+      max-width: 700px;
+    }
+
+    .section--blog-item {
+      padding: 0;
+
+      .blog-date {
+        font-size: 18px;
+        line-height: 30px;
+        color: #ACACAC;
+        padding-left: 31px;
+        position: relative;
+        margin-bottom: 37px;
+
+        &:before {
+          content: url("../images/calendar-alt.svg");
+          width: 17px;
+          height: 19px;
+          left: 0;
+          display: block;
+          position: absolute;
+        }
+      }
+
+      .section--large-text {
+        img {
+          width: 100%;
+          height: auto;
+        }
+
+        h2, h4 {
+          font-weight: normal
+        }
+
+        h2 {
+          margin-top: 0;
+        }
+
+        h4 {
+          font-size: 20px;
+          margin-bottom: 19px;
+        }
+
+        a {
+          color: #00A863;
+          text-decoration: none;
+        }
+
+        h5 {
+          font-weight: bold;
+          font-size: 16px;
+          margin: 40px 0 0;
+        }
+      }
+
+      ul {
+        li {
+          margin-bottom: 10px;
+        }
+
+        margin-bottom: 45px;
+      }
+    }
+
+    &.blog--list--item {
+      .content-link-box {
+        .link-box {
+          max-width: 350px;
+          margin-bottom: 40px;
+        }
+      }
+    }
   }
 }
 
@@ -1322,6 +1428,15 @@ body {
         border: none;
         background-color: transparent;
         padding: 0;
+        cursor: pointer;
+        text-decoration: none;
+        text-transform: uppercase;
+
+        .text {
+          text-decoration: none;
+          text-transform: uppercase;
+        }
+
       }
 
       &--answer {
@@ -1368,7 +1483,7 @@ body {
   .doc-text {
     max-width: 345px;
     width: 100%;
-    margin: 0 auto;
+    margin: 0 auto 0 60px;
     position: relative;
     top: -40px;
 
@@ -1708,10 +1823,19 @@ body {
     display: flex;
     justify-content: space-between;
 
+    .link-box__content{
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      height: 100%
+    }
+
     .link-box {
       box-shadow: 0 4px 70px rgba(146, 188, 211, 0.2);
       text-decoration: none;
       color: #1E1E1E;
+      display: flex;
+      flex-direction: column;
 
       &__image {
         background: #E1E1E1;
@@ -1804,6 +1928,51 @@ body {
       max-width: 540px;
     }
   }
+}
+
+.pagination {
+
+  .nav-links {
+    display: flex;
+    justify-content: space-between;
+    width: fit-content;
+    margin-left: auto;
+    position: relative;
+    z-index: 15;
+
+    .page-numbers {
+      font-size: 14px;
+      color: #5A5A5A;
+      background: #FFFFFF;
+      border: 1px solid #EDEDED;
+      min-height: 40px;
+      min-width: 40px;
+      line-height: 40px;
+      text-align: center;
+      cursor: pointer;
+      transition: 0.3s;
+      text-decoration: none;
+
+      &.prev {
+        min-width: 90px
+      }
+
+      &.next {
+        min-width: 90px
+      }
+
+      &.active {
+        border-color: #00A863;
+      }
+
+      &:hover {
+        transition: 0.3s;
+        color: #00A863;
+      }
+    }
+
+  }
+
 }
 
 //info-box
@@ -2033,6 +2202,41 @@ footer {
 }
 
 
+//Modal
+
+.modal {
+  .modal-dialog{
+    .modal-content{
+      .modal-body {
+        padding: 30px 50px;
+        h5.modal-title{
+          font-size: 28px;
+          line-height: 60px;
+          color: #1E1E1E;
+          margin: 0 0 28px;
+        }
+        input {
+          background: #FFFFFF;
+          border: 1px solid #CACACA;
+          box-sizing: border-box;
+          border-radius: 3px;
+          font-size: 16px;
+          padding: 9px 20px ;
+          margin-bottom: 16px;
+          width: 100%;
+          &::placeholder{
+            color: #CACACA;
+          }
+        }
+        .button--primary{
+          margin-top: 35px;
+          max-width: 291px;
+        }
+      }
+    }
+  }
+}
+
 //Media
 
 @media (max-width: 1070px) {
@@ -2052,7 +2256,7 @@ footer {
       max-width: 153px;
       font-size: 12px;
       min-height: auto;
-      height: 36px;
+      line-height: 36px;
     }
 
     .item__address {
@@ -2651,6 +2855,16 @@ footer {
 
 }
 
+@media (max-width: 700px) {
+  .section--blog--list {
+    .blog-list {
+      .content-image-box {
+        flex-wrap: wrap;
+      }
+    }
+  }
+}
+
 @media (max-width: 600px) {
   header {
     .button {
@@ -2701,7 +2915,8 @@ footer {
 
     &__content {
       h1, h2, h3, h4, h5, p {
-        text-align: left !important
+        text-align: left !important;
+        margin: 0 auto 14px 0 !important;
       }
     }
 
@@ -2742,7 +2957,18 @@ footer {
       }
     }
   }
+  .section--blog--list {
+    .wrapper {
+      background-image: none !important;
+    }
 
+    .section--blog-item {
+      .section--large-text img {
+        width: calc(100% + 20px);
+        margin-left: -10px;
+      }
+    }
+  }
   .cancel-types {
     &__item {
       max-width: 166px;
@@ -2842,6 +3068,41 @@ footer {
     }
   }
 
+  .section--blog--list {
+    .blog-list {
+      .content-image-box {
+        .image-box {
+          max-width: none;
+          max-height: none;
+          .link-box__image {
+            max-width: none;
+          }
+        }
+        .content-box {
+          padding: 20px 18px 40px;
+          h5.link-box-date{
+            margin-bottom: 9px;
+          }
+          p{
+            margin-bottom: 60px;
+          }
+        }
+      }
+    }
+  }
+  .section--blog--list {
+    .blog-list {
+      .content-image-box {
+        .image-box {
+
+          .link-box__image {
+            max-width: none;
+          }
+        }
+      }
+    }
+  }
+
   .gallery {
     &__nav {
       justify-content: space-between;
@@ -2911,6 +3172,7 @@ footer {
       &__item {
         margin-left: auto;
         margin-right: auto;
+        width: 100%;
       }
     }
   }

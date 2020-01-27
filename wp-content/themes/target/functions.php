@@ -98,6 +98,214 @@ function get_url_from_img_id($id)
     return wp_get_attachment_image_url($id,'full');
 }
 
+//comment form
+add_filter('comment_form_fields', 'kama_reorder_comment_fields' );
+function kama_reorder_comment_fields( $fields ){
+    // die(print_r( $fields )); // посмотрим какие поля есть
+
+    $new_fields = array(); // сюда соберем поля в новом порядке
+    $myorder = array('author','email','url','comment'); // нужный порядок
+
+    foreach( $myorder as $key ){
+        $new_fields[ $key ] = $fields[ $key ];
+        unset( $fields[ $key ] );
+    }
+
+    // если остались еще какие-то поля добавим их в конец
+    if( $fields )
+        foreach( $fields as $key => $val )
+            $new_fields[ $key ] = $val;
+
+    return $new_fields;
+}
+
+//comments template
+function mytheme_comment( $comment, $args, $depth ) {
+    if ( 'div' === $args['style'] ) {
+        $tag       = 'div';
+        $add_below = 'comment';
+    } else {
+        $tag       = 'li';
+        $add_below = 'div-comment';
+    }
+
+    $classes = ' ' . comment_class( $depth > 1 ? 'comments--message comments--message--answer' : 'comments--message', null, null, false );
+    ?>
+
+    <<?php echo $tag, $classes; ?> id="comment-<?php comment_ID() ?>">
+    <?php if ( 'div' != $args['style'] ) { ?>
+        <div id="div-comment-<?php comment_ID() ?>" class="comments--message"><?php
+    } ?>
+<!--    <div class="comment-author vcard">-->
+        <?php
+        if ( $args['avatar_size'] != 0 ) {
+            echo get_avatar( $comment, $args['avatar_size'],'', 'avatar', ['class' => 'user-img'] );
+        }
+//        printf(
+//            __( '<cite class="fn">%s</cite> <span class="says">says:</span>' ),
+//            get_comment_author_link()
+//        );
+        ?>
+<!--    </div>-->
+
+    <?php if ( $comment->comment_approved == '0' ) { ?>
+        <em class="comment-awaiting-moderation">
+            <?php _e( 'Your comment is awaiting moderation.' ); ?>
+        </em><br/>
+    <?php } ?>
+    <p class="message--head text">
+        <label class="user-name">
+            <?php printf(get_comment_author_link());?>
+        </label>
+        <label class="message-time"><?php
+            printf(
+                __( '%1$s %2$s' ),
+                get_comment_date(),
+                get_comment_time()
+            ); ?>
+            <?php edit_comment_link( __( '(Edit)' ), '  ', '' ); ?></label>
+    </p>
+<!--    <div class="comment-meta commentmetadata">-->
+<!--        <a href="--><?php //echo htmlspecialchars( get_comment_link( $comment->comment_ID ) ); ?><!--">-->
+<!--            --><?php
+//            printf(
+//                __( '%1$s at %2$s' ),
+//                get_comment_date(),
+//                get_comment_time()
+//            ); ?>
+<!--        </a>-->
+<!--        --><?php //edit_comment_link( __( '(Edit)' ), '  ', '' ); ?>
+<!--    </div>-->
+
+    <p class="message-text text">
+        <?= htmlspecialchars(get_comment_text()); ?>
+    </p>
+
+
+<!--    <div class="reply">-->
+        <?php
+        comment_reply_link(
+            array_merge(
+                $args,
+                array(
+                    'add_below' => $add_below,
+                    'depth'     => $depth,
+                    'max_depth' => $args['max_depth']
+                )
+            )
+        ); ?>
+<!--    </div>-->
+
+    <?php if ( 'div' != $args['style'] ) { ?>
+        </div>
+    <?php }
+}
+add_filter('comment_reply_link', 'replace_reply_link_class');
+function replace_reply_link_class($class){
+    $class = str_replace("class='comment-reply-link", "class='message-answer text", $class);
+    return $class;
+}
+
+
+function the_breadcrumb(){
+
+    // получаем номер текущей страницы
+    $pageNum = ( get_query_var('paged') ) ? get_query_var('paged') : 1;
+
+    $separator = ' / '; //  »
+//    global $post;
+//    if ( $post->post_parent ) {
+//        $parent_id  = $post->post_parent; // присвоим в переменную
+//        $breadcrumbs = array();
+//        while ( $parent_id ) {
+//            $page = get_page( $parent_id );
+//            $breadcrumbs[] = '<a href="' . get_permalink( $page->ID ) . '">' . get_the_title( $page->ID ) . '</a>';
+//            $parent_id = $page->post_parent;
+//        }
+//        echo join( $separator, array_reverse( $breadcrumbs ) ) . $separator;
+//    }
+    // если главная страница сайта
+//    if( is_tax( $taxonomy_name ) ) {
+//        single_term_title();
+//    }
+    if( is_front_page() ){
+
+        if( $pageNum > 1 ) {
+            echo '<a class="text--18" href="' . site_url() . '">Главная</a>' . $separator . $pageNum . '-я страница';
+        } else {
+            echo 'Вы находитесь на главной странице';
+        }
+
+    } else { // не главная
+
+        echo '<a class="text--18" href="' . site_url() . '">Главная</a>' . $separator;
+
+
+        if( is_single() ){ // записи
+            if (empty(get_the_category_list())) {
+//                get_post_type();
+//                var_dump(get_post_type());
+//                the_title();
+//                the_category(', ');
+//                switch (get_post_type()) {
+//                    case 'cancer':
+//                        break;
+//                }
+            } else {
+                the_category(', ');echo $separator;
+            }
+             the_title();
+
+        } elseif ( is_page() ){ // страницы WordPress
+
+            echo '<span class="cell-for-text">';the_title();echo'</span>';
+
+        } elseif ( is_category() ) {
+
+            echo '<span class="cell-for-text">';single_cat_title();echo'</span>';
+
+        } elseif ( is_home() ) {
+
+            echo '<span class="cell-for-text">';single_post_title();echo'</span>';
+
+        } elseif( is_tag() ) {
+
+            echo '<span class="cell-for-text">';single_tag_title();echo'</span>';
+
+        } elseif ( is_day() ) { // архивы (по дням)
+
+            echo '<a href="' . get_year_link(get_the_time('Y')) . '">' . get_the_time('Y') . '</a>' . $separator;
+            echo '<a href="' . get_month_link(get_the_time('Y'),get_the_time('m')) . '">' . get_the_time('F') . '</a>' . $separator;
+            echo get_the_time('d');
+
+        } elseif ( is_month() ) { // архивы (по месяцам)
+
+            echo '<a href="' . get_year_link(get_the_time('Y')) . '">' . get_the_time('Y') . '</a>' . $separator;
+            echo get_the_time('F');
+
+        } elseif ( is_year() ) { // архивы (по годам)
+
+            echo get_the_time('Y');
+
+        } elseif ( is_author() ) { // архивы по авторам
+
+            global $author;
+            $userdata = get_userdata($author);
+            echo 'Опубликовал(а) ' . $userdata->display_name;
+
+        } elseif ( is_404() ) { // если страницы не существует
+
+            echo 'Ошибка 404';
+
+        }
+
+        if ( $pageNum > 1 ) { // номер текущей страницы
+            echo ' (' . $pageNum . '-я страница)';
+        }
+
+    }
+
+}
 
 
 add_action( 'wp_ajax_nopriv_buy_tire', 'do_buy_tire' );

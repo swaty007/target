@@ -11,7 +11,7 @@ the_post();
             <div class="wrapper">
                 <div class="section__content">
                     <h3 class="text--18">
-                        Главная / Врачи
+                        <?php the_breadcrumb() ?>
                     </h3>
                     <h1 class="text--48">
                         <?php the_title(); ?>

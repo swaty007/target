@@ -126,3 +126,29 @@ $( '.toggle-item__header' ).click( function () {
 $(window).scroll(function () {
     $('body').scrollTop();
 });
+
+
+//Pagination
+
+$('.page-numbers').on('click', function () {
+    if($(this).hasClass('active')) {
+        event.preventDefault();
+    } else {
+        $('.page-numbers').removeClass('active');
+        $(this).addClass('active');
+    }
+});
+
+//
+window.onscroll = function() {myFunction()};
+
+let  header = document.getElementById("nav");
+let  sticky = header.offsetTop;
+
+function myFunction() {
+    if (window.pageYOffset > sticky) {
+        header.classList.add("sticky");
+    } else {
+        header.classList.remove("sticky");
+    }
+}
