@@ -1,4 +1,4 @@
-const themeLocation = "./wp-content/themes/target/";
+const themeLocation = "./wp-content/themes/target-clinic/";
 const urlToPreview = "http://target.local";
 const paths = {
   php: {

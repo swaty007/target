@@ -7,7 +7,7 @@ get_header();
 
 <main class="content">
 
-    <section class="section content--bg-img title-block" style="background-image:url(<?php the_post_thumbnail_url()?>">
+    <section class="section content--bg-img title-block" style="background-image:url(<?php the_post_thumbnail_url()?>)">
         <div class="wrapper">
             <div class="section__content">
                 <h3 class="text--18">
