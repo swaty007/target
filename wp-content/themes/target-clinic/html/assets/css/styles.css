@@ -52,6 +52,7 @@ body.overflow-hidden {
   padding: 0;
   font-style: normal;
   font-weight: normal;
+  color: inherit;
 }
 
 .title, h1 {
@@ -188,10 +189,13 @@ body.overflow-hidden {
 
 .nav {
   width: 100%;
-  padding: 37px 10px;
+  padding: 25px 10px;
   background: #00A863;
   position: relative;
   transition: 0.3s;
+}
+.nav .wrapper.flex-block {
+  align-items: center;
 }
 .nav.nav--transparent {
   position: absolute;
@@ -210,6 +214,7 @@ body.overflow-hidden {
   box-shadow: 0 10px 10px rgba(33, 120, 84, 0.36);
   z-index: 200;
   transition: 0.3s;
+  padding: 15px 10px;
 }
 .nav__list {
   padding: 0;
@@ -310,14 +315,10 @@ body.overflow-hidden {
 
 .section.title-block {
   min-height: 810px;
-  background-image: url("/target/assets/images/main_00000.svg");
   padding: 102px 10px 0;
 }
 .section.title-block .wrapper {
   height: 100%;
-}
-.section.title-block .item__address img {
-  top: 6px;
 }
 .section .section__content {
   color: #ffffff;
@@ -438,6 +439,8 @@ body.overflow-hidden {
 .section--blog .button {
   display: block;
   margin: 40px auto 0;
+  text-decoration: none;
+  cursor: pointer;
 }
 .section--blog--list {
   padding: 39px 10px 109px;
@@ -518,14 +521,15 @@ body.overflow-hidden {
 }
 .section--blog--list .blog-list .content-image-box .content-box .button:after {
   content: "";
-  background-image: url("../images/arrow-right.svg");
+  background-image: url(./img/arrow-right.svg);
   background-size: 31.87px 13.31px;
   display: block;
   width: 31.87px;
   height: 13.31px;
   position: absolute;
   right: -35px;
-  top: 4px;
+  top: 50%;
+  transform: translateY(-50%);
 }
 .section.title--about .section__content h3 {
   margin-top: 39px;
@@ -739,29 +743,12 @@ body.overflow-hidden {
 }
 
 /*Enter a unique class and set a picture or property for it*/
-.section.bg-img-services {
-  background: linear-gradient(103.53deg, #EEEEEE 24.58%, rgba(227, 227, 227, 0) 88.57%), url("../../assets/images/bed.png");
-}
-.section.bg-img-chemotherapy {
-  background: linear-gradient(103.53deg, #EEEEEE 24.58%, rgba(227, 227, 227, 0) 88.57%), url("../../assets/images/chemtherap.png");
-}
-.section.bg-img-molecular-pro {
-  background: linear-gradient(103.53deg, #EEEEEE 24.58%, rgba(227, 227, 227, 0) 88.57%), url("../../assets/images/molecular-pro.png");
-}
-.section.bg-img-cancer-treatment {
-  background: linear-gradient(88.91deg, #E3E3E3 15.75%, rgba(196, 196, 196, 0) 97.47%), url("../../assets/images/cancer-treatment.png");
-}
 .section.bg-img-treatment {
-  background: linear-gradient(276.84deg, rgba(255, 255, 255, 0) 36.89%, #E3E3E3 47.3%), url("../../assets/images/thinkst.png");
   background-size: contain !important;
   background-position: right !important;
   background-repeat: no-repeat;
 }
-.section.bg-img-contacts {
-  background: linear-gradient(103.53deg, #EEEEEE 24.58%, rgba(227, 227, 227, 0) 88.57%), url("../../assets/images/contacts-bg.png");
-}
 .section.bg-img-faq {
-  background: linear-gradient(90.53deg, #EEEEEE 45.58%, rgba(227, 227, 227, 0) 82.57%), url(../../assets/images/faq.jpg);
   background-position: right !important;
   background-size: contain !important;
 }
@@ -963,7 +950,6 @@ body.overflow-hidden {
 .contact-info .address-block .item__address img {
   max-width: 19px;
   width: 100%;
-  top: 5px;
 }
 .contact-info .phones {
   margin-bottom: 34px;
@@ -983,7 +969,8 @@ body.overflow-hidden {
   position: absolute;
   width: 17px;
   height: 17px;
-  top: 0;
+  top: 50%;
+  transform: translateY(-50%);
   left: 0;
 }
 
@@ -1454,6 +1441,19 @@ body.overflow-hidden {
 .content-image-box.content-link-box .link-box__footer .link-box-date {
   font-size: 14px;
   line-height: 28px;
+  position: relative;
+}
+.content-image-box.content-link-box .link-box__footer .link-box-date:after {
+  content: "";
+  background-image: url(./img/fe-arrow-down.svg);
+  background-size: 31.87px 20.31px;
+  display: block;
+  width: 31.87px;
+  height: 20.31px;
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
 }
 .content-image-box.content-link-box .link-box__footer img {
   position: absolute;
@@ -1585,6 +1585,8 @@ body.overflow-hidden {
   max-width: 16px;
   max-height: 16px;
   left: 0;
+  top: 50%;
+  transform: translateY(-50%);
 }
 .item__address .link {
   color: #2B83B4;
@@ -1618,7 +1620,7 @@ body.overflow-hidden {
 }
 .content-toggle__item .toggle-item__header:before {
   content: "";
-  background-image: url("../images/fe-arrow-down.svg");
+  background-image: url(./img/arrow-right.svg);
   transition: 0.4s;
   background-size: 100%;
   display: block;
@@ -1675,9 +1677,6 @@ footer .footer-content__item.item--info {
 }
 footer .footer-content__item.item--info .item__address {
   margin-bottom: 6px;
-}
-footer .footer-content__item.item--info .item__address img {
-  top: 3px;
 }
 footer .footer-content__item.item--info p {
   font-size: 14px;
@@ -1922,7 +1921,6 @@ footer .footer-content__item .list-title {
     width: 31px;
     height: 26px;
     position: relative;
-    z-index: 30;
     margin-left: auto;
     cursor: pointer;
     z-index: 50;
@@ -2121,7 +2119,6 @@ footer .footer-content__item .list-title {
     height: auto;
   }
   .section.bg-img-faq {
-    background: linear-gradient(90.53deg, #EEEEEE 12.58%, rgba(227, 227, 227, 0) 82.57%), url("../../assets/images/faq.jpg");
     background-size: cover !important;
     background-position: center !important;
   }
@@ -2363,6 +2360,7 @@ footer .footer-content__item .list-title {
 .gallery .slider .slick-next {
     display: block;
   }
+
   .info-box.info-box-w260 .info-box__item {
     margin-bottom: 47px;
   }

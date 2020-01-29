@@ -53,7 +53,7 @@ the_post();
                             </p>
                         </div>
                         <div class="large__img">
-                            <img src="../assets/images/headmas.png" alt="">
+                            <img src="<?php bloginfo('template_url'); ?>/img/headmas.png" alt="">
                         </div>
                     </div>
                 </div>
@@ -66,7 +66,7 @@ the_post();
                 <div class="info-box info-box--text flex-block">
                     <div class="info-box__item">
                         <div class="left-img-text">
-                            <img src="../assets/images/highhelp.svg" alt="">
+                            <img src="<?php bloginfo('template_url'); ?>/img/highhelp.svg" alt="">
                             <p class="title-img font-normal">
                                 Квалифицированная консультативная помощь онкологическим больным, в т.ч., предоставление
                                 услуги «иное мнение».
@@ -76,7 +76,7 @@ the_post();
                     </div>
                     <div class="info-box__item">
                         <div class="left-img-text">
-                            <img src="../assets/images/Group57.svg" alt="">
+                            <img src="<?php bloginfo('template_url'); ?>/img/Group57.svg" alt="">
                             <p class="title-img font-normal">
                                 На основе международных стандартов индивидуальный подбор наиболее современных схем и
                                 протоколов персонифицированного лечения.
@@ -85,7 +85,7 @@ the_post();
                     </div>
                     <div class="info-box__item">
                         <div class="left-img-text">
-                            <img src="../assets/images/btldrug.svg" alt="">
+                            <img src="<?php bloginfo('template_url'); ?>/img/btldrug.svg" alt="">
                             <p class="title-img font-normal">
                                 Проведение амбулаторного медикаментозного лечения, в частности, таргетной терапии,
                                 иммунотерапии, химиотерапии, инфузионной терапии, терапии сопровождения и др.
@@ -94,7 +94,7 @@ the_post();
                     </div>
                     <div class="info-box__item">
                         <div class="left-img-text">
-                            <img src="../assets/images/Grouphelp.svg" alt="">
+                            <img src="<?php bloginfo('template_url'); ?>/img/Grouphelp.svg" alt="">
                             <p class="title-img font-normal">
                                 Диспансерное наблюдение за онкологическими пациентами, независимо от того, в каком
                                 лечебном учреждении ранее проводилось их лечение.
@@ -110,21 +110,21 @@ the_post();
                     География наших пациентов
                 </h3>
                 <div class="map-group">
-                    <img src="../assets/images/map_ukraine.svg" class="map_ukraine" alt="">
+                    <img src="<?php bloginfo('template_url'); ?>/img/map_ukraine.svg" class="map_ukraine" alt="">
                     <div class="map-group__clients">
                         <h5 class="text map--title">
                             А также лечим пациентов из таких стран:
                         </h5>
                         <p>
-                            <img src="../assets/images/flag-italy.svg" alt="">
+                            <img src="<?php bloginfo('template_url'); ?>/img/flag-italy.svg" alt="">
                             Италия - 5 пациентов
                         </p>
                         <p>
-                            <img src="../assets/images/flag-greece.svg" alt="">
+                            <img src="<?php bloginfo('template_url'); ?>/img/flag-greece.svg" alt="">
                             Греция - 10 пациентов
                         </p>
                         <p>
-                            <img src="../assets/images/flag-russia.svg" alt="">
+                            <img src="<?php bloginfo('template_url'); ?>/img/flag-russia.svg" alt="">
                             Россия - 15 пациентов
                         </p>
                     </div>
@@ -139,7 +139,7 @@ the_post();
                 <div class="info-box info-box--text flex-block">
                     <div class="info-box__item">
                         <div class="top-img-text">
-                            <img src="../assets/images/help-heart.svg" alt="">
+                            <img src="<?php bloginfo('template_url'); ?>/img/help-heart.svg" alt="">
                             <p class="title-img font-normal">
                                 Искреннее желание помочь каждому пациенту.
                             </p>
@@ -147,7 +147,7 @@ the_post();
                     </div>
                     <div class="info-box__item">
                         <div class="top-img-text">
-                            <img src="../assets/images/microsc.svg" alt="">
+                            <img src="<?php bloginfo('template_url'); ?>/img/microsc.svg" alt="">
                             <p class="title-img font-normal">
                                 Только современные подходы к диагностике и лечению.
                             </p>
@@ -155,7 +155,7 @@ the_post();
                     </div>
                     <div class="info-box__item">
                         <div class="top-img-text">
-                            <img src="../assets/images/stars.svg" alt="">
+                            <img src="<?php bloginfo('template_url'); ?>/img/stars.svg" alt="">
                             <p class="title-img font-normal">
                                 Стремление к идеальному качеству услуг.
                             </p>
@@ -163,7 +163,7 @@ the_post();
                     </div>
                     <div class="info-box__item">
                         <div class="top-img-text">
-                            <img src="../assets/images/medcur.svg" alt="">
+                            <img src="<?php bloginfo('template_url'); ?>/img/medcur.svg" alt="">
                             <p class="title-img font-normal">
                                 Постоянное повышение квалификации сотрудников
                             </p>
@@ -184,28 +184,28 @@ the_post();
                         <div class="slider">
                             <div class="slick-horizontal">
                                 <div class="slick-item">
-                                    <img src="../assets/images/gal1.png" class="gallery-content__item" alt="">
+                                    <img src="<?php bloginfo('template_url'); ?>/img/gal1.png" class="gallery-content__item" alt="">
                                 </div>
                                 <div class="slick-item">
-                                    <img src="../assets/images/gal2.png" class="gallery-content__item" alt="">
+                                    <img src="<?php bloginfo('template_url'); ?>/img/gal2.png" class="gallery-content__item" alt="">
                                 </div>
                                 <div class="slick-item">
-                                    <img src="../assets/images/gal3.png" class="gallery-content__item" alt="">
+                                    <img src="<?php bloginfo('template_url'); ?>/img/gal3.png" class="gallery-content__item" alt="">
                                 </div>
                                 <div class="slick-item">
-                                    <img src="../assets/images/gal4.png" class="gallery-content__item" alt="">
+                                    <img src="<?php bloginfo('template_url'); ?>/img/gal4.png" class="gallery-content__item" alt="">
                                 </div>
                                 <div class="slick-item">
-                                    <img src="../assets/images/gal5.png" class="gallery-content__item" alt="">
+                                    <img src="<?php bloginfo('template_url'); ?>/img/gal5.png" class="gallery-content__item" alt="">
                                 </div>
                                 <div class="slick-item">
-                                    <img src="../assets/images/gal6.png" class="gallery-content__item" alt="">
+                                    <img src="<?php bloginfo('template_url'); ?>/img/gal6.png" class="gallery-content__item" alt="">
                                 </div>
                                 <div class="slick-item">
-                                    <img src="../assets/images/gal7.png" class="gallery-content__item" alt="">
+                                    <img src="<?php bloginfo('template_url'); ?>/img/gal7.png" class="gallery-content__item" alt="">
                                 </div>
                                 <div class="slick-item">
-                                    <img src="../assets/images/gal8.png" class="gallery-content__item" alt="">
+                                    <img src="<?php bloginfo('template_url'); ?>/img/gal8.png" class="gallery-content__item" alt="">
                                 </div>
                             </div>
                         </div>
@@ -214,28 +214,28 @@ the_post();
                         <div class="slider">
                             <div class="slick-horizontal">
                                 <div class="slick-item">
-                                    <img src="../assets/images/gal1.png" class="gallery-content__item" alt="">
+                                    <img src="<?php bloginfo('template_url'); ?>/img/gal1.png" class="gallery-content__item" alt="">
                                 </div>
                                 <div class="slick-item">
-                                    <img src="../assets/images/gal2.png" class="gallery-content__item" alt="">
+                                    <img src="<?php bloginfo('template_url'); ?>/img/gal2.png" class="gallery-content__item" alt="">
                                 </div>
                                 <div class="slick-item">
-                                    <img src="../assets/images/gal3.png" class="gallery-content__item" alt="">
+                                    <img src="<?php bloginfo('template_url'); ?>/img/gal3.png" class="gallery-content__item" alt="">
                                 </div>
                                 <div class="slick-item">
-                                    <img src="../assets/images/gal4.png" class="gallery-content__item" alt="">
+                                    <img src="<?php bloginfo('template_url'); ?>/img/gal4.png" class="gallery-content__item" alt="">
                                 </div>
                                 <div class="slick-item">
-                                    <img src="../assets/images/gal5.png" class="gallery-content__item" alt="">
+                                    <img src="<?php bloginfo('template_url'); ?>/img/gal5.png" class="gallery-content__item" alt="">
                                 </div>
                                 <div class="slick-item">
-                                    <img src="../assets/images/gal6.png" class="gallery-content__item" alt="">
+                                    <img src="<?php bloginfo('template_url'); ?>/img/gal6.png" class="gallery-content__item" alt="">
                                 </div>
                                 <div class="slick-item">
-                                    <img src="../assets/images/gal7.png" class="gallery-content__item" alt="">
+                                    <img src="<?php bloginfo('template_url'); ?>/img/gal7.png" class="gallery-content__item" alt="">
                                 </div>
                                 <div class="slick-item">
-                                    <img src="../assets/images/gal8.png" class="gallery-content__item" alt="">
+                                    <img src="<?php bloginfo('template_url'); ?>/img/gal8.png" class="gallery-content__item" alt="">
                                 </div>
                             </div>
                         </div>
@@ -244,28 +244,28 @@ the_post();
                         <div class="slider">
                             <div class="slick-horizontal">
                                 <div class="slick-item">
-                                    <img src="../assets/images/gal1.png" class="gallery-content__item" alt="">
+                                    <img src="<?php bloginfo('template_url'); ?>/img/gal1.png" class="gallery-content__item" alt="">
                                 </div>
                                 <div class="slick-item">
-                                    <img src="../assets/images/gal2.png" class="gallery-content__item" alt="">
+                                    <img src="<?php bloginfo('template_url'); ?>/img/gal2.png" class="gallery-content__item" alt="">
                                 </div>
                                 <div class="slick-item">
-                                    <img src="../assets/images/gal3.png" class="gallery-content__item" alt="">
+                                    <img src="<?php bloginfo('template_url'); ?>/img/gal3.png" class="gallery-content__item" alt="">
                                 </div>
                                 <div class="slick-item">
-                                    <img src="../assets/images/gal4.png" class="gallery-content__item" alt="">
+                                    <img src="<?php bloginfo('template_url'); ?>/img/gal4.png" class="gallery-content__item" alt="">
                                 </div>
                                 <div class="slick-item">
-                                    <img src="../assets/images/gal5.png" class="gallery-content__item" alt="">
+                                    <img src="<?php bloginfo('template_url'); ?>/img/gal5.png" class="gallery-content__item" alt="">
                                 </div>
                                 <div class="slick-item">
-                                    <img src="../assets/images/gal6.png" class="gallery-content__item" alt="">
+                                    <img src="<?php bloginfo('template_url'); ?>/img/gal6.png" class="gallery-content__item" alt="">
                                 </div>
                                 <div class="slick-item">
-                                    <img src="../assets/images/gal7.png" class="gallery-content__item" alt="">
+                                    <img src="<?php bloginfo('template_url'); ?>/img/gal7.png" class="gallery-content__item" alt="">
                                 </div>
                                 <div class="slick-item">
-                                    <img src="../assets/images/gal8.png" class="gallery-content__item" alt="">
+                                    <img src="<?php bloginfo('template_url'); ?>/img/gal8.png" class="gallery-content__item" alt="">
                                 </div>
                             </div>
                         </div>
@@ -274,28 +274,28 @@ the_post();
                         <div class="slider">
                             <div class="slick-horizontal">
                                 <div class="slick-item">
-                                    <img src="../assets/images/gal1.png" class="gallery-content__item" alt="">
+                                    <img src="<?php bloginfo('template_url'); ?>/img/gal1.png" class="gallery-content__item" alt="">
                                 </div>
                                 <div class="slick-item">
-                                    <img src="../assets/images/gal2.png" class="gallery-content__item" alt="">
+                                    <img src="<?php bloginfo('template_url'); ?>/img/gal2.png" class="gallery-content__item" alt="">
                                 </div>
                                 <div class="slick-item">
-                                    <img src="../assets/images/gal3.png" class="gallery-content__item" alt="">
+                                    <img src="<?php bloginfo('template_url'); ?>/img/gal3.png" class="gallery-content__item" alt="">
                                 </div>
                                 <div class="slick-item">
-                                    <img src="../assets/images/gal4.png" class="gallery-content__item" alt="">
+                                    <img src="<?php bloginfo('template_url'); ?>/img/gal4.png" class="gallery-content__item" alt="">
                                 </div>
                                 <div class="slick-item">
-                                    <img src="../assets/images/gal5.png" class="gallery-content__item" alt="">
+                                    <img src="<?php bloginfo('template_url'); ?>/img/gal5.png" class="gallery-content__item" alt="">
                                 </div>
                                 <div class="slick-item">
-                                    <img src="../assets/images/gal6.png" class="gallery-content__item" alt="">
+                                    <img src="<?php bloginfo('template_url'); ?>/img/gal6.png" class="gallery-content__item" alt="">
                                 </div>
                                 <div class="slick-item">
-                                    <img src="../assets/images/gal7.png" class="gallery-content__item" alt="">
+                                    <img src="<?php bloginfo('template_url'); ?>/img/gal7.png" class="gallery-content__item" alt="">
                                 </div>
                                 <div class="slick-item">
-                                    <img src="../assets/images/gal8.png" class="gallery-content__item" alt="">
+                                    <img src="<?php bloginfo('template_url'); ?>/img/gal8.png" class="gallery-content__item" alt="">
                                 </div>
                             </div>
                         </div>

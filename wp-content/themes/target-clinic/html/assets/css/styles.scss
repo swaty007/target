@@ -58,6 +58,7 @@ body {
   padding: 0;
   font-style: normal;
   font-weight: normal;
+  color: inherit;
 }
 
 .title, h1 {
@@ -235,10 +236,14 @@ body {
 
 .nav {
   width: 100%;
-  padding: 37px 10px;
+  padding: 25px 10px;
   background: #00A863;
   position: relative;
   transition: 0.3s;
+
+  .wrapper.flex-block{
+    align-items: center;
+  }
 
   &.nav--transparent {
     position: absolute;
@@ -260,6 +265,7 @@ body {
     box-shadow: 0 10px 10px rgba(33, 120, 84, 0.36);
     z-index: 200;
     transition: 0.3s;
+    padding: 15px 10px;
   }
 
 
@@ -380,7 +386,6 @@ body {
   &.title-block {
     //height: 100vh;
     min-height: 810px;
-    background-image: url("/target/assets/images/main_00000.svg");
     padding: 102px 10px 0;
 
     .wrapper {
@@ -388,7 +393,7 @@ body {
     }
 
     .item__address img {
-      top: 6px;
+      //top: 6px;
     }
 
   }
@@ -552,6 +557,8 @@ body {
     .button {
       display: block;
       margin: 40px auto 0;
+      text-decoration: none;
+      cursor: pointer;
     }
   }
 
@@ -646,14 +653,15 @@ body {
 
             &:after {
               content: '';
-              background-image: url('../images/arrow-right.svg');
+              background-image: url(./img/arrow-right.svg);
               background-size: 31.87px 13.31px;
               display: block;
               width: 31.87px;
               height: 13.31px;
               position: absolute;
               right: -35px;
-              top: 4px;
+              top: 50%;
+              transform: translateY(-50%);
             }
           }
         }
@@ -953,28 +961,18 @@ body {
 .section {
   &.bg-img- {
     &services {
-      background: linear-gradient(103.53deg, #EEEEEE 24.58%, rgba(227, 227, 227, 0) 88.57%),
-      url('../../assets/images/bed.png');
     }
 
     &chemotherapy {
-      background: linear-gradient(103.53deg, #EEEEEE 24.58%, rgba(227, 227, 227, 0) 88.57%),
-      url('../../assets/images/chemtherap.png');
     }
 
     &molecular-pro {
-      background: linear-gradient(103.53deg, #EEEEEE 24.58%, rgba(227, 227, 227, 0) 88.57%),
-      url('../../assets/images/molecular-pro.png');
     }
 
     &cancer-treatment {
-      background: linear-gradient(88.91deg, #E3E3E3 15.75%, rgba(196, 196, 196, 0) 97.47%),
-      url('../../assets/images/cancer-treatment.png');
     }
 
     &treatment {
-      background: linear-gradient(276.84deg, rgba(255, 255, 255, 0) 36.89%, #E3E3E3 47.3%),
-      url("../../assets/images/thinkst.png");
       background-size: contain !important;
       background-position: right !important;
       background-repeat: no-repeat;
@@ -982,13 +980,9 @@ body {
     }
 
     &contacts {
-      background: linear-gradient(103.53deg, #EEEEEE 24.58%, rgba(227, 227, 227, 0) 88.57%),
-      url('../../assets/images/contacts-bg.png');
     }
 
     &faq {
-      background: linear-gradient(90.53deg, #EEEEEE 45.58%, rgba(227, 227, 227, 0) 82.57%),
-      url(../../assets/images/faq.jpg);
       background-position: right !important;
       background-size: contain !important;
     }
@@ -1262,7 +1256,7 @@ body {
       img {
         max-width: 19px;
         width: 100%;
-        top: 5px;
+        //top: 5px;
       }
     }
   }
@@ -1285,7 +1279,8 @@ body {
         position: absolute;
         width: 17px;
         height: 17px;
-        top: 0;
+        top: 50%;
+        transform: translateY(-50%);
         left: 0;
       }
     }
@@ -1865,6 +1860,19 @@ body {
 
         .link-box-date {
           @include txt-size-14;
+          position: relative;
+          &:after{
+            content: "";
+            background-image: url(./img/fe-arrow-down.svg);
+            background-size: 31.87px 20.31px;
+            display: block;
+            width: 31.87px;
+            height: 20.31px;
+            position: absolute;
+            right: 0;
+            top: 50%;
+            transform: translateY(-50%);
+          }
         }
 
         img {
@@ -2045,6 +2053,8 @@ body {
     max-width: 16px;
     max-height: 16px;
     left: 0;
+    top: 50%;
+    transform: translateY(-50%);
   }
 
   .link {
@@ -2085,7 +2095,7 @@ body {
 
       &:before {
         content: '';
-        background-image: url("../images/fe-arrow-down.svg");
+        background-image: url(./img/arrow-right.svg);
         transition: 0.4s;
         background-size: 100%;
         display: block;
@@ -2157,7 +2167,7 @@ footer {
           margin-bottom: 6px;
 
           img {
-            top: 3px;
+            //top: 3px;
           }
         }
 
@@ -2484,7 +2494,6 @@ footer {
       width: 31px;
       height: 26px;
       position: relative;
-      z-index: 30;
       margin-left: auto;
       cursor: pointer;
       z-index: 50;
@@ -2758,8 +2767,6 @@ footer {
 
     &.bg-img- {
       &faq {
-        background: linear-gradient(90.53deg, #EEEEEE 12.58%, rgba(227, 227, 227, 0) 82.57%),
-        url('../../assets/images/faq.jpg');
         background-size: cover !important;
         background-position: center !important;
       }
@@ -3113,9 +3120,6 @@ footer {
       display: block;
     }
 
-    .slick-initialized {
-
-    }
   }
 
   .info-box {

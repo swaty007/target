@@ -26,7 +26,7 @@ the_post();
             <div class="wrapper">
                 <?php $loop = new WP_Query( array( 'post_type' => 'doctor', 'posts_per_page' => -1 ) ); ?>
                 <?php $count = 0; while ( $loop->have_posts() ) : $loop->the_post(); ?>
-                    <div class="doc-presents <?= $count&1 ? 'doc-left-img' : '';?>">
+                    <a href="<?php the_permalink();?>" class="doc-presents <?= $count&1 ? 'doc-left-img' : '';?>">
                         <div class="doc-text">
                             <p class="doc-name title--small"><?php the_title();?></p>
                             <p class="doc-position text--14"><?= get_post_meta( $post->ID, 'position', true ) ;?></p>
@@ -35,7 +35,7 @@ the_post();
                             </div>
                         </div>
                         <img src="<?php the_post_thumbnail_url()?>" class="doc-img" alt="">
-                    </div>
+                    </a>
                 <?php $count++; endwhile; wp_reset_query(); ?>
             </div>
             <div class="section about-clinic section--large-text">

@@ -166,3 +166,31 @@ $(document).on('click', '#modal_contact_form', function () {
         },
     });
 })
+
+$(document).on('click', '#question_form', function () {
+    let name = $('#question_name'),
+        email = $('#question_email'),
+        comment = $('#question_comment');
+
+    $.ajax({
+        type: "POST",
+        url: targetData.ajaxurl,
+        data: {
+            action: "question_form",
+            name: name.val(),
+            email: email.val(),
+            comment: comment.val(),
+            location: location.href
+        },
+        success: function(status) {
+            console.log(status);
+            if (status) {
+            } else {
+            }
+
+            name.val('');
+            email.val('')
+            comment.val('')
+        },
+    });
+})

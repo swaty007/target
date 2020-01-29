@@ -6,7 +6,7 @@ the_post();
 ?>
     <main class="content">
         <section class="section title-block default-title default-title-small bg-img-contacts"
-                 style="background: linear-gradient(103.53deg, #EEEEEE 24.58%, rgba(227, 227, 227, 0) 88.57%), url(<?php the_post_thumbnail_url() ?>);">
+                 style="background-image: url(<?php the_post_thumbnail_url() ?>);">
             <div class="wrapper">
                 <div class="section__content">
                     <h3 class="text--18">

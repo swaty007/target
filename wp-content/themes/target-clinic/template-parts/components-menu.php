@@ -29,7 +29,7 @@
 <?php
 //var_dump(get_page_template_slug());
 ?>
-<nav id="nav" class="nav <?=is_front_page() || is_page_template('page-doctors.php')?'nav--transparent':'';?>">
+<nav id="nav" class="nav <?=is_front_page() || is_page_template('page-doctors.php' )|| is_page_template('page-about.php' )?'nav--transparent':'';?>">
     <div class="wrapper flex-block">
         <a href="/">
             <img class="logo" src="<?= get_url_from_img_id(get_theme_mod( 'custom_logo' ));?>" alt="">

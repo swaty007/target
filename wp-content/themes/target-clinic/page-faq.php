@@ -7,7 +7,7 @@
 
     <main class="content">
         <section class="section title-block default-title default-title-small bg-img-faq"
-                 style="background: linear-gradient(274.98deg, rgba(243, 243, 243, 0) 9.98%, #E3E3E3 50.66%), url(<?php the_post_thumbnail_url() ?>);">
+                 style="background-image: url(<?php the_post_thumbnail_url() ?>);">
             <div class="wrapper">
                 <div class="section__content">
                     <h3 class="text--18">

@@ -350,7 +350,37 @@ function do_contact_form() {
     }
 
 }
+add_action( 'wp_ajax_question_form', 'do_question_form' );
+function do_question_form() {
+    if ( isset($_POST['name']) && isset($_POST['email']) ) {
+        $name = $_POST['name'];
+        $email = $_POST['email'];
+        $comment = $_POST['comment'];
+        $send_to = "eugene.subota1984@gmail.com,swaty0007@gmail.com,office@car.ua,info@car.ua";
+        $subject = "Заказ консультации";
+        $message = "Пользователь сайта задал вопрос онлайн. Пользователь: " . $name . " Email: " . $email ." Коментарий:". $comment;
+        if (isset($_POST['location'])) {
+            $message.=  "<br>Ссылка на страницу: " . $_POST['location'];
+        }
+        $headers = array('From: Car.ua <info@car.ua>', 'Content-Type: text/html; charset=UTF-8');
 
+
+        $telegram = new Telegram('1072821683:AAFLRe-3Cd3c8EKLBAsYB8-oei3dCdwBT-0');
+        $telegram->sendMessage([
+            'chat_id' => -379470267,
+            'text' => $message,
+        ]);
+        wp_send_json(true);
+
+//        $success = wp_mail($send_to,$subject,$message,$headers);
+//        if ($success){
+//            wp_send_json(true);
+//        } else {
+//            wp_send_json(false);
+//        }
+    }
+
+}
 
 
 

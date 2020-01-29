@@ -6,17 +6,17 @@
         </h3>
         <div class="appointment-faq__form">
             <form action="">
-                <label for="name">
-                    <input id="name" type="text" name="name"
+                <label for="question_name">
+                    <input id="question_name" type="text" name="name"
                            placeholder="Имя">
                 </label>
-                <label for="email">
-                    <input id="email" type="text" name="Email"
+                <label for="question_email">
+                    <input id="question_email" type="email" name="Email"
                            placeholder="E-mail">
                 </label>
-                <textarea name="Message" id="message-faq" cols="30" rows="6"
+                <textarea name="comment" id="question_comment" cols="30" rows="6"
                           placeholder="Напишите ваш вопрос..."></textarea>
-                <button type="button" class="button button--primary">
+                <button id="question_form" type="button" class="button button--primary">
                     Отправить
                 </button>
             </form>
