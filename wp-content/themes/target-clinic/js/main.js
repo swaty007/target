@@ -1,7 +1,10 @@
 //Header buttons
 
-$( '.link--menu' ).click( function () {
-    $( '.link__menu' ).slideToggle( 400 );
+$( '.menu-item-has-children' ).click( function (e) {
+    if (window.innerWidth <= 880) {
+        e.preventDefault()
+        $(this).children('.sub-menu link__menu').slideToggle( 400 )
+    }
 });
 
 $( '.menu--treatment' ).click(function () {

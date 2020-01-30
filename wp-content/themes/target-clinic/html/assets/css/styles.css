@@ -280,27 +280,27 @@ body.overflow-hidden {
 .nav__list .nav__item .menu-item--treatment .menu-item--treatment .treatment__name {
   display: block;
 }
-.nav__list .nav__item .link--menu {
+.nav__list .link--menu {
   position: relative;
 }
-.nav__list .nav__item .link--menu:after {
+.nav__list .link--menu:after {
   content: url("../images/fe-arrow-down.svg");
   display: block;
   position: absolute;
   right: -15px;
   top: -4px;
 }
-.nav__list .nav__item .menu--treatment:after {
+.nav__list .menu--treatment:after {
   content: url("../images/fe-arrow-down-green.svg");
   display: block;
   position: absolute;
   right: 19px;
   top: 16px;
 }
-.nav__list .nav__item .link__menu {
+.nav__list .link__menu {
   z-index: 4;
 }
-.nav__list .nav__item .link__menu:after {
+.nav__list .link__menu:after {
   content: "";
   position: absolute;
   left: 20px;
@@ -311,6 +311,23 @@ body.overflow-hidden {
 .nav .nav--mobile__phones,
 .nav .container-for-mob-menu {
   display: none;
+}
+.nav .menu-item-has-children {
+  position: relative;
+}
+.nav .menu-item-has-children .menu-item {
+  padding: 17px 20px 15px;
+  border-top: 1px solid rgba(0, 167, 98, 0.1);
+  cursor: pointer;
+  color: #00A863;
+  text-decoration: none;
+}
+.nav .menu-item-has-children .menu-item-has-children:after {
+  content: url("../images/fe-arrow-down-green.svg");
+  display: block;
+  position: absolute;
+  right: 19px;
+  top: 16px;
 }
 
 .section.title-block {
@@ -400,7 +417,7 @@ body.overflow-hidden {
 }
 .section--about--advantages .content-image-box .info-box--text .info-box__item {
   margin-bottom: 45px;
-  width: auto;
+  width: 100%;
   align-self: center;
   position: relative;
   padding-left: 60px;
@@ -1407,7 +1424,6 @@ body.overflow-hidden {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  height: 100%;
 }
 .content-image-box.content-link-box .link-box {
   box-shadow: 0 4px 70px rgba(146, 188, 211, 0.2);
@@ -2230,6 +2246,7 @@ footer .footer-content__item .list-title {
   }
   .section--about--advantages .content-image-box .image-box {
     order: 2;
+    display: none;
   }
   .section--blog .button {
     margin-top: 0;
@@ -2409,6 +2426,12 @@ footer .footer-content__item .list-title {
     margin-left: auto;
     margin-right: auto;
     width: 100%;
+  }
+}
+@media all and (max-width: 560px) {
+  .section--about--advantages .content-image-box .info-box--text .info-box__item {
+    width: 100%;
+    max-width: none;
   }
 }
 
