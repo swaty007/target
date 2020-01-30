@@ -244,10 +244,8 @@ body {
   width: 100%;
   padding: 0 10px;
   background: #00A863;
+  position: relative;
   transition: 0.3s;
-  position: sticky;
-  //top: 0;
-  z-index: 4200;
 
   .wrapper.flex-block{
     align-items: center;
@@ -267,11 +265,12 @@ body {
 
 
   &.sticky{
-    position: fixed;
+    position: sticky;
     top: 0;
     background: #00A863;
     box-shadow: 0 10px 10px rgba(33, 120, 84, 0.36);
     z-index: 200;
+    transition: 0.3s;
   }
 
 
@@ -290,6 +289,7 @@ body {
         text-decoration: none;
         display: inline-block;
         width: 100%;
+        position: relative;
         @include txt-size-16;
 
         &:hover {
@@ -2422,6 +2422,7 @@ footer {
   }
   .nav {
     padding: 10px 17px;
+    position: initial;
 
     &.overflow-y {
       overflow-y: auto;
@@ -2429,6 +2430,7 @@ footer {
     }
 
     &.nav--transparent {
+      position: initial;
       background: #00A863;
     }
 
