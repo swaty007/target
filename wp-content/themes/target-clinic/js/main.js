@@ -51,7 +51,15 @@ $( function () {
         verticalSwiping: true,
         slidesToShow: 1,
         autoplay: true,
-    });
+    }).on('wheel', (function(e) {
+        e.preventDefault();
+
+        if (e.originalEvent.deltaY < 0) {
+            $(this).slick('slickNext');
+        } else {
+            $(this).slick('slickPrev');
+        }
+    }));
     $( '.slick-horizontal' ).slick({
         horizontal: true,
         slidesToShow: 8,
@@ -69,7 +77,15 @@ $( function () {
                 }
             }
         ]
-    })
+    }).on('wheel', (function(e) {
+        e.preventDefault();
+
+        if (e.originalEvent.deltaY < 0) {
+            $(this).slick('slickNext');
+        } else {
+            $(this).slick('slickPrev');
+        }
+    }))
 });
 
 //Move blocks on resize to mob
@@ -109,8 +125,6 @@ $( '.toggle-item__header' ).click( function () {
         $( this ).addClass( 'active' );
         $( this ).parent().find( '.toggle-item__body' ).slideDown(400);
 
-        console.log($(this))
-
     } else {
 
         $('.toggle-item__body' ).slideUp(400)
@@ -120,7 +134,7 @@ $( '.toggle-item__header' ).click( function () {
 });
 
 let  header = document.getElementById("nav");
-let  sticky = header.offsetTop;
+let  sticky = header.offsetTop - window.pageYOffset;
 function myFunction() {
     if (window.pageYOffset > sticky) {
         header.classList.add("sticky");
@@ -132,6 +146,10 @@ $(window).scroll(function () {
     $('body').scrollTop();
     myFunction()
 });
+$(document).on('click', '#toTop', function (e) {
+    e.preventDefault();
+    $('html, body').animate({scrollTop:0}, 350, 'swing');
+})
 
 
 //Pagination

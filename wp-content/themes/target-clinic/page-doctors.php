@@ -7,7 +7,7 @@ the_post();
 
     <main class="content">
         <section class="section content--bg-img title-block title--about"
-                 style="background: linear-gradient(180deg, rgba(16, 37, 85, 0.8) 20%, rgba(0, 35, 118, 0.8) 99.31%), url(<?php the_post_thumbnail_url() ?>);">
+                 style="background: linear-gradient(180deg, rgba(16, 37, 85, 0.7) 20%, rgba(0, 35, 118, 0.6) 99.31%), url(<?php the_post_thumbnail_url() ?>);">
             <div class="wrapper">
                 <div class="section__content">
                     <h3 class="text--18">

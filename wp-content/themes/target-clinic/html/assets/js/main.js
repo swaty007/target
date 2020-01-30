@@ -139,12 +139,11 @@ $('.page-numbers').on('click', function () {
     }
 });
 
-//
-window.onscroll = function() {myFunction()};
 
+$(window).scroll(myFunction())
 let  header = document.getElementById("nav");
-let  sticky = header.offsetTop;
-
+let  sticky = header.offsetTop - window.pageYOffset;
+console.log(sticky, window.pageYOffset,header.offsetTop)
 function myFunction() {
     if (window.pageYOffset > sticky) {
         header.classList.add("sticky");

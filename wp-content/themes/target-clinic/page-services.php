@@ -56,52 +56,35 @@ the_post();
                 wp_reset_query(); ?>
             </div>
 
-            <div class="large-text-img">
-                <div class="flex-block">
-                    <div class="large__txt">
-                        <h3 class="title--small">
-                            Какие препараты мы используем
-                        </h3>
-                        <p class="text">
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sit vestibulum leo sem mauris, non
-                            nec porttitor sit. Porta sit tellus nisl, elit, ut lectus. Non risus tincidunt metus,
-                            pellentesque facilisis metus laoreet quam at. Diam id augue cursus id magnis at urna hac
-                            nunc. Purus ut facilisis ultrices in vitae. Tincidunt hendrerit vitae nisl sed in mauris
-                            consequat velit id. Id sapien consectetur lacinia nibh at viverra. Aliquam facilisis
-                            sagittis, quam massa justo, ipsum nisi venenatis. Eu sit sed in tristique. Congue est purus,
-                            nulla ultrices. Tincidunt morbi phasellus sed vehicula vestibulum cursus auctor tincidunt.
-                            Maecenas pharetra arcu varius egestas mauris.
-                        </p>
-                        <p class="text">
-                            Eu sit sed in tristique. Congue est purus, nulla ultrices. Tincidunt morbi phasellus sed
-                            vehicula vestibulum cursus auctor tincidunt. Maecenas pharetra arcu varius egestas mauris.
-                        </p>
-                    </div>
-                    <div class="large__img">
-                        <img src="../assets/images/preparation.png" alt="">
-                    </div>
-                </div>
-            </div>
+<!--            <div class="large-text-img">-->
+<!--                <div class="flex-block">-->
+<!--                    <div class="large__txt">-->
+<!--                        <h3 class="title--small">-->
+<!--                            Какие препараты мы используем-->
+<!--                        </h3>-->
+<!--                        <p class="text">-->
+<!--                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sit vestibulum leo sem mauris, non-->
+<!--                            nec porttitor sit. Porta sit tellus nisl, elit, ut lectus. Non risus tincidunt metus,-->
+<!--                            pellentesque facilisis metus laoreet quam at. Diam id augue cursus id magnis at urna hac-->
+<!--                            nunc. Purus ut facilisis ultrices in vitae. Tincidunt hendrerit vitae nisl sed in mauris-->
+<!--                            consequat velit id. Id sapien consectetur lacinia nibh at viverra. Aliquam facilisis-->
+<!--                            sagittis, quam massa justo, ipsum nisi venenatis. Eu sit sed in tristique. Congue est purus,-->
+<!--                            nulla ultrices. Tincidunt morbi phasellus sed vehicula vestibulum cursus auctor tincidunt.-->
+<!--                            Maecenas pharetra arcu varius egestas mauris.-->
+<!--                        </p>-->
+<!--                        <p class="text">-->
+<!--                            Eu sit sed in tristique. Congue est purus, nulla ultrices. Tincidunt morbi phasellus sed-->
+<!--                            vehicula vestibulum cursus auctor tincidunt. Maecenas pharetra arcu varius egestas mauris.-->
+<!--                        </p>-->
+<!--                    </div>-->
+<!--                    <div class="large__img">-->
+<!--                        <img src="../assets/images/preparation.png" alt="">-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--            </div>-->
             <div class="wrapper-920-left">
                 <div class="section--large-text">
-                    <p class="text">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Adipiscing quam enim at odio
-                        quisque amet,
-                        cursus purus. Quis sit nulla amet amet rhoncus aliquam luctus laoreet dignissim.
-                        Adipiscing
-                        convallis ut arcu nibh magna molestie consectetur scelerisque. Suspendisse sit arcu, et
-                        tellus arcu
-                        eu, pharetra congue quam. Magna quis mi nisl sed purus dolor ultricies sed pharetra.
-                    </p>
-                    <p class="text">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Adipiscing quam enim at odio
-                        quisque amet,
-                        cursus purus. Quis sit nulla amet amet rhoncus aliquam luctus laoreet dignissim.
-                        Adipiscing
-                        convallis ut arcu nibh magna molestie consectetur scelerisque. Suspendisse sit arcu, et
-                        tellus arcu
-                        eu, pharetra congue quam. Magna quis mi nisl sed purus dolor ultricies sed pharetra.
-                    </p>
+                    <?php the_content(); ?>
                 </div>
                 <?php get_template_part('template-parts/sections', 'contact-form-callback'); ?>
             </div>
