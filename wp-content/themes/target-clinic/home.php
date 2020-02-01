@@ -9,7 +9,7 @@ get_header();
     <main class="content">
         <section class="section section--blog--list">
             <div class="wrapper">
-                <h3 class="text--18">
+                <h3 class="text--18 breadcrumb__alex">
                     <?php the_breadcrumb() ?>
                 </h3>
                 <div class="wrapper-920-left">

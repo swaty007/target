@@ -1,9 +1,12 @@
 //Header buttons
 
-$( '.menu-item-has-children' ).click( function (e) {
+$(document).on('click', '.menu-item-has-children', function (e) {
     if (window.innerWidth <= 880) {
-        e.preventDefault()
-        $(this).children('.sub-menu link__menu').slideToggle( 400 )
+        // let $this = $(e.currentTarget)
+        if (this.offsetWidth*0.65 < e.offsetX) {
+            e.preventDefault()
+            $(this).children('.sub-menu.link__menu').slideToggle( 400 )
+        }
     }
 });
 
@@ -92,10 +95,10 @@ $( function () {
 function resizeBlocks() {
     let width = $( window ).width();
 
-    if (width < 880) {
+    if (width < 880 && $('#move_nav-menu-mob #nav-menu-mob').length === 0) {
         $( "#nav-menu-mob" ).appendTo( "#move_nav-menu-mob" );
 
-    } else if (width > 880) {
+    } else if (width > 880 && $('#profile-menu-mob #nav-menu-mob').length === 0) {
         $( "#nav-menu-mob" ).appendTo( "#profile-menu-mob" );
     }
 

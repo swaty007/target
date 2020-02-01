@@ -6,8 +6,8 @@ the_post(); ?>
       <main class="content">
           <section class="section section--blog--list blog--list--item">
               <div class="wrapper">
-                  <h3 class="text--18">
-                      <?php the_breadcrumb() ?>
+                  <h3 class="text--18 breadcrumb__alex">
+                    <?php the_breadcrumb() ?>
                   </h3>
                   <div class="wrapper-920-left">
                       <h1>

@@ -184,7 +184,19 @@ body {
     outline: none;
   }
 }
-
+.breadcrumb {
+  &__alex {
+    .cell-for-text {
+      text-transform: none;
+      text-decoration: none;
+    }
+    .text--18 {
+      text-transform: none;
+      text-decoration: none;
+      color: #00a863;
+    }
+  }
+}
 //Header Styles
 
 
@@ -409,7 +421,9 @@ body {
     }
     &:hover {
       &>.link__menu {
-        display: block;
+        @media(min-width: 881px) {
+          display: block;
+        }
       }
     }
     .menu-item{
@@ -852,10 +866,6 @@ body {
 
       .doc-about {
         margin-bottom: 55px;
-      }
-      &:hover {
-        text-decoration: none;
-        color: inherit;
       }
     }
   }
@@ -1524,6 +1534,10 @@ body {
   margin: 0 auto 30px;
   padding-top: 60px;
   overflow: hidden;
+  &:hover {
+    text-decoration: none;
+    color: inherit;
+  }
 
   .doc-img {
     width: 100%;
@@ -2553,7 +2567,8 @@ footer {
           position: relative;
           width: calc(100% + 39px * 2);
           left: -39px;
-          top: 14px;
+          top: 0;
+          margin-top: 14px;
           background: #02A863;
           box-shadow: none;
 
@@ -2564,6 +2579,7 @@ footer {
 
             a {
               color: #ffffff;
+              padding-left: 20px;
             }
           }
         }

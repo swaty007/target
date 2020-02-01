@@ -22,7 +22,7 @@ get_header();
             </div>
 
             <div class="flex-block">
-                <button type="button" class="button button--secondary button--white">
+                <button type="button" class="button button--secondary button--white" data-toggle="modal" data-target="#modalContactForm">
                     Записаться на прием
                 </button>
                 <div class="address-block flex-block text--14">

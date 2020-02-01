@@ -47,7 +47,7 @@
                     <?php $loop = new WP_Query(array('post_type' => 'services', 'posts_per_page' => -1)); ?>
                     <?php while ($loop->have_posts()) : $loop->the_post(); ?>
                         <li>
-                            <a href="<?php the_permalink(); ?>" target="_blank" class="link green">
+                            <a href="<?php the_permalink(); ?>" class="link green">
                                 <?php the_title(); ?>
                             </a>
                         </li>

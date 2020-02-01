@@ -13,8 +13,8 @@ the_post();
                  style="background-image: linear-gradient(180deg, rgba(16, 37, 85, 0.7) 20%, rgba(0, 35, 118, 0.6) 99.31%), url(<?php the_post_thumbnail_url() ?>)">
             <div class="wrapper">
                 <div class="section__content">
-                    <h3 class="text--18">
-                        <?php the_breadcrumb() ?>
+                    <h3 class="text--18 breadcrumb__alex">
+                    <?php the_breadcrumb() ?>
                     </h3>
                     <h1 class="text--48">
                         <?php the_title() ?>
