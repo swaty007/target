@@ -29,21 +29,6 @@ the_post();
                     <section class="section--large-text section-treatment">
                         <?php the_content(); ?>
 
-
-
-                        <h3 class="title--small">
-                            Показания при химиотерапии
-                        </h3>
-                        <p class="text">
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Adipiscing quam enim at odio
-                            quisque amet,
-                            cursus purus. Quis sit nulla amet amet rhoncus aliquam luctus laoreet dignissim.
-                            Adipiscing
-                            convallis ut arcu nibh magna molestie consectetur scelerisque. Suspendisse sit arcu, et
-                            tellus arcu
-                            eu, pharetra congue quam. Magna quis mi nisl sed purus dolor ultricies sed pharetra.
-                        </p>
-
                         <div class="cancel-types">
                             <?php $loop = new WP_Query( array( 'post_type' => 'cancer', 'posts_per_page' => -1 ) ); ?>
                             <?php while ( $loop->have_posts() ) : $loop->the_post(); ?>
@@ -55,18 +40,6 @@ the_post();
                         </div>
 
                         <?=get_post_meta( $post->ID, 'content', true )?>
-                        <h3 class="title--small">
-                            Эффективность
-                        </h3>
-                        <p class="text">
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Adipiscing quam enim at odio
-                            quisque amet,
-                            cursus purus. Quis sit nulla amet amet rhoncus aliquam luctus laoreet dignissim.
-                            Adipiscing
-                            convallis ut arcu nibh magna molestie consectetur scelerisque. Suspendisse sit arcu, et
-                            tellus arcu
-                            eu, pharetra congue quam. Magna quis mi nisl sed purus dolor ultricies sed pharetra.
-                        </p>
 
                         <div class="info-box info-box--text info-box-w260 flex-block">
                             <?php $loop = new WP_Query(array('post_type' => 'advantages', 'posts_per_page' => -1)); ?>

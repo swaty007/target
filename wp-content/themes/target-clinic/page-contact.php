@@ -37,12 +37,9 @@ the_post();
                         </div>
                         <div class="phones flex-block">
                         <?php
-                        $meta_data = get_post_meta($post->ID, '', false);
-                        foreach (array_filter(array_keys($meta_data), function($i) {
-                            return in_array($i, ['phone1', 'phone2', 'phone3', 'phone4']);
-                        }) as $phone):?>
-                            <a href="tel:+<?= preg_replace( '/[^0-9]/', '', $meta_data[$phone][0] )?>"><?=$meta_data[$phone][0]?></a>
-                        <?php endforeach;?>
+                        while (have_rows('phone')): the_row();?>
+                            <a href="tel:+<?= preg_replace( '/[^0-9]/', '', the_sub_field('phone') )?>"><?=the_sub_field('phone')?></a>
+                        <?php endwhile;?>
                         </div>
                     </div>
                     <section class="section--large-text">

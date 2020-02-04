@@ -28,79 +28,25 @@ the_post();
         <section class="section about-clinic section--large-text">
             <div class="wrapper w-920px">
                 <?php the_content(); ?>
-<!--                <div class="large-text-img">-->
-<!--                    <h3 class="title--small">-->
-<!--                        История клиники-->
-<!--                    </h3>-->
-<!--                    <div class="flex-block">-->
-<!--                        <div class="large__txt">-->
-<!--                            <p class="text">-->
-<!--                                Основатель «Клиники TARGET» профессор Киркилевский С.И. всю свою жизнь посвятил клинической-->
-<!--                                онкологии. В 1982 г. он начал работать хирургом-онкологом. За прошедшие годы выполнил тысячи-->
-<!--                                сложных хирургических операций по поводу рака, наблюдал тысячи пациентов с этой тяжелой-->
-<!--                                патологией. С накоплением опыта росла неудовлетворенность результатами работы. Хирургическое-->
-<!--                                удаление опухоли не гарантирует от развития рецидива болезни. Операцию можно выполнить-->
-<!--                                далеко не-->
-<!--                                всем больным. Последние достижения науки убеждают, что ситуацию можно улучшить, прибегнув к-->
-<!--                                персонализированной медицине, однако реалии онкологической больницы, существующей на-->
-<!--                                бюджетные-->
-<!--                                деньги, не позволяют провести лечение с использованием таргетных препаратов и иммунотерапии.-->
-<!--                            </p>-->
-<!--                            <p class="text">-->
-<!--                                Выходом из существующего положения стало создание независимой «Клиники TARGET», которая-->
-<!--                                начала-->
-<!--                                свою работу в начале 2018 г.-->
-<!--                            </p>-->
-<!--                        </div>-->
-<!--                        <div class="large__img">-->
-<!--                            <img src="--><?php //bloginfo('template_url'); ?><!--/img/headmas.png" alt="">-->
-<!--                        </div>-->
-<!--                    </div>-->
-<!--                </div>-->
+
+
 
                 <div class="title-box flex-block">
                     <div class="title-text title--small">
-                        Наша клиника эффективно решает целый ряд задач:
+                        <?= get_post_meta($post->ID,'task_title', true) ?>
                     </div>
                 </div>
                 <div class="info-box info-box--text flex-block">
-                    <div class="info-box__item">
-                        <div class="left-img-text">
-                            <img src="<?php bloginfo('template_url'); ?>/img/highhelp.svg" alt="">
-                            <p class="title-img font-normal">
-                                Квалифицированная консультативная помощь онкологическим больным, в т.ч., предоставление
-                                услуги «иное мнение».
-                            </p>
+                    <?php while (have_rows('task')): the_row();?>
+                        <div class="info-box__item">
+                            <div class="left-img-text">
+                                <img src="<?= get_url_from_img_id(get_sub_field('img')) ;?>" alt="">
+                                <p class="title-img font-normal">
+                                    <?php the_sub_field('title')?>
+                                </p>
+                            </div>
                         </div>
-
-                    </div>
-                    <div class="info-box__item">
-                        <div class="left-img-text">
-                            <img src="<?php bloginfo('template_url'); ?>/img/tablet_icon.svg" alt="">
-                            <p class="title-img font-normal">
-                                На основе международных стандартов индивидуальный подбор наиболее современных схем и
-                                протоколов персонифицированного лечения.
-                            </p>
-                        </div>
-                    </div>
-                    <div class="info-box__item">
-                        <div class="left-img-text">
-                            <img src="<?php bloginfo('template_url'); ?>/img/btldrug.svg" alt="">
-                            <p class="title-img font-normal">
-                                Проведение амбулаторного медикаментозного лечения, в частности, таргетной терапии,
-                                иммунотерапии, химиотерапии, инфузионной терапии, терапии сопровождения и др.
-                            </p>
-                        </div>
-                    </div>
-                    <div class="info-box__item">
-                        <div class="left-img-text">
-                            <img src="<?php bloginfo('template_url'); ?>/img/grouphelp.svg" alt="">
-                            <p class="title-img font-normal">
-                                Диспансерное наблюдение за онкологическими пациентами, независимо от того, в каком
-                                лечебном учреждении ранее проводилось их лечение.
-                            </p>
-                        </div>
-                    </div>
+                    <?php endwhile;?>
                 </div>
             </div>
         </section>
@@ -134,41 +80,19 @@ the_post();
         <section class="section about-clinic work-principles">
             <div class="wrapper">
                 <h3 class="title--small">
-                    Основные принципы работы клиники
+                    <?= get_post_meta($post->ID,'principles_title', true) ?>
                 </h3>
                 <div class="info-box info-box--text flex-block">
-                    <div class="info-box__item">
-                        <div class="top-img-text">
-                            <img src="<?php bloginfo('template_url'); ?>/img/help-heart.svg" alt="">
-                            <p class="title-img font-normal">
-                                Искреннее желание помочь каждому пациенту.
-                            </p>
+                    <?php while (have_rows('principles')): the_row();?>
+                        <div class="info-box__item">
+                            <div class="top-img-text">
+                                <img src="<?= get_url_from_img_id(get_sub_field('img')) ;?>" alt="">
+                                <p class="title-img font-normal">
+                                    <?php the_sub_field('title')?>
+                                </p>
+                            </div>
                         </div>
-                    </div>
-                    <div class="info-box__item">
-                        <div class="top-img-text">
-                            <img src="<?php bloginfo('template_url'); ?>/img/microsc.svg" alt="">
-                            <p class="title-img font-normal">
-                                Только современные подходы к диагностике и лечению.
-                            </p>
-                        </div>
-                    </div>
-                    <div class="info-box__item">
-                        <div class="top-img-text">
-                            <img src="<?php bloginfo('template_url'); ?>/img/stars.svg" alt="">
-                            <p class="title-img font-normal">
-                                Стремление к идеальному качеству услуг.
-                            </p>
-                        </div>
-                    </div>
-                    <div class="info-box__item">
-                        <div class="top-img-text">
-                            <img src="<?php bloginfo('template_url'); ?>/img/medcur.svg" alt="">
-                            <p class="title-img font-normal">
-                                Постоянное повышение квалификации сотрудников
-                            </p>
-                        </div>
-                    </div>
+                    <?php endwhile;?>
                 </div>
                 <div class="gallery">
                     <h3 class="title--small">

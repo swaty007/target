@@ -28,6 +28,7 @@ body {
   position: relative;
   min-width: 300px;
   margin: 0;
+  line-height: 1.8;
 
   &.overflow-hidden {
     overflow: hidden;
@@ -986,6 +987,9 @@ body {
 
         h2 {
           margin-top: 0;
+          & + h2 {
+            margin-top: 20px;
+          }
         }
 
         h4 {
