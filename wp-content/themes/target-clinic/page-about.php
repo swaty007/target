@@ -94,137 +94,31 @@ the_post();
                         </div>
                     <?php endwhile;?>
                 </div>
+                <?php if( have_rows('gallery') ):?>
                 <div class="gallery">
                     <h3 class="title--small">
                         Галлерея
                     </h3>
                     <div class="gallery__nav">
-                        <div data-click="#gallery-1" class="gallery__nav-item text active">Оборудование</div>
-                        <div data-click="#gallery-2" class="gallery__nav-item text">Лечебный процесс</div>
-                        <div data-click="#gallery-3" class="gallery__nav-item text">Интерьер</div>
-                        <div data-click="#gallery-4" class="gallery__nav-item text">Врачи</div>
+                        <?php $count=0; while (have_rows('gallery')): the_row();?>
+                            <div data-click="#gallery-<?=$count?>" class="gallery__nav-item text <?php if($count === 0) echo 'active'?>"><?php the_sub_field('title')?></div>
+                        <?php $count++;endwhile;?>
                     </div>
-                    <div id="gallery-1" class="gallery-content show-gallery">
-                        <div class="slider">
-                            <div class="slick-horizontal">
-                                <div class="slick-item">
-                                    <img src="<?php bloginfo('template_url'); ?>/img/gal1.png" class="gallery-content__item" alt="">
-                                </div>
-                                <div class="slick-item">
-                                    <img src="<?php bloginfo('template_url'); ?>/img/gal2.png" class="gallery-content__item" alt="">
-                                </div>
-                                <div class="slick-item">
-                                    <img src="<?php bloginfo('template_url'); ?>/img/gal3.png" class="gallery-content__item" alt="">
-                                </div>
-                                <div class="slick-item">
-                                    <img src="<?php bloginfo('template_url'); ?>/img/gal4.png" class="gallery-content__item" alt="">
-                                </div>
-                                <div class="slick-item">
-                                    <img src="<?php bloginfo('template_url'); ?>/img/gal5.png" class="gallery-content__item" alt="">
-                                </div>
-                                <div class="slick-item">
-                                    <img src="<?php bloginfo('template_url'); ?>/img/gal6.png" class="gallery-content__item" alt="">
-                                </div>
-                                <div class="slick-item">
-                                    <img src="<?php bloginfo('template_url'); ?>/img/gal7.png" class="gallery-content__item" alt="">
-                                </div>
-                                <div class="slick-item">
-                                    <img src="<?php bloginfo('template_url'); ?>/img/gal8.png" class="gallery-content__item" alt="">
+                    <?php $count=0; while (have_rows('gallery')): the_row();?>
+                        <div id="gallery-<?=$count?>" class="gallery-content <?php if($count === 0) echo 'show-gallery'?>">
+                            <div class="slider">
+                                <div class="slick-horizontal">
+                                    <?php foreach (get_sub_field('images') as $img):?>
+                                        <div class="slick-item">
+                                            <img src="<?= get_url_from_img_id($img['img']) ;?>" class="gallery-content__item" alt="">
+                                        </div>
+                                    <?php endforeach;?>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                    <div id="gallery-2" class="gallery-content">
-                        <div class="slider">
-                            <div class="slick-horizontal">
-                                <div class="slick-item">
-                                    <img src="<?php bloginfo('template_url'); ?>/img/gal1.png" class="gallery-content__item" alt="">
-                                </div>
-                                <div class="slick-item">
-                                    <img src="<?php bloginfo('template_url'); ?>/img/gal2.png" class="gallery-content__item" alt="">
-                                </div>
-                                <div class="slick-item">
-                                    <img src="<?php bloginfo('template_url'); ?>/img/gal3.png" class="gallery-content__item" alt="">
-                                </div>
-                                <div class="slick-item">
-                                    <img src="<?php bloginfo('template_url'); ?>/img/gal4.png" class="gallery-content__item" alt="">
-                                </div>
-                                <div class="slick-item">
-                                    <img src="<?php bloginfo('template_url'); ?>/img/gal5.png" class="gallery-content__item" alt="">
-                                </div>
-                                <div class="slick-item">
-                                    <img src="<?php bloginfo('template_url'); ?>/img/gal6.png" class="gallery-content__item" alt="">
-                                </div>
-                                <div class="slick-item">
-                                    <img src="<?php bloginfo('template_url'); ?>/img/gal7.png" class="gallery-content__item" alt="">
-                                </div>
-                                <div class="slick-item">
-                                    <img src="<?php bloginfo('template_url'); ?>/img/gal8.png" class="gallery-content__item" alt="">
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div id="gallery-3" class="gallery-content">
-                        <div class="slider">
-                            <div class="slick-horizontal">
-                                <div class="slick-item">
-                                    <img src="<?php bloginfo('template_url'); ?>/img/gal1.png" class="gallery-content__item" alt="">
-                                </div>
-                                <div class="slick-item">
-                                    <img src="<?php bloginfo('template_url'); ?>/img/gal2.png" class="gallery-content__item" alt="">
-                                </div>
-                                <div class="slick-item">
-                                    <img src="<?php bloginfo('template_url'); ?>/img/gal3.png" class="gallery-content__item" alt="">
-                                </div>
-                                <div class="slick-item">
-                                    <img src="<?php bloginfo('template_url'); ?>/img/gal4.png" class="gallery-content__item" alt="">
-                                </div>
-                                <div class="slick-item">
-                                    <img src="<?php bloginfo('template_url'); ?>/img/gal5.png" class="gallery-content__item" alt="">
-                                </div>
-                                <div class="slick-item">
-                                    <img src="<?php bloginfo('template_url'); ?>/img/gal6.png" class="gallery-content__item" alt="">
-                                </div>
-                                <div class="slick-item">
-                                    <img src="<?php bloginfo('template_url'); ?>/img/gal7.png" class="gallery-content__item" alt="">
-                                </div>
-                                <div class="slick-item">
-                                    <img src="<?php bloginfo('template_url'); ?>/img/gal8.png" class="gallery-content__item" alt="">
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div id="gallery-4" class="gallery-content">
-                        <div class="slider">
-                            <div class="slick-horizontal">
-                                <div class="slick-item">
-                                    <img src="<?php bloginfo('template_url'); ?>/img/gal1.png" class="gallery-content__item" alt="">
-                                </div>
-                                <div class="slick-item">
-                                    <img src="<?php bloginfo('template_url'); ?>/img/gal2.png" class="gallery-content__item" alt="">
-                                </div>
-                                <div class="slick-item">
-                                    <img src="<?php bloginfo('template_url'); ?>/img/gal3.png" class="gallery-content__item" alt="">
-                                </div>
-                                <div class="slick-item">
-                                    <img src="<?php bloginfo('template_url'); ?>/img/gal4.png" class="gallery-content__item" alt="">
-                                </div>
-                                <div class="slick-item">
-                                    <img src="<?php bloginfo('template_url'); ?>/img/gal5.png" class="gallery-content__item" alt="">
-                                </div>
-                                <div class="slick-item">
-                                    <img src="<?php bloginfo('template_url'); ?>/img/gal6.png" class="gallery-content__item" alt="">
-                                </div>
-                                <div class="slick-item">
-                                    <img src="<?php bloginfo('template_url'); ?>/img/gal7.png" class="gallery-content__item" alt="">
-                                </div>
-                                <div class="slick-item">
-                                    <img src="<?php bloginfo('template_url'); ?>/img/gal8.png" class="gallery-content__item" alt="">
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                        <?php $count++;endwhile;?>
                 </div>
+                <?php endif?>
                 <?php
                     // If comments are open or we have at least one comment, load up the comment template.
                     if (comments_open() || get_comments_number()) :

@@ -70,6 +70,16 @@ $( function () {
         arrows: false,
         responsive: [
             {
+                breakpoint: 900,
+                settings: {
+                    focusOnSelect: true,
+                    slidesToScroll: 1,
+                    arrows: true,
+                    slidesToShow: 2,
+                    infinite:false
+                }
+            },
+            {
                 breakpoint: 601,
                 settings: {
                     focusOnSelect: true,

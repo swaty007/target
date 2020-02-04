@@ -37,6 +37,12 @@ body {
   }
 }
 
+img {
+  max-width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
 .wrapper {
   max-width: 1100px;
   width: 100%;
@@ -2489,7 +2495,6 @@ footer {
   }
   .nav {
     padding: 10px 17px;
-    position: initial;
     margin-bottom: 0;
 
     &.overflow-y {
@@ -2498,7 +2503,6 @@ footer {
     }
 
     &.nav--transparent {
-      position: initial;
       background: #00A863;
       margin-bottom: 0;
     }
@@ -2537,7 +2541,7 @@ footer {
     }
 
     .container-for-mob-menu {
-      position: absolute;
+      position: fixed;
       right: 0;
       top: 63px;
       bottom: 0;
@@ -3102,7 +3106,7 @@ footer {
   }
   .cancel-types {
     &__item {
-      max-width: 166px;
+      max-width: 48%;
       min-height: 166px;
     }
   }
@@ -3313,6 +3317,23 @@ footer {
         .info-box__item {
           width: 100%;
           max-width: none;
+        }
+      }
+    }
+  }
+}
+
+@media (min-width:901px) {
+  .slick-horizontal {
+    .slick-track {
+      width: 100%!important;
+      .slick-item {
+        width: 25%!important;
+        height: 215px!important;
+        img {
+          object-fit: cover;
+          height: 100%!important;
+          width: 100%!important;
         }
       }
     }
