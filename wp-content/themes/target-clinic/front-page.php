@@ -1,5 +1,6 @@
 <?php
 get_header();
+the_post();
 ?>
 
 <?php //get_template_part('template-parts/sections', 'main-screen'); ?>
@@ -11,13 +12,13 @@ get_header();
         <div class="wrapper">
             <div class="section__content">
                 <h3 class="text--18">
-                    Онкологическая клиника
+                    ОНКОЛОГИЧЕСКАЯ КЛИНИКА
                 </h3>
                 <h1 class="text--48">
-                    Инновационные методы лечения рака
+                    <?php the_title();?>
                 </h1>
                 <h4 class="text--18">
-                    Помогаем в самых сложных консультациях
+                    <?php the_excerpt();?>
                 </h4>
             </div>
 
@@ -45,33 +46,22 @@ get_header();
             <div class="title-box title-box--line title-box--white flex-block">
                 <div class="line w-155"></div>
                 <div class="title-text title--sub">
-                    О клинике
+                    <?= get_post_meta($post->ID,'about_title', true) ?>
                 </div>
                 <div class="title-subtext text">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sit pharetra, tortor aliquet fusce. Lorem
-                    duis nisi, tortor auctor orci, facilisis sed pulvinar. Lorem ipsum dolor sit amet, consectetur
-                    adipiscing elit. Sit pharetra, tortor aliquet fusce. Lorem duis nisi, tortor auctor orci, facilisis
-                    sed pulvinar.
+                    <?= get_post_meta($post->ID,'about_text', true) ?>
                 </div>
             </div>
             <div class="slider">
                 <div class="slick-vertical">
-                    <div class="slick-item">
-                        <img src="<?php bloginfo('template_url'); ?>/html/assets/images/DSC_9463.png" alt="">
-                    </div>
-                    <div class="slick-item">
-                        <img src="<?php bloginfo('template_url'); ?>/html/assets/images/DSC_9463.png" alt="">
-                    </div>
-                    <div class="slick-item">
-                        <img src="<?php bloginfo('template_url'); ?>/html/assets/images/DSC_9463.png" alt="">
-                    </div>
-                    <div class="slick-item">
-                        <img src="<?php bloginfo('template_url'); ?>/html/assets/images/DSC_9463.png" alt="">
-                    </div>
+                    <?php while (have_rows('gallery')): the_row();?>
+                        <div class="slick-item">
+                            <img src="<?= get_url_from_img_id(get_sub_field('img')) ;?>" class="" alt="">
+                        </div>
+                    <?php endwhile;?>
                 </div>
                 <p class="text">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sit pharetra, tortor aliquet fusce.
-                    Lorem duis nisi, tortor auctor orci, facilisis sed pulvinar.
+                    <?= get_post_meta($post->ID,'slider_text', true) ?>
                 </p>
             </div>
         </div>
@@ -83,11 +73,10 @@ get_header();
             <div class="title-box title-box--line flex-block">
                 <div class="line w-205 line-green"></div>
                 <div class="title-text title--sub">
-                    Услуги
+                    Услуги<?= get_post_meta($post->ID,'services_title', true) ?>
                 </div>
                 <div class="title-subtext text">
-                    Tempus, a gravida vitae aliquet at laoreet penatibus pharetra. Ac elementum ipsum posuere tortor.
-                    Fringilla dictumst quam cras vel nec diam...
+                    <?= get_post_meta($post->ID,'services_text', true) ?>
                 </div>
             </div>
 
@@ -120,11 +109,10 @@ get_header();
             <div class="title-box title-box--line flex-block">
                 <div class="line w-75"></div>
                 <div class="title-text title--sub">
-                    Преимущества
+                    <?= get_post_meta($post->ID,'advantages_title', true) ?>
                 </div>
                 <div class="title-subtext text">
-                    Tempus, a gravida vitae aliquet at laoreet penatibus pharetra. Ac elementum ipsum posuere tortor.
-                    Fringilla dictumst quam cras vel nec diam...
+                    <?= get_post_meta($post->ID,'advantages_title', true) ?>
                 </div>
             </div>
             <div class="content-image-box">
@@ -158,11 +146,10 @@ get_header();
             <div class="title-box title-box--line flex-block">
                 <div class="line w-255 line-green"></div>
                 <div class="title-text title--sub">
-                    Блог
+                    <?= get_post_meta($post->ID,'blog_title', true) ?>
                 </div>
                 <div class="title-subtext text">
-                    Tempus, a gravida vitae aliquet at laoreet penatibus pharetra. Ac elementum ipsum posuere tortor.
-                    Fringilla dictumst quam cras vel nec diam...
+                    <?= get_post_meta($post->ID,'blog_text', true) ?>
                 </div>
             </div>
 
