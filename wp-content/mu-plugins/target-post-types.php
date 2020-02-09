@@ -71,6 +71,19 @@ function target_post_types() {
         'menu_icon' => 'dashicons-admin-settings'
     ));
 
+    register_post_type('phones', array(
+        'supports' => array('title'),
+        'public' => true,
+        'labels' => array(
+            'name' => 'Phones',
+            'add_new_item' => 'Add New Phone',
+            'edit_item' => 'Edit Phone',
+            'all_items' => 'All Phones',
+            'singular_name' => 'Phone'
+        ),
+        'menu_icon' => 'dashicons-phone'
+    ));
+
 }
 
 add_action('init', 'target_post_types');
