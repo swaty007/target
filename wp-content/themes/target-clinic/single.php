@@ -18,6 +18,13 @@ the_post(); ?>
                           <div class="section--large-text">
                               <img class="" src="<?php the_post_thumbnail_url() ?>" alt="">
                               <?php the_content(); ?>
+
+                              <?php
+                              // If comments are open or we have at least one comment, load up the comment template.
+                              if (comments_open() || get_comments_number()) :
+                                  comments_template();
+                              endif; ?>
+
                               <h2 class="title--small">
                                   Читайте также
                               </h2>
@@ -47,6 +54,7 @@ the_post(); ?>
                           </a>
                       <?php $count++;endwhile; wp_reset_query(); ?>
                   </div>
+
               </div>
           </section>
       </main>

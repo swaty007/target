@@ -18,8 +18,8 @@ $( '.menu--treatment' ).click(function () {
 $( '.button-open-menu' ).click( function () {
     $( this ).toggleClass( 'active' );
 
-    $( 'body' ).toggleClass( 'overflow-hidden' );
-    $( 'html' ).toggleClass( 'overflow-hidden' );
+    // $( 'body' ).toggleClass( 'overflow-hidden' );
+    // $( 'html' ).toggleClass( 'overflow-hidden' );
     $( '.nav' ).addClass( 'overflow-y' )
 
     $( '.container-for-mob-menu' ).slideToggle( 500 );
@@ -54,15 +54,7 @@ $( function () {
         verticalSwiping: true,
         slidesToShow: 1,
         autoplay: true,
-    }).on('wheel', (function(e) {
-        e.preventDefault();
-
-        if (e.originalEvent.deltaY < 0) {
-            $(this).slick('slickNext');
-        } else {
-            $(this).slick('slickPrev');
-        }
-    }));
+    })
     $( '.slick-horizontal' ).slick({
         horizontal: true,
         slidesToShow: 8,
@@ -90,15 +82,7 @@ $( function () {
                 }
             }
         ]
-    }).on('wheel', (function(e) {
-        e.preventDefault();
-
-        if (e.originalEvent.deltaY < 0) {
-            $(this).slick('slickNext');
-        } else {
-            $(this).slick('slickPrev');
-        }
-    }))
+    })
 });
 
 //Move blocks on resize to mob

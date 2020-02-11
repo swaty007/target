@@ -480,7 +480,7 @@ img {
     }
 
     h4 {
-      margin-bottom: 126px;
+      margin-bottom: 200px;
     }
 
   }
@@ -2532,6 +2532,7 @@ footer {
           background: #02A863;
           right: 0;
           left: -7px;
+          z-index: 425;
         }
       }
     }
@@ -2543,7 +2544,7 @@ footer {
     .container-for-mob-menu {
       position: fixed;
       right: 0;
-      top: 63px;
+      top: 53px;
       bottom: 0;
       max-height: 100vh;
       background: #02A863;
