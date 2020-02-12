@@ -283,10 +283,21 @@ img {
     width: 100%;
   }
 
+  .logo {
+    &-scroll {
+      display: none;
+    }
+  }
 
   &.sticky {
     background: #00A863;
     box-shadow: 0 10px 10px rgba(33, 120, 84, 0.36);
+    .logo {
+      display: none;
+      &-scroll {
+        display: block;
+      }
+    }
   }
 
 
@@ -1192,7 +1203,8 @@ img {
 
   &__nav {
     display: flex;
-    justify-content: space-between;
+    //justify-content: space-between;
+    justify-content: start;
     flex-wrap: wrap;
     max-width: 660px;
     margin-bottom: 19px;
@@ -1207,6 +1219,9 @@ img {
       cursor: pointer;
       transition: 0.4s;
       margin-bottom: 10px;
+      &:not(:last-child) {
+        margin-right: 15px;
+      }
 
       &.active {
         background-color: #53B487;
@@ -1973,7 +1988,7 @@ img {
 // title box with line
 
 .title-box {
-  max-width: 920px;
+  //max-width: 920px;
   width: 100%;
   margin: 0 auto;
   flex-wrap: wrap;
@@ -2339,7 +2354,7 @@ footer {
   .modal-dialog{
     .modal-content{
       .modal-body {
-        padding: 30px 50px;
+        padding: 30px 30px;
         h5.modal-title{
           font-size: 28px;
           line-height: 60px;
@@ -2361,7 +2376,8 @@ footer {
         }
         .button--primary{
           margin-top: 35px;
-          max-width: 291px;
+          max-width: 100%;
+          min-width: unset;
         }
       }
     }

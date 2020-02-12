@@ -34,6 +34,7 @@
     <div class="wrapper flex-block">
         <a href="/">
             <img class="logo" src="<?= get_url_from_img_id(get_theme_mod( 'custom_logo' ));?>" alt="">
+            <img class="logo logo-scroll" src="<?= get_theme_mod( 'your_theme_scroll_logo' );?>" alt="">
         </a>
         <div id="profile-menu-mob" class="container-for-move">
             <div id="nav-menu-mob">

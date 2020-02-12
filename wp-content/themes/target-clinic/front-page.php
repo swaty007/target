@@ -73,7 +73,7 @@ the_post();
             <div class="title-box title-box--line flex-block">
                 <div class="line w-205 line-green"></div>
                 <div class="title-text title--sub">
-                    Услуги<?= get_post_meta($post->ID,'services_title', true) ?>
+                    <?= get_post_meta($post->ID,'services_title', true) ?>
                 </div>
                 <div class="title-subtext text">
                     <?= get_post_meta($post->ID,'services_text', true) ?>
