@@ -56,7 +56,7 @@ the_post();
                 <div class="slick-vertical">
                     <?php while (have_rows('gallery')): the_row();?>
                         <div class="slick-item">
-                            <img src="<?= get_url_from_img_id(get_sub_field('img')) ;?>" class="" alt="">
+                            <img data-no-lazy="1" src="<?= get_url_from_img_id(get_sub_field('img')) ;?>" class="" alt="">
                         </div>
                     <?php endwhile;?>
                 </div>

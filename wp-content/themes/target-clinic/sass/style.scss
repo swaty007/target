@@ -792,6 +792,7 @@ img {
 
   //Style block with large text
   &--large-text {
+
     h1, h2, h4, h5 {
       margin-bottom: 29px;
     }
@@ -822,6 +823,7 @@ img {
   }
   iframe {
     width: 100%;
+    margin-bottom: 20px;
   }
   .large-text-img {
     h3 {
@@ -1239,6 +1241,9 @@ img {
   &-content {
     max-width: 920px;
     display: none;
+    &--full {
+      max-width: 100%;
+    }
 
     &.show-gallery {
       display: block !important;
@@ -1400,6 +1405,19 @@ img {
       margin: 0 auto;
       width: 100%;
       height: auto;
+      path {
+        transition: 0.3s all;
+        cursor: pointer;
+      }
+    }
+    .map_europe {
+      max-width: 828px;
+      display: block;
+      margin: 0 auto;
+      height: auto;
+      max-height: 550px;
+      object-fit: contain;
+      width: auto;
       path {
         transition: 0.3s all;
         cursor: pointer;

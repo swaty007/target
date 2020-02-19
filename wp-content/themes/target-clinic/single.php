@@ -32,8 +32,8 @@ the_post(); ?>
                       </div>
                   </div>
                   <div class="content-image-box content-link-box">
-                      <?php $post_id = $post->ID; $count = 0;$loop = new WP_Query( array( 'post_type' => 'post', 'posts_per_page' => 4 ) ); ?>
-                      <?php while ( $loop->have_posts() ) : $loop->the_post();if($count === 3 || $post_id === $post->ID) {continue;} ?>
+                      <?php $loop = new WP_Query( array( 'post_type' => 'post', 'posts_per_page' => 3, 'post__not_in' => [$post->ID] ) ); ?>
+                      <?php while ( $loop->have_posts() ) : $loop->the_post(); ?>
                           <a href="<?php the_permalink(); ?>" class="link-box">
                               <div class="link-box__image">
                                   <img src="<?php the_post_thumbnail_url();?>" alt="">
@@ -52,7 +52,7 @@ the_post(); ?>
                                   </p>
                               </div>
                           </a>
-                      <?php $count++;endwhile; wp_reset_query(); ?>
+                      <?php endwhile; wp_reset_query(); ?>
                   </div>
 
               </div>
