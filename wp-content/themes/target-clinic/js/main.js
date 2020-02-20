@@ -33,14 +33,14 @@ $( '.open-mob' ).click( function () {
 //Slider navigation
 
 function openSideInfo(name) {
-    $('.gallery-content').removeClass('show-gallery');
+    $(name).siblings('.gallery-content').removeClass('show-gallery');
     $(name).addClass('show-gallery')
         .find('.slick-horizontal').slick('setPosition');//refresh position
 }
 
 $('.gallery__nav-item[data-click]').click(function () {
 
-    $( '.gallery__nav-item' ).removeClass('active');
+    $( this ).siblings().removeClass('active');
     $( this ).addClass( 'active' );
 
     openSideInfo($(this).data("click"));
