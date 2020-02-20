@@ -1418,6 +1418,10 @@ img {
       max-height: 550px;
       object-fit: contain;
       width: auto;
+      @media(max-width:880px) {
+        width: 100%;
+        max-height: unset;
+      }
       path {
         transition: 0.3s all;
         cursor: pointer;
