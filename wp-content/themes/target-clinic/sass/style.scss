@@ -275,6 +275,16 @@ img {
   &.nav--transparent {
     background-color: transparent;
     margin-bottom: -100px;
+    @media(min-width:881px) {
+      .logo {
+        &-color {
+          display: block;
+        }
+        &-default {
+          display: none;
+        }
+      }
+    }
   }
 
   .container-for-move {
@@ -287,15 +297,21 @@ img {
     &-scroll {
       display: none;
     }
+    &-default {
+
+    }
+    &-color {
+      display: none;
+    }
   }
 
   &.sticky {
     background: #00A863;
     box-shadow: 0 10px 10px rgba(33, 120, 84, 0.36);
     .logo {
-      display: none;
+      display: none!important;
       &-scroll {
-        display: block;
+        display: block!important;
       }
     }
   }

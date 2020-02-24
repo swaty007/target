@@ -33,8 +33,9 @@
 <nav id="nav" class="nav <?=is_front_page() || is_page_template('page-doctors.php' )|| is_page_template('page-about.php' )?'nav--transparent':'';?>">
     <div class="wrapper flex-block">
         <a href="/">
-            <img class="logo" src="<?= get_url_from_img_id(get_theme_mod( 'custom_logo' ));?>" alt="">
-            <img class="logo logo-scroll" src="<?= get_theme_mod( 'your_theme_scroll_logo' );?>" alt="">
+            <img class="logo logo-default" src="<?= get_url_from_img_id(get_theme_mod( 'custom_logo' ));?>" />
+            <img class="logo logo-scroll" src="<?= get_theme_mod( 'your_theme_scroll_logo' );?>" />
+            <img class="logo logo-color" src="<?= get_theme_mod( 'your_theme_color_logo' );?>" />
         </a>
         <div id="profile-menu-mob" class="container-for-move">
             <div id="nav-menu-mob">

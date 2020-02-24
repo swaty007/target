@@ -55,11 +55,18 @@ add_action( 'after_setup_theme', 'target_setup' );
 function your_theme_customizer_setting($wp_customize) {
 // add a setting
     $wp_customize->add_setting('your_theme_scroll_logo');
+    $wp_customize->add_setting('your_theme_color_logo');
 // Add a control to upload the hover logo
     $wp_customize->add_control(new WP_Customize_Image_Control($wp_customize, 'your_theme_scroll_logo', array(
         'label' => 'Upload Scroll Logo',
         'section' => 'title_tagline', //this is the section where the custom-logo from WordPress is
         'settings' => 'your_theme_scroll_logo',
+        'priority' => 8 // show it just below the custom-logo
+    )));
+    $wp_customize->add_control(new WP_Customize_Image_Control($wp_customize, 'your_theme_color_logo', array(
+        'label' => 'Upload Color Logo',
+        'section' => 'title_tagline', //this is the section where the custom-logo from WordPress is
+        'settings' => 'your_theme_color_logo',
         'priority' => 8 // show it just below the custom-logo
     )));
 }
