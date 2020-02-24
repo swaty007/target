@@ -21,7 +21,7 @@
                     <img src="<?= get_template_directory_uri(); ?>/img/fa-solid_map-marker-alt.svg" alt="location">
                     Пн-Пт с 08:00 до 17:00
                 </div>
-                <a href="" target="_blank" class="link">
+                <a href="/kontakty/" class="link">
                     Как добраться
                 </a>
                 <button type="button" class="button button--secondary button--white" data-toggle="modal" data-target="#modalContactForm">

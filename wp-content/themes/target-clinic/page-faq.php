@@ -2,6 +2,7 @@
   /* Template Name: FAQ */
 
   get_header();
+the_post();
 ?>
 
 

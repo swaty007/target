@@ -9,7 +9,7 @@
                 <div class="item__address">
                     <img src="<?= get_template_directory_uri(); ?>/img/uil-map-marker.svg" alt="">
                     Пн-Пт с 08:00 до 17:00
-                    <a href="" target="_blank" class="link">
+                    <a href="/kontakty/" class="link">
                         Как добраться
                     </a>
                 </div>
