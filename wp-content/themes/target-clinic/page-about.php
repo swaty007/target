@@ -81,7 +81,7 @@ the_post();
                 <?php if( have_rows('gallery') ):?>
                 <div class="gallery">
                     <h3 class="title--small">
-                        Галлерея
+                        <?= get_post_meta($post->ID,'gallery_title', true) ?>
                     </h3>
                     <div class="gallery__nav">
                         <?php $count=0; while (have_rows('gallery')): the_row();?>
