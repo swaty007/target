@@ -1314,15 +1314,15 @@ img {
   }
 }
 
-@media screen and (min-width: 600px) {
-  .gallery-content {
-    .slick-initialized {
-      .slick-item {
-        width: auto !important;
-      }
-    }
-  }
-}
+//@media screen and (min-width: 600px) {
+//  .gallery-content {
+//    .slick-initialized {
+//      .slick-item {
+//        width: auto !important;
+//      }
+//    }
+//  }
+//}
 
 //Simple gallery
 
@@ -3386,6 +3386,7 @@ footer {
   .slick-horizontal {
     .slick-track {
       width: 100%!important;
+      transform: none!important;
       .slick-item {
         width: 25%!important;
         height: 215px!important;
