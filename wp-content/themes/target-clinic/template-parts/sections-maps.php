@@ -297,7 +297,7 @@
             if (item.id === 'russia') {
                 $(id).attr('fill', item.stableColor);
             }
-            $(id).attr('title', europeRegions[item.id] + ' область, пациентов ' + item.patient);
+            $(id).attr('title', europeRegions[item.id] + ', пациентов ' + item.patient);
             $(id).hover(function (e) {
                 if (item.id === 'russia') {
                     $(id).attr('fill', item.hoverColor)
