@@ -83,6 +83,34 @@ $( function () {
             }
         ]
     })
+    $( '.slick-certificates' ).slick({
+        // horizontal: true,
+        slidesToShow: 3,
+        adaptiveHeight: true,
+        // arrows: false,
+        responsive: [
+            {
+                breakpoint: 900,
+                settings: {
+                    focusOnSelect: true,
+                    slidesToScroll: 1,
+                    arrows: true,
+                    slidesToShow: 2,
+                    infinite:false
+                }
+            },
+            {
+                breakpoint: 601,
+                settings: {
+                    focusOnSelect: true,
+                    slidesToScroll: 1,
+                    arrows: true,
+                    slidesToShow: 1,
+                    infinite:false
+                }
+            }
+        ]
+    })
 });
 
 //Move blocks on resize to mob

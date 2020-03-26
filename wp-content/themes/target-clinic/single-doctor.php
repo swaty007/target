@@ -39,13 +39,22 @@ the_post();
                         Сертификаты
                     </h3>
                     <div class="certificates">
-                        <div class="flex-block">
-                            <?php foreach ( lot_album_url_array(explode(',', get_post_meta( $post->ID, 'certificates', true ))) as $img): ;?>
-                            <div class="flex-item">
-                                <img src="<?= $img;?>" alt="">
+<!--                        <div class="flex-block">-->
+<!--                            --><?php //foreach ( lot_album_url_array(explode(',', get_post_meta( $post->ID, 'certificates', true ))) as $img): ;?>
+<!--                            <div class="flex-item">-->
+<!--                                <img src="--><?//= $img;?><!--" alt="">-->
+<!--                            </div>-->
+<!--                            --><?php //endforeach; ?>
+<!--                        </div>-->
+                            <div class="slick-certificates">
+                                <?php foreach ( lot_album_url_array(explode(',', get_post_meta( $post->ID, 'certificates', true ))) as $img): ;?>
+                                    <div class="slick-item">
+                                        <a href="<?= $img;?>" data-fancybox="gallery<?=$count;?>" rel="gallery">
+                                            <img src="<?= $img;?>" />
+                                        </a>
+                                    </div>
+                                <?php endforeach; ?>
                             </div>
-                            <?php endforeach; ?>
-                        </div>
                     </div>
 
                     <div class="change-order-mob">

@@ -76,8 +76,10 @@ add_action('customize_register', 'your_theme_customizer_setting');
 function target_files() {
 //  wp_enqueue_script('main-target-js', get_template_directory_uri() .'/js/scripts-bundled.js','','',true);
   wp_enqueue_script('slick-js', get_template_directory_uri() .'/js/slick.min.js','','',true);
+  wp_enqueue_script('fancybox-js', 'https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js',['jquery'],'',true);
   wp_enqueue_script('main-target-js', get_template_directory_uri() .'/js/main.js','','',true);
-  wp_enqueue_style('carua_main_styles', get_stylesheet_uri());
+  wp_enqueue_style('target_main_styles', get_stylesheet_uri());
+  wp_enqueue_style('fancybox-css', 'https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css');
   wp_localize_script('main-target-js', 'targetData', array(
     'root_url' => get_site_url(),
     'nonce' => wp_create_nonce( 'protection' ),

@@ -94,7 +94,9 @@ the_post();
                                 <div class="slick-horizontal">
                                     <?php foreach (get_sub_field('images') as $img):?>
                                         <div class="slick-item">
-                                            <img src="<?= get_url_from_img_id($img['img']) ;?>" class="gallery-content__item" alt="">
+                                            <a href="<?= get_url_from_img_id($img['img']) ;?>" data-fancybox="gallery<?=$count;?>" rel="gallery">
+                                                <img src="<?= get_url_from_img_id($img['img']) ;?>" class="gallery-content__item" alt="">
+                                            </a>
                                         </div>
                                     <?php endforeach;?>
                                 </div>
