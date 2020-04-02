@@ -54,12 +54,24 @@ $( function () {
         verticalSwiping: true,
         slidesToShow: 1,
         autoplay: true,
+        autoplaySpeed: 5000,
+        responsive: [
+            {
+                breakpoint: 991,
+                settings: {
+                    vertical: false,
+                    horizontal: true,
+                    verticalSwiping: false,
+                }
+            },
+        ]
     })
     $( '.slick-horizontal' ).slick({
         horizontal: true,
         slidesToShow: 8,
         adaptiveHeight: true,
         arrows: false,
+        autoplaySpeed: 3500,
         responsive: [
             {
                 breakpoint: 900,
