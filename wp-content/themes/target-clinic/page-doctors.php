@@ -16,9 +16,9 @@ the_post();
                     <h1 class="text--48">
                         <?php the_title(); ?>
                     </h1>
-                    <h4 class="text--18">
+                    <div class="text--18">
                         <?php the_excerpt();?>
-                    </h4>
+                    </div>
                 </div>
             </div>
         </section>
