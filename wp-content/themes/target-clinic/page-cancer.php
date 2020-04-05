@@ -59,6 +59,7 @@ the_post();
                         </div>
                         <?php get_template_part('template-parts/sections', 'contact-form-callback'); ?>
                     </section>
+                    <?php get_template_part('template-parts/sections', 'dropdown-seo'); ?>
                 </div>
             </div>
         </section>

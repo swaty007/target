@@ -32,11 +32,13 @@ the_post(); ?>
                             <?php endforeach; ?>
                         </div>
                         <?php get_template_part('template-parts/sections', 'contact-form-callback'); ?>
+                        <?php get_template_part('template-parts/sections', 'dropdown-seo'); ?>
                     </div>
                 </div>
             </div>
 
         </section>
+
     </main>
 <?php
 get_footer();

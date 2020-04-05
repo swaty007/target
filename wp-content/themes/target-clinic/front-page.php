@@ -12,7 +12,7 @@ the_post();
         <div class="wrapper">
             <div class="section__content">
                 <h3 class="text--18">
-                    ОНКОЛОГИЧЕСКАЯ КЛИНИКА
+                    <?= get_post_meta($post->ID,'clinic_title', true) ?>
                 </h3>
                 <h1 class="text--48">
                     <?php the_title();?>
@@ -112,7 +112,7 @@ the_post();
                     <?= get_post_meta($post->ID,'advantages_title', true) ?>
                 </div>
                 <div class="title-subtext text">
-                    <?= get_post_meta($post->ID,'advantages_title', true) ?>
+                    <?= get_post_meta($post->ID,'advantages_text', true) ?>
                 </div>
             </div>
             <div class="content-image-box">
@@ -184,6 +184,7 @@ the_post();
             <a href="<?= get_permalink( get_option( 'page_for_posts' ) ); ?>" class="button button--secondary button--green">
                 Смотреть все статьи
             </a>
+            <?php get_template_part('template-parts/sections', 'dropdown-seo'); ?>
         </div>
     </section>
 

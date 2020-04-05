@@ -2266,6 +2266,14 @@ img {
 //  toggle content block style
 
 .content-toggle {
+  p,.text {
+    font-size: 16px;
+    line-height: 28px;
+    margin: 0;
+  }
+  &--top {
+    margin-top: 50px;
+  }
   &__item {
     position: relative;
     background: #FFFFFF;
