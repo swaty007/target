@@ -341,7 +341,7 @@ function my_jquery_enqueue() {
     wp_enqueue_script('jquery');
 }
 //add_filter('script_loader_tag', 'add_async_attribute', 49, 2);
-function add_async_attribute($tag, $handle, $src) {
+function add_async_attribute($tag, $handle) {
     if(is_admin()) {return $tag;}
     // добавьте дескрипторы (названия) скриптов в массив ниже
     $scripts_to_async = array('jquery-core');
@@ -354,7 +354,7 @@ function add_async_attribute($tag, $handle, $src) {
     }
     return $tag;
 }
-//add_filter('style_loader_tag', 'async_load_css', 10, 4);
+add_filter('style_loader_tag', 'async_load_css', 10, 4);
 function async_load_css ($html, $handle, $href, $media) {
     if( is_admin() ){return $html;} //если в админке
 
