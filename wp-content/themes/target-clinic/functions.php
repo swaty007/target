@@ -340,8 +340,8 @@ function my_jquery_enqueue() {
     wp_register_script('jquery', "//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js", false, null);
     wp_enqueue_script('jquery');
 }
-//add_filter('script_loader_tag', 'add_async_attribute', 49, 2);
-function add_async_attribute($tag, $handle) {
+//add_filter('script_loader_tag', 'add_async_attribute', 49, 3);
+function add_async_attribute($tag, $handle, $src) {
     if(is_admin()) {return $tag;}
     // добавьте дескрипторы (названия) скриптов в массив ниже
     $scripts_to_async = array('jquery-core');
