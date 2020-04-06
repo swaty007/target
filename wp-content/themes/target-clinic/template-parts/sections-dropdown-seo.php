@@ -1,6 +1,7 @@
+<?php the_post();?>
 <?php if (have_rows('dropdown_seo')):?>
     <div class="content-toggle content-toggle--top">
-        <?php while (have_rows('dropdown_seo')): the_row();$count = 0;?>
+        <?php $count = 0; while (have_rows('dropdown_seo')): the_row();?>
             <div class="content-toggle__item">
                 <div class="toggle-item__header <?= ($count === 0) ? 'active' : '';?>">
                     <p class="text">
