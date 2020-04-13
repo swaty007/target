@@ -32,7 +32,7 @@ the_post();
                         <div class="cancel-types">
                             <?php $loop = new WP_Query( array( 'post_type' => 'cancer', 'posts_per_page' => -1 ) ); ?>
                             <?php while ( $loop->have_posts() ) : $loop->the_post(); ?>
-                                <a class="cancel-types__item" href="<?php the_permalink(); ?>" target="_blank">
+                                <a class="cancel-types__item" href="<?php the_permalink(); ?>">
                                     <img src="<?= get_url_from_img_id(get_post_meta( $post->ID, 'icon', true )) ;?>" />
                                     <p class="cancel-type__name"> <?php the_title(); ?></p>
                                 </a>
@@ -57,9 +57,10 @@ the_post();
                             <?php endwhile;
                             wp_reset_query(); ?>
                         </div>
+                        <?php get_template_part('template-parts/sections', 'dropdown-seo'); ?>
                         <?php get_template_part('template-parts/sections', 'contact-form-callback'); ?>
                     </section>
-                    <?php get_template_part('template-parts/sections', 'dropdown-seo'); ?>
+
                 </div>
             </div>
         </section>

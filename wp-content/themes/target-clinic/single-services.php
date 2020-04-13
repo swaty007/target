@@ -31,8 +31,8 @@ the_post(); ?>
                                 <img class="simple-gallery__item <?= $count%3 === 0 ? 'big-image' : '';?>" src="<?= $img;?>" alt="">
                             <?php endforeach; ?>
                         </div>
-                        <?php get_template_part('template-parts/sections', 'contact-form-callback'); ?>
                         <?php get_template_part('template-parts/sections', 'dropdown-seo'); ?>
+                        <?php get_template_part('template-parts/sections', 'contact-form-callback'); ?>
                     </div>
                 </div>
             </div>

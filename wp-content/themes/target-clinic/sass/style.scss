@@ -1910,7 +1910,7 @@ img {
   position: relative;
 
   p {
-    max-width: 540px;
+    max-width: 100%;
     margin: 20px auto 0;
   }
 
@@ -3416,6 +3416,22 @@ footer {
   img {
     margin: 0 5px;
     display: block;
+  }
+  .slick-next, .slick-prev {
+    z-index: 420;
+  }
+  .slick-next:before, .slick-prev:before {
+    color: #13ab67;
+    font-size: 60px;
+  }
+  .slick-dots li:before{
+    content: none!important;
+  }
+  .slick-dots li button {
+
+  }
+  .slick-dots li button:before {
+    font-size: 55px;
   }
 }
 @media (min-width:901px) {

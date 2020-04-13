@@ -99,16 +99,18 @@ $( function () {
         // horizontal: true,
         slidesToShow: 3,
         adaptiveHeight: true,
-        // arrows: false,
+        arrows: true,
+        // dots: true,
         responsive: [
             {
                 breakpoint: 900,
                 settings: {
                     focusOnSelect: true,
                     slidesToScroll: 1,
-                    arrows: true,
+                    arrows: false,
                     slidesToShow: 2,
-                    infinite:false
+                    infinite:false,
+                    dots: true
                 }
             },
             {
@@ -116,9 +118,10 @@ $( function () {
                 settings: {
                     focusOnSelect: true,
                     slidesToScroll: 1,
-                    arrows: true,
+                    arrows: false,
                     slidesToShow: 1,
-                    infinite:false
+                    infinite:false,
+                    dots: true
                 }
             }
         ]
