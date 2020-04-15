@@ -27,11 +27,10 @@ the_post();
             <div class="title-box title-box--line flex-block">
                 <div class="line w-205 line-green"></div>
                 <div class="title-text title--sub">
-                    Услуги
+                    <?= get_post_meta($post->ID,'service_title', true) ?>
                 </div>
                 <div class="title-subtext text">
-                    Tempus, a gravida vitae aliquet at laoreet penatibus pharetra. Ac elementum ipsum posuere tortor.
-                    Fringilla dictumst quam cras vel nec diam...
+                    <?= get_post_meta($post->ID,'service_text', true) ?>
                 </div>
             </div>
 
@@ -45,9 +44,9 @@ the_post();
                                 <?php the_title(); ?>
                             </p>
                         </div>
-                        <p class="info-text">
+                        <div class="info-text">
                             <?php the_excerpt(); ?>
-                        </p>
+                        </div>
                         <a href="<?php the_permalink(); ?>" target="_blank" class="link green">
                             Узнать детальнее
                         </a>
