@@ -2225,6 +2225,8 @@ img {
     .info-text {
       color: #6C6C6C;
       line-height: 30px;
+      height: 146px;
+      overflow: hidden;
     }
 
   }
@@ -2324,7 +2326,7 @@ img {
     }
 
     .toggle-item__body {
-      padding: 26px 32px 0.1px;
+      padding: 26px 32px 10px;
       display: none;
     }
   }

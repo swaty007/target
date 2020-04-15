@@ -9,9 +9,24 @@
         </button>
         <p class="telephone">
             <img src="<?php bloginfo('template_url'); ?>/img/phone.svg"/>
-            <a href="tel:+38444444444" class="link title--small">
-                +38(044)444 44 44
+            <?php $loop = new WP_Query( array(
+                    'post_type' => 'phones',
+                    'posts_per_page' => 1,
+                    'meta_query' => [
+                        'AND',
+                        [
+                            'key' => 'contact_form',
+                            'value'	  	=>  true,
+                            'compare' 	=> '=',
+                        ]
+                    ],
+                )
+            ); ?>
+            <?php while ( $loop->have_posts() ) : $loop->the_post(); ?>
+            <a href="tel:+<?= preg_replace( '/[^0-9]/', '', get_the_title() )?>" class="link title--small">
+                <?php the_title(); ?>
             </a>
+            <?php endwhile; wp_reset_query(); ?>
         </p>
     </div>
 </div>

@@ -5,7 +5,7 @@ the_post();
 
 <?php //get_template_part('template-parts/sections', 'main-screen'); ?>
 
-
+<?php get_template_part('template-parts/sections', 'color'); ?>
 <main class="content">
 
     <section class="section content--bg-img title-block" style="background-image:url(<?php the_post_thumbnail_url()?>)">
@@ -90,9 +90,9 @@ the_post();
                                 <?php the_title(); ?>
                             </p>
                         </div>
-                        <p class="info-text">
+                        <div class="info-text">
                             <?php the_excerpt(); ?>
-                        </p>
+                        </div>
                         <a href="<?php the_permalink(); ?>" target="_blank" class="link green">
                             Узнать детальнее
                         </a>

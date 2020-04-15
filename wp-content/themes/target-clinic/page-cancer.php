@@ -5,7 +5,7 @@ get_header();
 the_post();
 ?>
 
-
+<?php get_template_part('template-parts/sections', 'color'); ?>
     <main class="content">
         <section class="section title-block default-title default-title-small bg-img-treatment"
                  style="background-image: url(<?php the_post_thumbnail_url() ?>);">

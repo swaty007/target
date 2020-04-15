@@ -4,7 +4,7 @@
 get_header();
 the_post();
 ?>
-
+<?php get_template_part('template-parts/sections', 'color'); ?>
     <main class="content">
         <section class="section content--bg-img title-block title--about"
                  style="background: linear-gradient(180deg, rgba(16, 37, 85, 0.7) 20%, rgba(0, 35, 118, 0.6) 99.31%), url(<?php the_post_thumbnail_url() ?>);">
