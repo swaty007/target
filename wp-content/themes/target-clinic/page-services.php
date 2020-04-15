@@ -47,7 +47,7 @@ the_post();
                         <div class="info-text">
                             <?php the_excerpt(); ?>
                         </div>
-                        <a href="<?php the_permalink(); ?>" target="_blank" class="link green">
+                        <a href="<?php the_permalink(); ?>" class="link green">
                             Узнать детальнее
                         </a>
                     </div>
