@@ -461,6 +461,7 @@ function footer_enqueue_scripts() {
 
 
 add_action( 'wp_ajax_contact_form', 'do_contact_form' );
+add_action( 'wp_ajax_nopriv_contact_form', 'do_contact_form' );
 function do_contact_form() {
     if ( isset($_POST['name']) && isset($_POST['phone']) ) {
         $name = $_POST['name'];
@@ -491,6 +492,7 @@ function do_contact_form() {
 
 }
 add_action( 'wp_ajax_question_form', 'do_question_form' );
+add_action( 'wp_ajax_nopriv_question_form', 'do_question_form' );
 function do_question_form() {
     if ( isset($_POST['name']) && isset($_POST['email']) ) {
         $name = $_POST['name'];
