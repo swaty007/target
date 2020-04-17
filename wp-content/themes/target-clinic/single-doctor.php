@@ -21,7 +21,7 @@ the_post();
                     <div class="doc-about text">
                         <?php the_excerpt()?>
                     </div>
-                    <button type="button" class="button button--secondary button--green text--14">
+                    <button type="button" class="button button--secondary button--green text--14" data-toggle="modal" data-target="#modalContactForm">
                         Записаться на прием
                     </button>
                 </div>
