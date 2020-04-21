@@ -354,7 +354,7 @@ function add_async_attribute($tag, $handle, $src) {
     }
     return $tag;
 }
-add_filter('style_loader_tag', 'async_load_css', 10, 4);
+//add_filter('style_loader_tag', 'async_load_css', 10, 4);
 function async_load_css ($html, $handle, $href, $media) {
     if( is_admin() ){return $html;} //если в админке
 
