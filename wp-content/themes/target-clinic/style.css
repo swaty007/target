@@ -3547,6 +3547,7 @@ header {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+   flex-wrap: wrap;
 }
 .comment-doctor .doctor-item {
   max-width: 270px;

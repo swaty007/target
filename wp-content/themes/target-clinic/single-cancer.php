@@ -26,6 +26,7 @@ the_post();
             <div class="wrapper-920-left">
                 <section class="section--large-text">
                     <?php the_content(); ?>
+                    <?php get_template_part('template-parts/sections', 'contact-form-callback'); ?>
                     <div class="change-order-mob">
                         <?php // get_template_part('template-parts/sections', 'contact-form-callback'); ?>
                         <?php
@@ -34,7 +35,6 @@ the_post();
                             comments_template();
                         endif; ?>
                     </div>
-                    <?php get_template_part('template-parts/sections', 'contact-form-callback'); ?>
                 </section>
             </div>
         </div>
