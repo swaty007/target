@@ -37,10 +37,10 @@ the_post();
                             </div>
                         </div>
                         <div class="phones flex-block">
-                        <?php
-                        while (have_rows('phone')): the_row();?>
-                            <a href="tel:+<?= preg_replace( '/[^0-9]/', '', the_sub_field('phone') )?>"><?=the_sub_field('phone')?></a>
-                        <?php endwhile;?>
+                        <?php $count = 0; 
+                        while (have_rows('phone')): the_row(); ?>
+                            <a class="binct-phone-number-<?php echo $count+1 ?>" href="tel:+<?php echo preg_replace( '/[^0-9]/', '', get_sub_field('phone') ) ?>"><?php echo the_sub_field('phone') ?></a>
+                        <?php $count++;  endwhile;?>
                         </div>
                     </div>
                     <section class="section--large-text">

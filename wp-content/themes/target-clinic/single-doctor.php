@@ -24,6 +24,11 @@ the_post();
                     <button type="button" class="button button--secondary button--green text--14" data-toggle="modal" data-target="#modalContactForm">
                         Записаться на прием
                     </button>
+                    <button onclick="window.location.href='#comments'" type="button" class="button button--secondary button--green__all btn-single-do text--14">
+                        Оставить отзыв
+                    </button>
+                    <p><?php $post_obj = get_page_by_title( 'Привет, мир!', OBJECT, 'post' );
+print_r( $post_obj ); ?></p>
                 </div>
                 <img src="<?php the_post_thumbnail_url()?>" class="doc-img" alt="">
             </div>
@@ -58,7 +63,7 @@ the_post();
                     </div>
 
                     <div class="change-order-mob">
-                        <?php get_template_part('template-parts/sections', 'contact-form-callback'); ?>
+                        <?php // get_template_part('template-parts/sections', 'contact-form-callback'); ?>
                         <?php
                         // If comments are open or we have at least one comment, load up the comment template.
                         if (comments_open() || get_comments_number()) :

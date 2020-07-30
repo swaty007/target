@@ -78,7 +78,8 @@ function target_files() {
   wp_enqueue_script('slick-js', get_template_directory_uri() .'/js/slick.min.js','','',true);
   wp_enqueue_script('fancybox-js', 'https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js',['jquery'],'',true);
   wp_enqueue_script('main-target-js', get_template_directory_uri() .'/js/main.js','','',true);
-  wp_enqueue_style('target_main_styles', get_stylesheet_uri());
+  wp_enqueue_style('target_main_styles', get_stylesheet_uri(), [], 2);
+  wp_enqueue_style( 'target-style', get_template_directory_uri() . '/css/master.css' );
   wp_enqueue_style('fancybox-css', 'https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css');
   wp_localize_script('main-target-js', 'targetData', array(
     'root_url' => get_site_url(),
@@ -96,7 +97,15 @@ function cc_mime_types($mime_types) {
 }
 add_filter('upload_mimes', 'cc_mime_types');
 
-
+acf_register_form(array(
+  'id'		=> 'reviews_form',
+  'post_id'	=> 'new_post',
+  'new_post'	=> array(
+    'post_type'		=> 'название поста к которому форма принадлежит',
+    'post_status'	=> 'pending' // статус " на модерации", другие статусы чекните в гугле
+  ),
+  'post_title'=> true, // по стандарту поле заглавие должно быть любим но должно, acf поля подключатся сами.
+));
 
 
 function remove_admin_login_header() {
@@ -128,7 +137,7 @@ function kama_reorder_comment_fields( $fields ){
     // die(print_r( $fields )); // посмотрим какие поля есть
 
     $new_fields = array(); // сюда соберем поля в новом порядке
-    $myorder = array('author','email','url','comment'); // нужный порядок
+    $myorder = array('author','email','url','comment', 'rate'); // нужный порядок
 
     foreach( $myorder as $key ){
         $new_fields[ $key ] = $fields[ $key ];
@@ -427,12 +436,24 @@ function remove_redundant_shortlink() {
 }
 
 
-//add_action( 'wp_print_styles', 'my_font_awesome_cdn', 1);
-//function my_font_awesome_cdn() {
-//    wp_deregister_style( 'fontawesome' );
-//    wp_register_style( 'fontawesome', '//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css', false, '4.7.0', 'all');
-//    wp_enqueue_style( 'fontawesome' );
-//}
+add_action( 'wp_print_styles', 'my_font_awesome_cdn', 1);
+function my_font_awesome_cdn() {
+   wp_deregister_style( 'fontawesome' );
+   wp_register_style( 'fontawesome', '//cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css', false, '5.14.0', 'all');
+   wp_enqueue_style( 'fontawesome' );
+}
+
+if( function_exists('acf_add_options_page') ) {
+
+	acf_add_options_page(array(
+		'page_title' 	=> 'Основные настройки',
+		'menu_title'	=> 'Настройки темы',
+		'menu_slug' 	=> 'theme-general-settings',
+		'capability'	=> 'edit_posts',
+		'redirect'		=> false
+	));
+
+}
 
 add_action( 'after_setup_theme', 'footer_enqueue_scripts' );
 function footer_enqueue_scripts() {
@@ -457,7 +478,112 @@ function footer_enqueue_scripts() {
 }
 //Opti End
 
+add_action( 'wp_ajax_contact_form_order', 'do_contact_form_order' );
+add_action( 'wp_ajax_nopriv_contact_form_order', 'do_contact_form_order' );
+function do_contact_form_order() {
+    if ( isset($_POST['name']) && isset($_POST['phone']) ) {
+        $name = $_POST['name'];
+        $phone = $_POST['phone'];
+        $date = $_POST['date'];
+        $u_message = $_POST['message'];
 
+        $send_to = "eugene.subota1984@gmail.com,swaty0007@gmail.com,office@car.ua,info@car.ua";
+        $subject = "Заказ консультации";
+        $message = "Пользователь сайта запросил консультацию менеджера.<br> Пользователь: " . $name . "<br>Номер телефона: " . $phone. "<br>Дата: " . $date. "<br>Сообщение: " . $u_message;
+        if (isset($_POST['location'])) {
+            $message.=  "<br>Ссылка на страницу: " . $_POST['location'];
+        }
+        $headers = array('From: Car.ua <info@car.ua>', 'Content-Type: text/html; charset=UTF-8');
+
+
+        $telegram = new Telegram('1072821683:AAFLRe-3Cd3c8EKLBAsYB8-oei3dCdwBT-0');
+        $telegram->sendMessage([
+            'chat_id' => -379470267,
+            'text' => $message,
+        ]);
+        wp_send_json(true);
+
+//        $success = wp_mail($send_to,$subject,$message,$headers);
+//        if ($success){
+//            wp_send_json(true);
+//        } else {
+//            wp_send_json(false);
+//        }
+    }
+
+}
+
+
+add_action( 'wp_ajax_contact_form_himio', 'do_contact_form_himio' );
+add_action( 'wp_ajax_nopriv_contact_form_himio', 'do_contact_form_himio' );
+function do_contact_form_himio() {
+    if ( isset($_POST['name']) && isset($_POST['phone']) ) {
+        $name = $_POST['name'];
+        $phone = $_POST['phone'];
+        $email = $_POST['email'];
+        $u_message = $_POST['message'];
+
+        $send_to = "eugene.subota1984@gmail.com,swaty0007@gmail.com,office@car.ua,info@car.ua";
+        $subject = "Заказ консультации";
+        $message = "Пользователь сайта запросил консультацию химиотерапевта.<br> Пользователь: " . $name . "<br>Номер телефона: " . $phone. "<br>Почта: " . $email. "<br>Сообщение: " . $u_message;
+        if (isset($_POST['location'])) {
+            $message.=  "<br>Ссылка на страницу: " . $_POST['location'];
+        }
+        $headers = array('From: Car.ua <info@car.ua>', 'Content-Type: text/html; charset=UTF-8');
+
+
+        $telegram = new Telegram('1072821683:AAFLRe-3Cd3c8EKLBAsYB8-oei3dCdwBT-0');
+        $telegram->sendMessage([
+            'chat_id' => -379470267,
+            'text' => $message,
+        ]);
+        wp_send_json(true);
+
+//        $success = wp_mail($send_to,$subject,$message,$headers);
+//        if ($success){
+//            wp_send_json(true);
+//        } else {
+//            wp_send_json(false);
+//        }
+    }
+
+}
+
+
+add_action( 'wp_ajax_contact_form_callback', 'do_contact_form_callback' );
+add_action( 'wp_ajax_nopriv_contact_form_callback', 'do_contact_form_callback' );
+function do_contact_form_callback() {
+    if (isset($_POST['phone']) ) {
+        $height = $_POST['height'];
+        $phone = $_POST['phone'];
+        $weight = $_POST['weight'];
+        $pils = $_POST['pils'];
+
+        $send_to = "eugene.subota1984@gmail.com,swaty0007@gmail.com,office@car.ua,info@car.ua";
+        $subject = "Заказ консультации";
+        $message = "Пользователь сайта запросил консультацию.<br> Рост: " . $height . "<br>Вес: " . $weight. "<br>Номер телефона: " . $phone. "<br>Схема лечения: " . $pils;
+        if (isset($_POST['location'])) {
+            $message.=  "<br>Ссылка на страницу: " . $_POST['location'];
+        }
+        $headers = array('From: Car.ua <info@car.ua>', 'Content-Type: text/html; charset=UTF-8');
+
+
+        $telegram = new Telegram('1072821683:AAFLRe-3Cd3c8EKLBAsYB8-oei3dCdwBT-0');
+        $telegram->sendMessage([
+            'chat_id' => -379470267,
+            'text' => $message,
+        ]);
+        wp_send_json(true);
+
+//        $success = wp_mail($send_to,$subject,$message,$headers);
+//        if ($success){
+//            wp_send_json(true);
+//        } else {
+//            wp_send_json(false);
+//        }
+    }
+
+}
 
 
 add_action( 'wp_ajax_contact_form', 'do_contact_form' );
@@ -660,3 +786,22 @@ function send_pre_order(WP_REST_Request $request){
         wp_send_json(false);
     }
 }
+
+
+function vic_admin_menu()
+{
+/*
+	if($_COOKIE['lang_clinic'] == 'ua'){
+		add_menu_page('Переключить на RU', 'Переключить на RU', 'manage_options', '/lang.php?set_lang=ru');
+	}
+	else{
+		add_menu_page('Переключить на UA', 'Переключить на UA', 'manage_options', '/lang.php?set_lang=ua');
+	}
+*/
+
+	add_menu_page('Переключить на UA', 'Переключить на UA', 'manage_options', 'lang.php');
+
+
+}
+
+add_action( 'admin_menu', 'vic_admin_menu' );

@@ -1,4 +1,3 @@
-<?php the_post();?>
 <?php if (have_rows('dropdown_seo')):?>
     <div class="content-toggle content-toggle--top">
         <?php $count = 0; while (have_rows('dropdown_seo')): the_row();?>

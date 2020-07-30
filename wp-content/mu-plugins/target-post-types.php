@@ -31,7 +31,7 @@ function target_post_types() {
     ));
 
     register_post_type('services', array(
-      'supports' => array('title', 'editor', 'thumbnail', 'excerpt'),
+      'supports' => array('title', 'editor', 'thumbnail', 'excerpt', 'comments'),
       'public' => true,
       'labels' => array(
         'name' => 'Services',
@@ -57,7 +57,7 @@ function target_post_types() {
   ));
 
     register_post_type('cancer', array(
-        'supports' => array('title', 'editor', 'thumbnail', 'excerpt'),
+        'supports' => array('title', 'editor', 'thumbnail', 'excerpt', 'comments'),
         'public' => true,
 //        'rewrite' => array( 'slug' => 'cancer'),
 //        'has_archive' => false,

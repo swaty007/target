@@ -204,28 +204,49 @@ $('.page-numbers').on('click', function () {
 });
 
 $(document).on('click', '#modal_contact_form', function () {
-    let name = $('#modal_name'),
-        phone = $('#modal_phone');
 
-    $.ajax({
-        type: "POST",
-        url: targetData.ajaxurl,
-        data: {
-            action: "contact_form",
-            name: name.val(),
-            phone: phone.val(),
-            location: location.href
-        },
-        success: function(status) {
-            console.log(status);
-            if (status) {
-            } else {
-            }
-            $(".thank-popup").addClass("thank-popup--open");
-            name.val('');
-            phone.val('')
-        },
-    });
+    if($('#modal_name').attr('data-required') == 'required' && $('#modal_name').val() == ''){
+	    $('#modal_name').addClass('required-input');
+    }
+    else if($('#modal_phone').attr('data-required') == 'required' && $('#modal_phone').val() == ''){
+	    $('#modal_phone').addClass('required-input');
+    }
+    else if($('#modal_phone').val().length < 19){
+	    $('#modal_phone').addClass('required-input');
+    }
+    else{
+
+	    let name = $('#modal_name'),
+	        phone = $('#modal_phone');
+
+        name.removeClass('required-input');
+        phone.removeClass('required-input');
+
+	    $.ajax({
+	        type: "POST",
+	        url: targetData.ajaxurl,
+	        data: {
+	            action: "contact_form",
+	            name: name.val(),
+	            phone: phone.val(),
+	            location: location.href
+	        },
+	        success: function(status) {
+	            console.log(status);
+	            if (status) {
+	            } else {
+	            }
+
+	            $('#modal_contact_form').hide();
+	            $('#modal_contact_form_thank').show();
+
+	            $(".thank-popup").addClass("thank-popup--open");
+	            name.val('');
+	            phone.val('');
+	        },
+	    });
+
+    }
 })
 
 $(document).on('click', '#question_form', function () {
@@ -254,4 +275,178 @@ $(document).on('click', '#question_form', function () {
             comment.val('')
         },
     });
+})
+
+
+$(document).on('click', '#modalOrderForm .send-button', function () {
+
+    i = 0;
+	$( "#modalOrderForm input[data-required=required], #modalOrderForm textarea[data-required=required]" ).each(function( inp ) {
+		if($(this).val() == "" || ($(this).hasClass('modal_phone') && $(this).val().length < 19)){
+			$(this).addClass('required-input');
+			i++;
+		}
+	});
+
+
+    if(i == 0){
+
+	    let name = $('#modalOrderForm .modal_name'),
+	        phone = $('#modalOrderForm .modal_phone'),
+	        date = $('#modalOrderForm .modal_date'),
+	        message = $('#modalOrderForm .modal_message');
+
+
+        $( "#modalOrderForm input[data-required=required], #modalOrderForm textarea[data-required=required]" ).each(function( inp ) {
+			$(this).removeClass('required-input');
+		});
+
+
+	    $.ajax({
+	        type: "POST",
+	        url: targetData.ajaxurl,
+	        data: {
+	            action: "contact_form_order",
+	            name: name.val(),
+	            phone: phone.val(),
+	            date: date.val(),
+	            message: message.val(),
+	            location: location.href
+	        },
+	        success: function(status) {
+	            console.log(status);
+	            if (status) {
+	            } else {
+	            }
+
+	            $('#modalOrderForm .modal_contact_form').hide();
+	            $('#modalOrderForm .modal_contact_form_thank').show();
+
+	            $(".thank-popup").addClass("thank-popup--open");
+	            name.val('');
+	            phone.val('');
+	            date.val('');
+	            message.val('');
+	        },
+	    });
+    }
+
+
+})
+
+
+
+$(document).on('click', '#modalHimioForm .send-button', function () {
+
+    i = 0;
+	$( "#modalHimioForm input[data-required=required], #modalHimioForm textarea[data-required=required]" ).each(function( inp ) {
+		if($(this).val() == "" || ($(this).hasClass('modal_phone') && $(this).val().length < 19)){
+			$(this).addClass('required-input');
+			i++;
+		}
+	});
+
+
+    if(i == 0){
+
+	    let name = $('#modalHimioForm .modal_name'),
+	        phone = $('#modalHimioForm .modal_phone'),
+	        email = $('#modalHimioForm .modal_email'),
+	        message = $('#modalHimioForm .modal_message');
+
+
+        $( "#modalHimioForm input[data-required=required], #modalHimioForm textarea[data-required=required]" ).each(function( inp ) {
+			$(this).removeClass('required-input');
+		});
+
+
+	    $.ajax({
+	        type: "POST",
+	        url: targetData.ajaxurl,
+	        data: {
+	            action: "contact_form_himio",
+	            name: name.val(),
+	            phone: phone.val(),
+	            email: email.val(),
+	            message: message.val(),
+	            location: location.href
+	        },
+	        success: function(status) {
+	            console.log(status);
+	            if (status) {
+	            } else {
+	            }
+
+	            $('#modalHimioForm .modal_contact_form').hide();
+	            $('#modalHimioForm .modal_contact_form_thank').show();
+
+	            $(".thank-popup").addClass("thank-popup--open");
+	            name.val('');
+	            phone.val('');
+	            email.val('');
+	            message.val('');
+	        },
+	    });
+    }
+
+
+})
+
+
+
+
+$(document).on('click', '#modalCallbackFormCustom .send-button', function () {
+
+    i = 0;
+	$( "#modalCallbackFormCustom input[data-required=required], #modalCallbackFormCustom textarea[data-required=required]" ).each(function( inp ) {
+		if($(this).val() == "" || ($(this).hasClass('modal_phone') && $(this).val().length < 19)){
+			$(this).addClass('required-input');
+			i++;
+		}
+	});
+
+
+    if(i == 0){
+
+	    let height = $('#modalCallbackFormCustom .modal_height'),
+	        phone = $('#modalCallbackFormCustom .modal_phone'),
+	        weight = $('#modalCallbackFormCustom .modal_weight'),
+	        pils = $('#modalCallbackFormCustom .modal_pils');
+
+
+        $( "#modalCallbackFormCustom input[data-required=required], #modalCallbackFormCustom textarea[data-required=required]" ).each(function( inp ) {
+			$(this).removeClass('required-input');
+		});
+
+	    $.ajax({
+	        type: "POST",
+	        url: targetData.ajaxurl,
+	        data: {
+	            action: "contact_form_callback",
+	            height: height.val(),
+	            phone: phone.val(),
+	            weight: weight.val(),
+	            pils: pils.val(),
+	            location: location.href
+	        },
+	        success: function(status) {
+	            console.log(status);
+	            if (status) {
+	            } else {
+	            }
+
+	            $('#modalCallbackForm .modal_contact_form').hide();
+	            $('#modalCallbackForm .modal_contact_form_thank').show();
+
+	            $(".thank-popup").addClass("thank-popup--open");
+	            height.val('');
+	            phone.val('');
+	            weight.val('');
+	            pils.val('');
+	        },
+	    });
+    }
+
+
+
 })

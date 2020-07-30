@@ -12,7 +12,7 @@ the_post();
         <div class="wrapper">
             <div class="section__content">
                 <h3 class="text--18">
-                    <?= get_post_meta($post->ID,'clinic_title', true) ?>
+                    <?//= get_post_meta($post->ID,'clinic_title', true) ?>
                 </h3>
                 <h1 class="text--48">
                     <?php the_title();?>
@@ -23,8 +23,8 @@ the_post();
             </div>
 
             <div class="flex-block">
-                <button type="button" class="button button--secondary button--white" data-toggle="modal" data-target="#modalContactForm">
-                    Записаться на прием
+                <button type="button" class="button button--secondary button--white" data-toggle="modal" data-target="#modalHimioForm">
+                    Задать вопрос онкологу
                 </button>
                 <div class="address-block flex-block text--14">
                     <div class="item__address">
@@ -179,7 +179,7 @@ the_post();
                             </div>
                         </div>
                     </a>
-                <?php endwhile; ?>
+                <?php endwhile; wp_reset_query();?>
             </div>
             <a href="<?= get_permalink( get_option( 'page_for_posts' ) ); ?>" class="button button--secondary button--green">
                 Смотреть все статьи

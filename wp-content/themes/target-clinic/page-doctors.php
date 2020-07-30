@@ -42,7 +42,7 @@ the_post();
                 <div class="wrapper w-920px">
                     <?php the_content(); ?>
                     <?php get_template_part('template-parts/sections', 'dropdown-seo'); ?>
-                    <?php get_template_part('template-parts/sections', 'contact-form-callback'); ?>
+                    <?php // get_template_part('template-parts/sections', 'contact-form-callback'); ?>
                 </div>
             </div>
         </section>

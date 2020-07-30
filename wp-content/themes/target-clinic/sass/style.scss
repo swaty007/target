@@ -276,6 +276,8 @@ img {
   }
 }
 
+
+
 //Nav Styles
 
 .nav {
@@ -464,7 +466,7 @@ img {
         content: url(./img/fe-arrow-down.svg);
         display: block;
         position: absolute;
-        right: -15px;
+        right: 0px;
         top: 50%;
         transform: translateY(-50%);
         @media(max-width:880px) {
@@ -480,7 +482,8 @@ img {
       }
     }
     .menu-item{
-      padding: 17px 20px 15px;
+      /*padding: 17px 20px 15px;*/
+	  padding: 17px 20px 15px;
       border-top: 1px solid rgba(0, 167, 98, 0.1);
       cursor: pointer;
       color: #00A863;

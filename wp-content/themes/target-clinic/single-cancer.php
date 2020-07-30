@@ -26,6 +26,14 @@ the_post();
             <div class="wrapper-920-left">
                 <section class="section--large-text">
                     <?php the_content(); ?>
+                    <div class="change-order-mob">
+                        <?php // get_template_part('template-parts/sections', 'contact-form-callback'); ?>
+                        <?php
+                        // If comments are open or we have at least one comment, load up the comment template.
+                        if (comments_open() || get_comments_number()) :
+                            comments_template();
+                        endif; ?>
+                    </div>
                     <?php get_template_part('template-parts/sections', 'contact-form-callback'); ?>
                 </section>
             </div>

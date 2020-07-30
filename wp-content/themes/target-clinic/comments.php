@@ -35,6 +35,7 @@ if ( post_password_required() ) {
                     'email'  => '<label for="email">
 <input id="email" name="email" placeholder="' . __( 'Email' ) . ( $req ? '*' : '' ) .
                         '" type="text" value="' . esc_attr(  $commenter['comment_author_email'] ) . '" size="30"' . $aria_req . ' /></label>',
+
 //                    'url'    => '<label for="url"><input id="url" name="url" placeholder="' . __( 'Website' ) . '" type="text" value="' . esc_attr( $commenter['comment_author_url'] ) . '" size="30" /></label>',
 //                    'cookies' => ''
                 ],

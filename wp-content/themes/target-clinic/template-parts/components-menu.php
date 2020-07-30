@@ -15,12 +15,12 @@
                 </div>
             </div>
             <div class="header__item header--phones flex-block">
-                <?php $loop = new WP_Query(array('post_type' => 'phones', 'posts_per_page' => -1)); ?>
+                <?php $count = 0; $loop = new WP_Query(array('post_type' => 'phones', 'posts_per_page' => -1)); ?>
                 <?php while ($loop->have_posts()) : $loop->the_post(); ?>
-                    <a href="tel:+<?= preg_replace( '/[^0-9]/', '', get_the_title() )?>"><?php the_title();?></a>
-                <?php endwhile; ?>
+                    <a class="binct-phone-number-<?php echo $count+1?>" href="tel:+<?= preg_replace( '/[^0-9]/', '', get_the_title() )?>"><?php the_title();?></a>
+                <?php $count++; endwhile; ?>
             </div>
-            <button type="button" class="button button--secondary button--green text--14" data-toggle="modal" data-target="#modalContactForm">
+            <button type="button" class="button button--secondary button--green text--14" data-toggle="modal" data-target="#modalOrderForm">
                 Записаться на прием
             </button>
         </div>
@@ -55,7 +55,7 @@
             <div class="nav--mobile__phones">
                 <?php $count = 0; $loop = new WP_Query(array('post_type' => 'phones', 'posts_per_page' => -1)); ?>
                 <?php while ($loop->have_posts()) : $loop->the_post(); ?>
-                    <a href="tel:+<?= preg_replace( '/[^0-9]/', '', get_the_title() )?>"><?php the_title();?></a>
+                    <a class="binct-phone-number-<?php echo $count+1?>" href="tel:+<?= preg_replace( '/[^0-9]/', '', get_the_title() )?>"><?php the_title();?></a>
                 <?php if ($count === 0):?>
                         <img src="<?= get_template_directory_uri(); ?>/img/fe-arrow-down.svg" class="open-mob" alt="">
                 <div class="mobile__phones">
