@@ -450,3 +450,26 @@ $(document).on('click', '#modalCallbackFormCustom .send-button', function () {
 
 
 })
+
+
+$(document).on('click', '.button_get_comment', function () {
+  let post_id = $(this).attr('data-post-id'),
+    _this = $(this),
+    offset = $(this).attr('data-offset')
+
+  $.ajax({
+    type: "POST",
+    url: targetData.ajaxurl,
+    data: {
+      action: "get_comments",
+      post_id: post_id,
+      offset: offset,
+    },
+    success: function(comments) {
+      console.log(comments)
+      if (comments.length) {
+        _this.attr('data-offset', offset + 2)
+      }
+    },
+  });
+})

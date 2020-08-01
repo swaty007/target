@@ -111,8 +111,10 @@ the_post();
                                             </ul>
                                         </div>
                                         <div class="doctor-item__footer">
-                                            <button class="button button--secondary button--green__all btn-single-do text--14" id="pills-profile-tab<?= $post->ID; ?>" data-toggle="pill"
+                                            <button class="button_get_comment button button--secondary button--green__all btn-single-do text--14" id="pills-profile-tab<?= $post->ID; ?>" data-toggle="pill"
                                                     href="#pills-profile<?= $post->ID; ?>" role="tab"
+                                                    data-post-id="<?= $post->ID; ?>"
+                                                    data-offset="0"
                                                     aria-controls="pills-profile<?= $post->ID; ?>">
                                                 Читать коментарии
                                             </button>

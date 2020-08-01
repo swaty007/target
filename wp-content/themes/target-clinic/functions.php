@@ -489,9 +489,9 @@ function do_contact_form_order() {
 
         $send_to = "eugene.subota1984@gmail.com,swaty0007@gmail.com,office@car.ua,info@car.ua";
         $subject = "Заказ консультации";
-        $message = "Пользователь сайта запросил консультацию менеджера.<br> Пользователь: " . $name . "<br>Номер телефона: " . $phone. "<br>Дата: " . $date. "<br>Сообщение: " . $u_message;
+        $message = "Пользователь сайта запросил консультацию менеджера.\n Пользователь: " . $name . "\nНомер телефона: " . $phone. "\nДата: " . $date. "\nСообщение: " . $u_message;
         if (isset($_POST['location'])) {
-            $message.=  "<br>Ссылка на страницу: " . $_POST['location'];
+            $message.=  "\nСсылка на страницу: " . $_POST['location'];
         }
         $headers = array('From: Car.ua <info@car.ua>', 'Content-Type: text/html; charset=UTF-8');
 
@@ -525,9 +525,9 @@ function do_contact_form_himio() {
 
         $send_to = "eugene.subota1984@gmail.com,swaty0007@gmail.com,office@car.ua,info@car.ua";
         $subject = "Заказ консультации";
-        $message = "Пользователь сайта запросил консультацию химиотерапевта.<br> Пользователь: " . $name . "<br>Номер телефона: " . $phone. "<br>Почта: " . $email. "<br>Сообщение: " . $u_message;
+        $message = "Пользователь сайта запросил консультацию химиотерапевта.\n Пользователь: " . $name . "\nНомер телефона: " . $phone. "\nПочта: " . $email. "\nСообщение: " . $u_message;
         if (isset($_POST['location'])) {
-            $message.=  "<br>Ссылка на страницу: " . $_POST['location'];
+            $message.=  "\nСсылка на страницу: " . $_POST['location'];
         }
         $headers = array('From: Car.ua <info@car.ua>', 'Content-Type: text/html; charset=UTF-8');
 
@@ -561,9 +561,9 @@ function do_contact_form_callback() {
 
         $send_to = "eugene.subota1984@gmail.com,swaty0007@gmail.com,office@car.ua,info@car.ua";
         $subject = "Заказ консультации";
-        $message = "Пользователь сайта запросил консультацию.<br> Рост: " . $height . "<br>Вес: " . $weight. "<br>Номер телефона: " . $phone. "<br>Схема лечения: " . $pils;
+        $message = "Пользователь сайта запросил консультацию.\n Рост: " . $height . "\nВес: " . $weight. "\nНомер телефона: " . $phone. "\nСхема лечения: " . $pils;
         if (isset($_POST['location'])) {
-            $message.=  "<br>Ссылка на страницу: " . $_POST['location'];
+            $message.=  "\nСсылка на страницу: " . $_POST['location'];
         }
         $headers = array('From: Car.ua <info@car.ua>', 'Content-Type: text/html; charset=UTF-8');
 
@@ -805,3 +805,21 @@ function vic_admin_menu()
 }
 
 add_action( 'admin_menu', 'vic_admin_menu' );
+
+
+add_action( 'wp_ajax_get_comments', 'get_comments_form' );
+add_action( 'wp_ajax_nopriv_get_comments', 'get_comments_form' );
+function get_comments_form () {
+    $post_id = $_POST['post_id'];
+    $offset = $_POST['offset'];
+
+    $comments = get_comments(array(
+        'orderby' => 'comment_date',
+        'order' => 'DESC',
+        'offset' => $offset,
+        'number' => 2,
+        'post_id' => $post_id,
+        'type' => '',
+    ));
+    wp_send_json($comments);
+}
