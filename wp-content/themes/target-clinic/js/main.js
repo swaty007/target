@@ -473,3 +473,102 @@ $(document).on('click', '.button_get_comment', function () {
     },
   });
 })
+
+
+$(function(){
+  if ( $(window).width() < 768 ) {
+    $('.owl-carousel.carousel-doc').owlCarousel({
+      autoplay: false,
+      loop: true,
+      nav: true,
+      // stagePadding: 50,
+      margin: 25,
+      responsiveClass: true,
+      responsive: {
+        0: {
+          items: 1
+        },
+        568: {
+          items: 1
+        },
+        600: {
+          items: 2
+        },
+        1000: {
+          items: 3
+        }
+      }
+    })
+  } else {
+    $('.owl-carousel.carousel-doc').owlCarousel({
+      autoplay: false,
+      loop: false,
+      nav: false,
+      margin: 25,
+      responsiveClass: true,
+      responsive: {
+        0: {
+          items: 1
+        },
+        568: {
+          items: 1
+        },
+        600: {
+          items: 2
+        },
+        1000: {
+          items: 3
+        }
+      }
+    })
+  }
+});
+
+$(function(){
+  if ( $(window).width() < 768 ) {
+    $('.owl-carousel').owlCarousel({
+      autoplay: false,
+      loop: true,
+      nav: true,
+      // stagePadding: 50,
+      margin: 25,
+      responsiveClass: true,
+      responsive: {
+        0: {
+          items: 1
+        },
+        568: {
+          items: 1
+        },
+        600: {
+          items: 2
+        },
+        1000: {
+          items: 4
+        }
+      }
+    })
+  } else {
+    $('.owl-carousel').owlCarousel({
+      autoplay: false,
+      loop: false,
+      nav: false,
+      margin: 25,
+      responsiveClass: true,
+      responsive: {
+        0: {
+          items: 1
+        },
+        568: {
+          items: 1
+        },
+        600: {
+          items: 3
+        },
+        1000: {
+          items: 4
+        }
+      }
+    })
+  }
+});

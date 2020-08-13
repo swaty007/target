@@ -1155,6 +1155,10 @@ p--14 {
    margin-bottom: 55px
 }
 
+.section--comments {
+  margin-bottom: 200px!important;
+}
+
 .section--default {
    padding: 80px 10px 193px
 }
@@ -1651,6 +1655,15 @@ p--14 {
 
 .comments__form button {
    text-transform: uppercase
+}
+
+.comments__form--modal {
+  padding: 0;
+  background: #fff;
+}
+
+.comments__form--modal .comment-notes {
+  margin-bottom: 15px;
 }
 
 .comments__messages {
@@ -2301,6 +2314,10 @@ p--14 {
 
 .item__address .link {
    color: #2b83b4
+}
+
+.item__address ul li {
+  margin-bottom: 5px;
 }
 
 .content-toggle .text,
@@ -3445,12 +3462,13 @@ header {
 }
 
 .meta-page {
-  padding: 15px;
+  padding: 15px 40px;
   background: #04A964;
   color: #fff;
   font-size: 14px;
   display: inline-flex;
   flex-direction: column;
+  margin-bottom: 50px;
 }
 
 @media screen and (max-width: 599px) {
@@ -3464,8 +3482,8 @@ header {
   margin-bottom: 25px;
 }
 
-.title-box-servies span {
-  margin: 0 auto;
+.title-box-servies h3 {
+  /* margin: 0 auto; */
 }
 
 /* Comments */
@@ -3486,9 +3504,14 @@ header {
 .nav-comments {
     margin-bottom: 25px;
     background: transparent;
+    position: relative;
     display: flex;
     justify-content: center;
     z-index: 1;
+}
+
+.nav-comments.nav-com .nav-item {
+  margin: 0 5px 5px;
 }
 
 .nav-comments .nav-item::before {
@@ -3506,10 +3529,22 @@ header {
 .nav-comments .nav-item .nav-link.active {
   color: #333;
   background-color: transparent;
-  font-weight: 500;
   border-bottom: 2px solid green;
   padding: 0;
   border-radius: 0;
+}
+
+.nav-comments.nav-com .nav-item .nav-link {
+  background: #f3f3f3;
+  margin: 5px 5px;
+  padding: 5px 15px;
+  border-radius: 5px;
+}
+
+.nav-comments.nav-com .nav-item .nav-link.active {
+  background: #04A964;
+  color: #fff;
+  border-bottom: none;
 }
 
 .comment-list {
@@ -3543,19 +3578,64 @@ header {
 
 /* Doctor */
 
+.comment-doctor .owl-nav {
+  position: absolute;
+  top: 40%;
+  width: 100%;
+}
+
+.comment-doctor .owl-nav .owl-prev, .comment-doctor .owl-nav .owl-next {
+  font-size: 28px!important;
+  background: #eee!important;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50px;
+  position: absolute;
+}
+
+.comment-doctor .owl-nav .owl-prev:focus, .comment-doctor .owl-nav .owl-next:focus {
+  outline: none;
+}
+
+.comment-doctor .owl-nav .owl-prev {
+  left: 15px;
+}
+
+.comment-doctor .owl-nav .owl-next {
+  right: 15px;
+}
+
 .comment-doctor {
+  min-width: 100%;
+  padding: 10px;
+  margin-bottom: 25px;
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
-   flex-wrap: wrap;
+  justify-content: flex-start;
+  overflow-x: auto;
+}
+.comment-doctor::-webkit-scrollbar {
+  height: 3px;
+}
+.comment-doctor::-webkit-scrollbar-thumb {
+  background-color: #04A964;
 }
 .comment-doctor .doctor-item {
-  max-width: 270px;
+  max-width: calc(25% - 19px);
+  min-width: 220px;
+  height: 100%;
+  margin-right: 25px;
   padding: 10px;
   margin-bottom: 25px;
   box-shadow: 0px 4px 9px rgba(0, 0, 0, 0.1);
   border: 1px solid #fff;
   transition: .1s;
+}
+.comment-doctor .doctor-item:nth-child(4n) {
+  margin-right: 0;
 }
 .comment-doctor .doctor-item:hover {
   border: 1px solid #04A964;
@@ -3563,9 +3643,11 @@ header {
 }
 .comment-doctor .doctor-item img {
   width: 100%;
+  max-height: 205px;
 }
 .comment-doctor .doctor-item__body {
   margin-top: 15px;
+  min-height: 130px;
 }
 .comment-doctor .doctor-item__body h1 {
   font-size: 18px;
@@ -3605,6 +3687,15 @@ header {
   border: 0;
   background: #04A964;
 }
+.accordion-faq .card .accordion-icon {
+  position: absolute;
+  right: 25px;
+  top: 23px;
+  color: #fff;
+}
+.accordion-faq .card .card-header .btn[aria-expanded="true"] + .accordion-icon {
+  transform: rotate(180deg);
+}
 .accordion-faq .card .card-header button {
   color: #fff;
   text-decoration: none;
@@ -3619,56 +3710,98 @@ header {
 }
 
 /* Service Doctors */
-.service-doctors {
+.service-doctors .owl-nav {
+  position: absolute;
+  top: 40%;
+  width: 100%;
+}
+
+.service-doctors .owl-nav .owl-prev, .service-doctors .owl-nav .owl-next {
+  font-size: 28px!important;
+  background: #eee!important;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50px;
+  position: absolute;
+}
+
+.service-doctors .owl-nav .owl-prev:focus, .service-doctors .owl-nav .owl-next:focus {
+  outline: none;
+}
+
+.service-doctors .owl-nav .owl-prev {
+  left: -5px;
+}
+
+.service-doctors .owl-nav .owl-next {
+  right: -5px;
+}
+
+.service-doctors-items {
+  min-width: 100%;
+  overflow-x: auto;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  flex-wrap: wrap;
 }
-.service-doctors .doctor-item {
+.service-doctors .service-doctors-items .doctor-item {
   position: relative;
-  width: 290px;
+  width: calc(33% - 19px);
+  min-width: 260px;
   height: 410px;
   padding: 35px 30px 0;
   margin-bottom: 25px;
+  margin-right: 25px;
   background: radial-gradient(62.73% 89.37% at 72.93% 77.53%, #F7F7F7 0%, #E8E8E8 100%);
   border: 1px solid #fff;
   border-radius: 4px;
   transition: .2s;
 }
-.service-doctors .doctor-item:hover {
+.service-doctors .service-doctors-items::-webkit-scrollbar {
+  height: 3px;
+}
+.service-doctors .service-doctors-items::-webkit-scrollbar-thumb {
+  background-color: #04A964;
+}
+.service-doctors .service-doctors-items .doctor-item:last-child {
+  margin-right: 0;
+}
+.service-doctors .service-doctors-items .doctor-item:hover {
   border: 1px solid #04A964;
 }
-.service-doctors .doctor-item:hover .doctor-item__header--first .doctor-item--position {
+.service-doctors .service-doctors-items .doctor-item:hover .doctor-item__header--first .doctor-item--position {
   opacity: 0;
 }
-.service-doctors .doctor-item:hover .doctor-item__header--second {
+.service-doctors .service-doctors-items .doctor-item:hover .doctor-item__header--second {
   opacity: 1;
 }
-.service-doctors .doctor-item--name {
+.service-doctors .service-doctors-items .doctor-item--name {
   font-size: 20px;
   text-align: center;
   color: #333333;
   line-height: 27px;
   margin-bottom: 15px;
 }
-.service-doctors .doctor-item--position {
+.service-doctors .service-doctors-items .doctor-item--position {
   font-size: 14px;
   text-align: center;
   margin-top: 15px;
   color: #848484;
 }
-.service-doctors .doctor-item__header {
+.service-doctors .service-doctors-items .doctor-item__header {
   text-align: center;
 }
-.service-doctors .doctor-item__header--second {
+.service-doctors .service-doctors-items .doctor-item__header--second {
   text-align: center;
   opacity: 0;
   margin: 0 auto;
   transition: .2s;
   position: relative;
 }
-.service-doctors .doctor-item__header--second .button-doctor-service {
+.service-doctors .service-doctors-items .doctor-item__header--second .button-doctor-service {
   padding: 12px 55px;
   background: #04A964;
   width: 200px;
@@ -3682,10 +3815,15 @@ header {
   left: 0;
   top: -55px;
 }
-.service-doctors .doctor-item__header--second .button-doctor-service:hover {
+.service-doctors .service-doctors-items .doctor-item__header--second .button-doctor-service:hover {
   text-decoration: none;
 }
-.service-doctors .doctor-item__footer img {
+.service-doctors .service-doctors-items .doctor-item__footer {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+.service-doctors .service-doctors-items .doctor-item__footer img {
   width: 90%;
   position: absolute;
   bottom: 0;
@@ -3713,80 +3851,277 @@ header {
 	color: #fff;
 }
 
-/* Рейтинг */
+/* Modal */
 
-.comments-rating {
-	border: none;
-	padding: 0;
-	margin-left: 0;
+.footer-modal-close {
+  background: #13ab67 !important;
+  color: #fff!important;
+  position: absolute;
+  width: 32px;
+  height: 32px;
+  right: -50px;
+  top: -50px;
+  border-radius: 50px;
+  opacity: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: 0.2s;
 }
 
-.comments-rating label {
-	display: inline-block;
+.footer-modal-close:hover {
+  opacity: 0.9!important;
 }
 
-.rating-container {
-	/* remove inline-block whitespace */
-	font-size: 0;
-	/* flip the order so we can use the + and ~ combinators */
-	unicode-bidi: bidi-override;
-	direction: rtl;
+.footer-modal-close span {
+  font-weight: 300;
+  height: 25px;
+  color: #fff!important;
 }
 
-.rating-container * {
-	font-size: 1.4rem;
+#modalCommentForm .modal-dialog {
+  max-width: 900px;
 }
 
-.rating-container > input {
+#modalCommentForm .modal-title {
+  text-align: center;
+}
+
+#modalCommentForm .modal-dialog .modal-body {
+  border: 20px solid #00a863;
+  margin: 15px;
+}
+
+#modalCommentForm .modal-dialog .modal-body .form-modal {
+
+}
+
+#modalCommentForm .modal-dialog .modal-body .form-modal .comment-respond #reply-title {
+  display: none;
+}
+
+#modalCommentForm .modal-dialog .modal-body .form-modal .comment-respond .comment-form .logged-in-as {
+  text-align: left;
+  margin-bottom: 10px;
+}
+
+#modalCommentForm .modal-dialog .modal-body .form-modal .comment-respond .comment-form .logged-in-as a {
+  color: #333;
+}
+
+#modalCommentForm .modal-dialog .modal-body .form-modal .comment-respond .comment-form .logged-in-as a:nth-child(2) {
+  display: none;
+}
+
+#modalCommentForm .modal-dialog .modal-body .form-modal .comment-respond .comment-form .comment-form-comment {
+  text-align: left;
+  margin-bottom: 5px;
+}
+
+#modalCommentForm .modal-dialog .modal-body .form-modal .comment-respond .comment-form .comment-form-comment label {
+  font-size: 14px;
+  margin-bottom: 3px;
+}
+
+#modalCommentForm .modal-dialog .modal-body .form-modal .comment-respond .comment-form .form-submit input {
+  transition: .2s;
+  border-color: #00a863;
+}
+
+#modalCommentForm .modal-dialog .modal-body .form-modal .comment-respond .comment-form .form-submit input:hover {
+  background: #00a863;
+  color: #fff;
+}
+
+#modalCommentForm .modal-comment-img {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.comment-single-page .title--small, .comment-single-page .comments__form {
+  display: none;
+}
+
+.comment-single-page {
+
+}
+
+.comment-single-page .comments {
+  max-width: 100%;
+  margin-top: 0;
+}
+
+.comment-single-page h3 {
+  text-align: center;
+}
+
+.comment-single-page .comments__messages .comments--message .message--head {
+  margin-bottom: 0;
+}
+
+.comment-single-page .comments__messages .comments--message .message-answer {
+  display: none;
+}
+
+.comment-single-page .comments__messages img {
+  position: relative;
+  float: left;
+  margin-right: 25px;
+  border-radius: 3px;
+}
+
+.comment-single-page .comments__messages .comments--message {
+  position: relative;
+  margin-bottom: 37px;
+  box-shadow: 0px 4px 15px rgba(146, 188, 211, 0.15);
+  padding: 30px;
+  transition: .2s;
+}
+
+.comment-single-page .comments__messages .comments--message:hover {
+  box-shadow: 0px 4px 15px rgba(146, 188, 211, 0.25);
+}
+
+.comment-single-page .comments__messages .comments--message .message-text {
+  margin-bottom: 0;
+}
+
+.comment.comments--message--answer {
+  box-shadow: none!important;
+  padding: 0!important;
+  border-left: 3px solid #f9fbfc;
+  padding-left: 15px!important;
+}
+
+.comments-footer-btns {
+  display: flex;
+  justify-content: center;
+}
+
+.comments-footer-btns .button {
+  height: 46px;
+  margin: 0 5px;
+  text-decoration: none;
+}
+
+.comments-footer-btns .button:hover {
+  text-decoration: none;
+}
+
+@media (max-width: 600px) {
+  .btn-single-do {
+    margin-top: 15px!important;
+  }
+
+  #modalCommentForm {
+
+  }
+
+  #modalCommentForm .col-pc {
+    display: none;
+  }
+
+  #modalCommentForm .modal-dialog .modal-body {
+    margin: 0;
+    border: 0;
+  }
+
+  .footer-modal-close {
+    right: 15px;
+    top: 0px;
+  }
+
+  .comment-doctor .doctor-item {
+    max-width: 80%!important;
+    margin: 0 auto;
+  }
+
+  .meta-page {
+    width: 100%;
+  }
+
+  .service-doctors .doctor-item {
+    margin: 0 auto 75px;
+    width: 80%;
+  }
+
+  .service-doctors .doctor-item__header--second {
+    opacity: 1;
+    position: absolute;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    bottom: -55px;
+    left: 0;
+  }
+
+  .service-doctors .doctor-item__header--second .button-doctor-service {
+    position: absolute;
+    right: 0;
+    left: 0;
+    top: -50px;
+    opacity: 1;
+    width: 100%;
+  }
+}
+
+
+/* Rate */
+
+.rating-form {
+	display: flex;
+    flex-direction: column;
+    text-align: left;
+}
+
+.rating-form span {
+	font-size: 14px;
+    font-weight: 500;
+    color: #5d5d5d;
+}
+
+.rating-area {
+	overflow: hidden;
+	width: 265px;
+	margin: 0 auto;
+}
+.rating-area-form {
+	overflow: hidden;
+    width: 125px;
+    margin: 0 0 15px;
+    float: left;
+}
+.rating-area:not(:checked) > input {
 	display: none;
 }
-
-.rating-container > input + label {
-	/* only enough room for the star */
-	font-family: 'dashicons';
-	display: inline-block;
-	overflow: hidden;
-	text-indent: 9999px;
-	width: 1em;
-	white-space: nowrap;
+.rating-area:not(:checked) > label {
+	float: right;
+	width: 25px;
+	padding: 0;
 	cursor: pointer;
-	margin: 0;
+	font-size: 26px;
+	line-height: 26px;
+	color: #bebebe;
 }
-
-.rating-container > input + label:before {
-	display: inline-block;
-	text-indent: -9999px;
-	content: "\f154";
-	color: #888;
+.rating-area:not(:checked) > label:before {
+	content: '★';
 }
-
-.rating-container > input:checked ~ label:before,
-.rating-container > input + label:hover ~ label:before,
-.rating-container > input + label:hover:before {
-	content: "\f155";
-	color: #e52;
-	text-shadow: 0 0 1px #333;
+.rating-area > input:checked ~ label {
+	color: gold;
 }
-
-.rating-container > .star-cb-clear + label {
-	text-indent: -9999px;
-	width: .5em;
-	margin-left: -.5em;
+.rating-area:not(:checked) > label:hover,
+.rating-area:not(:checked) > label:hover ~ label {
+	color: gold;
 }
-
-.rating-container > .star-cb-clear + label:before {
-	width: .5em;
+.rating-area > input:checked + label:hover,
+.rating-area > input:checked + label:hover ~ label,
+.rating-area > input:checked ~ label:hover,
+.rating-area > input:checked ~ label:hover ~ label,
+.rating-area > label:hover ~ input:checked ~ label {
+	color: gold;
 }
-
-.rating-container:hover > input + label:before {
-	content: "\f154";
-	color: #888;
-	text-shadow: none;
-}
-
-.rating-container:hover > input + label:hover ~ label:before,
-.rating-container:hover > input + label:hover:before {
-	content: "\f155";
-	color: #e52;
-	text-shadow: 0 0 1px #333;
+.rating-area > label:active {
+	position: relative;
 }

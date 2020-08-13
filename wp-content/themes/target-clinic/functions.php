@@ -71,16 +71,166 @@ function your_theme_customizer_setting($wp_customize) {
     )));
 }
 
+//	=============
+//  Comment
+//  =============
+
+
+// Добавляем поля для всех пользователей
+// add_action( 'comment_form_logged_in_after', 'extend_comment_custom_fields' );
+// add_action( 'comment_form_after_fields', 'extend_comment_custom_fields' );
+// function extend_comment_custom_fields() {
+//
+// 	echo '<div class="rating-area">';
+//
+// 	for( $i=1; $i <= 5; $i++ ){
+// 		echo '
+//     <label for="star-'. $i .'" title="Оценка 1"><input type="radio" id="star-'. $i .'" name="rating" value="'. $i .'"/>
+//     </label>';
+// 	}
+//
+// 	echo '</div>';
+// }
+
+// Сохранение данных из полей во фронт-энде
+// add_action( 'comment_post', 'save_extend_comment_meta_data' );
+// function save_extend_comment_meta_data( $comment_id ){
+//
+// 	if( !empty( $_POST['rating'] ) ){
+// 		$rating = intval($_POST['rating']);
+// 		add_comment_meta( $comment_id, 'rating', $rating );
+// 	}
+//
+// }
+
+// Проверяем, заполнено ли поле "Рейтинг"
+// add_filter( 'preprocess_comment', 'verify_extend_comment_meta_data' );
+// function verify_extend_comment_meta_data( $commentdata ) {
+//
+// 	if ( empty( $_POST['rating'] ) || ! (int)$_POST['rating'] )
+// 		wp_die( __( 'Error: You did not add a rating. Hit the Back button on your Web browser and resubmit your comment with a rating.' ) );
+//
+// 	return $commentdata;
+// }
+
+// Отображение содержимого метаполей во фронт-энде
+// add_filter( 'comment_text', 'modify_extend_comment');
+// function modify_extend_comment( $text ){
+// 	global $post;
+//
+// 	if( $commenttitle = get_comment_meta( get_comment_ID(), 'title', true ) ) {
+// 		$commenttitle = '<strong>' . esc_attr( $commenttitle ) . '</strong><br/>';
+// 		$text = $commenttitle . $text;
+// 	}
+//
+// 	if( $commentrating = get_comment_meta( get_comment_ID(), 'rating', true ) ) {
+//
+// 		$commentrating = wp_star_rating( array (
+// 			'rating' => $commentrating,
+// 			'echo'=> false
+// 		));
+//
+// 		$text = $text . $commentrating;
+// 	}
+//
+// 	return $text;
+// }
+
+add_action( 'wp_enqueue_scripts', 'check_count_extend_comments' );
+function check_count_extend_comments(){
+	global $post;
+
+	if( isset($post) && (int)$post->comment_count > 0 ){
+		require_once ABSPATH .'wp-admin/includes/template.php';
+		add_action('wp_enqueue_scripts', function(){
+			wp_enqueue_style('dashicons');
+		});
+
+		$stars_css = '
+		.star-rating .star-full:before { content: "\f155"; }
+		.star-rating .star-empty:before { content: "\f154"; }
+		.star-rating .star {
+			color: #0074A2;
+			display: inline-block;
+			font-family: dashicons;
+			font-size: 20px;
+			font-style: normal;
+			font-weight: 400;
+			height: 20px;
+			line-height: 1;
+			text-align: center;
+			text-decoration: inherit;
+			vertical-align: top;
+			width: 20px;
+		}
+		';
+
+		wp_add_inline_style( 'dashicons', $stars_css );
+	}
+
+}
+
+// Добавляем новый метабокс на страницу редактирования комментария
+add_action( 'add_meta_boxes_comment', 'extend_comment_add_meta_box' );
+function extend_comment_add_meta_box(){
+	add_meta_box( 'title', __( 'Comment Metadata - Extend Comment' ), 'extend_comment_meta_box', 'comment', 'normal', 'high' );
+}
+
+// Отображаем наши поля
+function extend_comment_meta_box( $comment ){
+	$rating = get_comment_meta( $comment->comment_ID, 'rating', true );
+
+	wp_nonce_field( 'extend_comment_update', 'extend_comment_update', false );
+	?>
+	<p>
+		<label for="rating"><?php _e( 'Rating: ' ); ?></label>
+		<span class="commentratingbox">
+		<?php
+		for( $i=1; $i <= 5; $i++ ){
+		  echo '
+		  <span class="commentrating">
+			<input type="radio" name="rating" id="rating" value="'. $i .'" '. checked( $i, $rating, 0 ) .'/>
+		  </span>';
+		}
+		?>
+		</span>
+	</p>
+	<?php
+}
+
+add_action( 'edit_comment', 'extend_comment_edit_meta_data' );
+function extend_comment_edit_meta_data( $comment_id ) {
+	if( ! isset( $_POST['extend_comment_update'] ) || ! wp_verify_nonce( $_POST['extend_comment_update'], 'extend_comment_update' ) )
+	return;
+
+	if( !empty($_POST['rating']) ){
+		$rating = intval($_POST['rating']);
+		update_comment_meta( $comment_id, 'rating', $rating );
+	}
+	else
+		delete_comment_meta( $comment_id, 'rating');
+
+}
+
+
+
+
+//	=============
+//  Comment END
+//	=============
+
 add_action('customize_register', 'your_theme_customizer_setting');
 
 function target_files() {
 //  wp_enqueue_script('main-target-js', get_template_directory_uri() .'/js/scripts-bundled.js','','',true);
   wp_enqueue_script('slick-js', get_template_directory_uri() .'/js/slick.min.js','','',true);
   wp_enqueue_script('fancybox-js', 'https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js',['jquery'],'',true);
+  wp_enqueue_script('owlcarousel-js', '//cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js','','',true);
   wp_enqueue_script('main-target-js', get_template_directory_uri() .'/js/main.js','','',true);
   wp_enqueue_style('target_main_styles', get_stylesheet_uri(), [], 2);
   wp_enqueue_style( 'target-style', get_template_directory_uri() . '/css/master.css' );
   wp_enqueue_style('fancybox-css', 'https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css');
+  wp_enqueue_style('owlcarousel-css', '//cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.css');
   wp_localize_script('main-target-js', 'targetData', array(
     'root_url' => get_site_url(),
     'nonce' => wp_create_nonce( 'protection' ),
@@ -134,7 +284,7 @@ function get_url_from_img_id($id)
 //comment form
 add_filter('comment_form_fields', 'kama_reorder_comment_fields' );
 function kama_reorder_comment_fields( $fields ){
-    // die(print_r( $fields )); // посмотрим какие поля есть
+   // (print_r( $fields )); // посмотрим какие поля есть
 
     $new_fields = array(); // сюда соберем поля в новом порядке
     $myorder = array('author','email','url','comment', 'rate'); // нужный порядок
@@ -408,8 +558,12 @@ function my_jquery_cdn_method() {
 //    echo '<script>(function($,d){$.each(readyQ,function(i,f){$(f)});$.each(bindReadyQ,function(i,f){$(d).bind("ready",f)})})(jQuery,document)</script>';
 //}
 
+function true_remove_url_field( $comments_form_modal ) {
+	unset( $comments_form_modal['url'] );
+	return $comments_form_modal;
+}
 
-
+add_filter( 'comment_form_default_fields', 'true_remove_url_field', 10, 1);
 
 
 //Disable REST API link tag
@@ -799,7 +953,7 @@ function vic_admin_menu()
 	}
 */
 
-	add_menu_page('Переключить на UA', 'Переключить на UA', 'manage_options', 'lang.php');
+	// add_menu_page('Переключить на UA', 'Переключить на UA', 'manage_options', 'lang.php');
 
 
 }

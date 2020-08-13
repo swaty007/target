@@ -47,8 +47,6 @@ if ( post_password_required() ) {
     <?php
     // You can start editing here -- including this comment!
     if ( have_comments() ) :?>
-		<?php the_comments_navigation(); ?>
-        <?php the_comments_pagination(); ?>
     <div class="comments__messages">
 			<?php
 			wp_list_comments( array(
@@ -59,9 +57,10 @@ if ( post_password_required() ) {
 			) );
 			?>
     </div><!-- .comment-list -->
-        <?php the_comments_pagination(); ?>
+        <?php
+				// the_comments_pagination(); 
+				?>
 		<?php
-		the_comments_navigation();
 
 		// If comments are closed and there are comments, let's leave a little note, shall we?
 		if ( ! comments_open() ) :

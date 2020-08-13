@@ -11,7 +11,7 @@
                     <?php if(get_sub_field('social-items', 'options')): ?>
                       <div class="social-items">
                       <?php while(has_sub_field('social-items', 'options')): ?>
-                        <a class="social-item" href="<?php the_sub_field('link'); ?>"><i class="<?php the_sub_field('icon'); ?>"></i></a>
+                        <a class="social-item" target="_blank" href="<?php the_sub_field('link'); ?>"><i class="<?php the_sub_field('icon'); ?>"></i></a>
                       <?php endwhile; ?>
                       </div>
                     <?php endif; ?>
@@ -23,9 +23,6 @@
                 <a class="binct-phone-number-1" href="tel:+380982334019">+38 (098) 233 4019</a>
             </div>
             <div class="footer-content__item item--info">
-                <p>
-                    Адрес:
-                </p>
                 <div class="item__address">
                     <img src="<?= get_template_directory_uri(); ?>/img/fa-regular_clock-wh.svg" alt="location">
                     Киев, п-р Воздухофлотский 71/3
@@ -34,12 +31,14 @@
                     <img src="<?= get_template_directory_uri(); ?>/img/fa-solid_map-marker-alt.svg" alt="location">
                     Пн-Пт с 08:00 до 17:00
                 </div>
-                <a href="/kontakty/" class="link">
-                    Как добраться
-                </a>
-                <button type="button" class="button button--secondary button--white" data-toggle="modal" data-target="#modalOrderForm">
-                    Записаться на прием
-                </button>
+                <div class="item__address">
+                    <ul class="mt-3">
+                      <li>Троллейбус: №9, №22</li>
+                      <li>Автобус: 78, 302, 368, 805</li>
+                      <li>Маршрутное такси: 496, 499, 565.</li>
+                      <li>Остановка Аэропорт «Киев»</li>
+                    </ul>
+                </div>
             </div>
             <div class="footer-content__item">
                 <p class="list-title text--18">
@@ -174,10 +173,35 @@
     <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="modal-content">
             <div class="modal-body text-center">
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <button type="button" class="close footer-modal-close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
-                <h5 class="modal-title my-modal-h">Оставить комментарий</h5>
+
+                <div class="row">
+                  <div class="col-md-6">
+                    <div class="form-modal">
+                      <h5 class="modal-title my-modal-h">Оставить отзыв</h5>
+                      <div class="comments__form comments__form--modal">
+                        <?php $comments_form_modal = array(
+                            	'label_submit' => 'Отправить',
+                            	'comment_notes_after' => '',
+                              'comment_field' => '<textarea id="comment" name="comment" cols="45" rows="8" aria-required="true" placeholder="Комментарий"></textarea>',
+                              'fields' => array(
+                                'author' => '<label for="author"><input id="author" name="author" placeholder="Имя*" type="text" value="" size="30"></label>',
+                            		'email' => '<label for="email"><input id="email" name="email" placeholder="Email*" type="text" value="" size="30"></label>',
+                                'rating'  => ''
+                              )
+                            );
+                            comment_form( $comments_form_modal ); ?>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-6 col-pc">
+                    <div class="modal-comment-img">
+                      <img src="http://target.malina.tech/wp-content/themes/target-clinic/img/tablet.png" alt="Clinic Target">
+                    </div>
+                  </div>
+                </div>
 
             </div>
         </div>

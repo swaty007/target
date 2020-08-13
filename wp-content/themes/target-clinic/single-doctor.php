@@ -15,7 +15,7 @@ the_post();
             </div>
             <div class="doc-presents doc-presents--main">
                 <div class="doc-text">
-                    <p class="doc-name title--small"><?php the_title(); ?></p>
+                    <h1 class="doc-name title--small"><?php the_title(); ?></h1>
                     <p class="doc-position text--14"><?= get_post_meta( $post->ID, 'position', true ) ;?></p>
                     <p class="doc-experience text">Стаж: <span class="doc-ex-year"><?= get_post_meta( $post->ID, 'experience', true ) ;?> лет</span></p>
                     <div class="doc-about text">
@@ -24,7 +24,7 @@ the_post();
                     <button type="button" class="button button--secondary button--green text--14" data-toggle="modal" data-target="#modalContactForm">
                         Записаться на прием
                     </button>
-                    <button onclick="window.location.href='#comments'" type="button" class="button button--secondary button--green__all btn-single-do text--14">
+                    <button data-toggle="modal" data-target="#modalCommentForm" type="button" class="button button--secondary button--green__all btn-single-do text--14">
                         Оставить отзыв
                     </button>
                     <p><?php $post_obj = get_page_by_title( 'Привет, мир!', OBJECT, 'post' );
@@ -62,13 +62,18 @@ print_r( $post_obj ); ?></p>
                             </div>
                     </div>
 
-                    <div class="change-order-mob">
+                    <div class="change-order-mob comment-single-page">
+                      <div class="title-box title-box-servies flex-block mb-0"><h3 class="mb-0">Отзыв о Враче</h3></div>
                         <?php // get_template_part('template-parts/sections', 'contact-form-callback'); ?>
                         <?php
                         // If comments are open or we have at least one comment, load up the comment template.
                         if (comments_open() || get_comments_number()) :
                             comments_template();
                         endif; ?>
+                        <div class="change-comments d-flex justify-content-center">
+                          <!-- <button data-toggle="modal" data-target="#modalCommentForm" type="button" class="button button--secondary button--green__all btn-single-do text--14">Оставить отзыв</button> -->
+                          <!-- <button onclick="window.location.href='/comments'" class="button button--secondary button--white__all btn-single-do text--14">Все отзывы</button> -->
+                        </div>
                     </div>
                 </div>
             </div>
