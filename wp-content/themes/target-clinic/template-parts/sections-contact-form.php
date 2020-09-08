@@ -1,9 +1,9 @@
 <div class="appointment appointment-faq flex-block hide-on-mob">
     <img src="<?php bloginfo('template_url'); ?>/img/tablet.png" class="image" alt="">
     <div class="appointment__text">
-        <h3 class="title--small">
+        <p class="title--small">
             Задайте вопрос онлайн
-        </h3>
+        </p>
         <div class="appointment-faq__form">
             <form action="">
                 <label for="question_name">

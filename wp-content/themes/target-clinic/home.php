@@ -9,9 +9,9 @@ get_header();
     <main class="content">
         <section class="section section--blog--list">
             <div class="wrapper">
-                <h3 class="text--18 breadcrumb__alex">
+                <div class="text--18 breadcrumb__alex">
                     <?php the_breadcrumb() ?>
-                </h3>
+                </div>
                 <div class="wrapper-920-left">
                     <h1>
                         <?php single_post_title();?>
@@ -29,9 +29,11 @@ get_header();
                                     <h5 class="link-box-date">
                                         <?php the_modified_time('F jS, Y'); ?>
                                     </h5>
-                                    <h2 class="text--20">
-                                        <?php the_title(); ?>
-                                    </h2>
+                                    <a href="<?php the_permalink();?>" class="no-decoration">
+                                        <h2 class="text--20 h2">
+                                            <?php the_title(); ?>
+                                        </h2>
+                                    </a>
                                     <p class="text--16">
                                         <?php the_excerpt(); ?>
                                     </p>

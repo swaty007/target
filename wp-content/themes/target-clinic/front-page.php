@@ -22,11 +22,11 @@ the_post();
                 </h4>
             </div>
 
-            <div class="flex-block">
+            <div class=""><!--flex-block-->
                 <button type="button" class="button button--secondary button--white" data-toggle="modal" data-target="#modalHimioForm">
                     Задать вопрос онкологу
                 </button>
-                <div class="address-block flex-block text--14">
+                <div class="address-block text--14"><!--flex-block-->
                     <div class="item__address">
                         <img src="<?php bloginfo('template_url'); ?>/img/uil-clock.svg" alt="location">
                         Киев, п-р Воздухофлотский 71/3

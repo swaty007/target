@@ -2,7 +2,6 @@
     <div class="wrapper">
         <img src="<?= get_template_directory_uri(); ?>/img/bg/bg-type-img.svg" class="bg-img" alt="">
         <div class="footer-content flex-block">
-            <img src="<?= get_template_directory_uri(); ?>/img/bg/bg-footer.svg" class="bg-img-footer" alt="">
             <div class="footer-content__item item--contacts">
                 <?php if(get_field('footer_social', 'options')): ?>
                   <div class="social-footer">
@@ -11,7 +10,7 @@
                     <?php if(get_sub_field('social-items', 'options')): ?>
                       <div class="social-items">
                       <?php while(has_sub_field('social-items', 'options')): ?>
-                        <a class="social-item" target="_blank" href="<?php the_sub_field('link'); ?>"><i class="<?php the_sub_field('icon'); ?>"></i></a>
+                        <a class="social-item" rel="nofollow" target="_blank" href="<?php the_sub_field('link'); ?>"><i class="<?php the_sub_field('icon'); ?>"></i></a>
                       <?php endwhile; ?>
                       </div>
                     <?php endif; ?>
@@ -41,9 +40,9 @@
                 </div>
             </div>
             <div class="footer-content__item">
-                <p class="list-title text--18">
-                    Навигация
-                </p>
+<!--                <p class="list-title text--18">-->
+<!--                    Навигация-->
+<!--                </p>-->
                 <?php
                 wp_nav_menu( array(
                     'theme_location' => 'menu-2',
@@ -73,6 +72,7 @@
                     wp_reset_query(); ?>
                 </ul>
             </div>
+            <img src="<?= get_template_directory_uri(); ?>/img/bg/bg-footer.svg" class="bg-img-footer" alt="">
         </div>
     </div>
 </footer>
@@ -198,7 +198,7 @@
                   </div>
                   <div class="col-md-6 col-pc">
                     <div class="modal-comment-img">
-                      <img src="http://target.malina.tech/wp-content/themes/target-clinic/img/tablet.png" alt="Clinic Target">
+                      <img src="<?= get_template_directory_uri(); ?>/img/tablet.png" alt="Clinic Target">
                     </div>
                   </div>
                 </div>

@@ -9,9 +9,9 @@ the_post();
              style="background-image: url(<?php the_post_thumbnail_url() ?>);">
         <div class="wrapper">
             <div class="section__content">
-                <h3 class="text--18 breadcrumb__alex">
+                <div class="text--18 breadcrumb__alex">
                     <?php the_breadcrumb() ?>
-                </h3>
+                </div>
                 <h1 class="text--48 default-title__text">
                     <?php the_title(); ?>
                 </h1>
@@ -30,13 +30,13 @@ the_post();
                        <?php while( have_rows('service_meta_info') ): the_row(); ?>
                          <div class="meta-page">
                            <span class="author-meta">Автор статьи: <?php the_sub_field('author'); ?></span>
-                           <span class="link-meta"><?php the_sub_field('link'); ?></span>
+                           <a href="<?php the_sub_field('link'); ?>" class="link-meta"><?php the_sub_field('link'); ?></a>
                          </div>
                        <?php endwhile; ?>
                     <?php endif; ?>
                     <?php if(get_field('service_doctor')): ?>
                     <div class="service-doctors">
-                      <div class="title-box title-box-servies"><h3 class="mt-4">Наши врачи</h3></div>
+                      <div class="title-box title-box-servies"><p class="mt-4 h3">Наши врачи</p></div>
                       <div class="service-doctors-items">
 
                           <?php while(has_sub_field('service_doctor')): ?>
@@ -66,9 +66,11 @@ the_post();
                             <?php // get_template_part('template-parts/sections', 'contact-form-callback'); ?>
                             <?php
                             // If comments are open or we have at least one comment, load up the comment template.
-                            if (comments_open() || get_comments_number()) :
+                            if (comments_open() && get_comments_number()) :
                                 comments_template();
-                            endif; ?>
+                            else:; ?>
+                                <br>
+                            <?php endif; ?>
                             <div class="change-comments d-flex justify-content-center">
                               <button data-toggle="modal" data-target="#modalCommentForm" type="button" class="button button--secondary button--green__all btn-single-do text--14">Оставить отзыв</button>
                               <!-- <button onclick="window.location.href='/comments'" class="button button--secondary button--white__all btn-single-do text--14">Все отзывы</button> -->

@@ -1,9 +1,9 @@
 <div class="appointment flex-block">
     <img src="<?php bloginfo('template_url'); ?>/img/tablet.png" class="image"/>
     <div class="appointment__text">
-        <h3 class="title--small">
+        <p class="title--small">
             Запись на консультацию в клинику 24/7
-        </h3>
+        </p>
         <button class="button button--primary" data-toggle="modal" data-target="#modalOrderForm">
             Записаться на прием
         </button>

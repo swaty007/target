@@ -11,9 +11,9 @@ the_post();
                  style="background-image: url(<?php the_post_thumbnail_url() ?>);">
             <div class="wrapper">
                 <div class="section__content">
-                    <h3 class="text--18 breadcrumb__alex">
+                    <div class="text--18 breadcrumb__alex">
                     <?php the_breadcrumb() ?>
-                    </h3>
+                    </div>
                     <h1 class="text--48 default-title__text">
                         <?php the_title(); ?>
                     </h1>
@@ -31,9 +31,9 @@ the_post();
                         <?php $count = 0; while ( $loop->have_posts() ) : $loop->the_post(); ?>
                             <div class="content-toggle__item">
                                 <div class="toggle-item__header <?= ($count === 0) ? 'active' : '';?>">
-                                    <p class="text">
+                                    <h2 class="text">
                                         <?php the_title(); ?>
-                                    </p>
+                                    </h2>
                                 </div>
 
                                 <div class="toggle-item__body" <?= ($count === 0) ? 'style="display: block"' : '';?>>

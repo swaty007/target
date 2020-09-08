@@ -26,6 +26,14 @@
 .himioterapiya-button {
    max-width: 260px !important;
 }
+section.not-found {
+   padding: 100px 0 150px 0;
+}
+a.link-meta {
+   color: #fff;
+}
+a.link-meta:hover {
+}
 
 .slick-list {
    position: relative;
@@ -773,7 +781,7 @@ p--14 {
    color: #fff
 }
 
-.section .section__content h3 {
+.section .section__content h3, .section .section__content .breadcrumb__alex {
    margin-top: 91px;
    text-transform: uppercase;
    max-width: 255px;
@@ -795,7 +803,8 @@ p--14 {
 }
 
 .section .address-block {
-   align-items: center
+   align-items: center;
+   margin-top: 35px;
 }
 
 .section .address-block .item__address {
@@ -989,11 +998,15 @@ p--14 {
    color: #acacac;
    margin: 0 0 20px
 }
-
-.section--blog--list .blog-list .content-image-box .content-box h2 {
+.no-decoration {
+   text-decoration: none!important;
+}
+.section--blog--list .blog-list .content-image-box .content-box h2,
+.section--blog--list .blog-list .content-image-box .content-box a.h2{
    font-size: 28px;
    color: #1e1e1e;
-   margin-bottom: 10px
+   margin-bottom: 10px;
+   text-decoration: none!important;
 }
 
 .section--blog--list .blog-list .content-image-box .content-box p {
@@ -1172,7 +1185,7 @@ p--14 {
    height: auto
 }
 
-.section--default .section--large-text h3 {
+.section--default .section--large-text h3, .section--default .section--large-text p.h3 {
    margin-bottom: 29px
 }
 
@@ -1901,7 +1914,7 @@ p--14 {
    width: 100%
 }
 
-.appointment__text h3.title--small {
+.appointment__text p.title--small {
    max-width: 340px;
    margin-bottom: 19px
 }
@@ -2411,7 +2424,8 @@ footer .footer-content {
 }
 
 footer .footer-content__item {
-   margin-bottom: 31px
+   margin-bottom: 31px;
+   z-index: 420;
 }
 
 footer .footer-content__item.item--contacts img {
@@ -2832,8 +2846,12 @@ footer .footer-content__item .list-title {
    .section.title-block {
       padding: 25px 10px 0;
       max-height: 700px;
-      height: 100vh;
-      text-align: center
+      /*height: 100vh;*/
+      text-align: center;
+      min-height: 75vh;
+   }
+   .section.title-block {
+
    }
    .section.title-block .section__content h1,
    .section.title-block .section__content h2,
@@ -2853,13 +2871,19 @@ footer .footer-content__item .list-title {
    }
    .section.title-block .section__content h4 {
       font-size: 16px;
-      margin-bottom: 47px
+      margin-bottom: 47px!important;
    }
    .section.title-block .button {
       margin: 0 auto
    }
    .section.title-block .address-block {
-      display: none
+      /*display: none*/
+   }
+   .section.title-block .address-block .item__address{
+      text-align: center;
+   }
+   .section.title-block .address-block .item__address img{
+      display: none;
    }
    .section--about--clinic {
       padding: 57px 10px
@@ -2926,6 +2950,9 @@ footer .footer-content__item .list-title {
    .section--default .appointment,
    .section--default .comments {
       margin-top: 0
+   }
+   .section--default .appointment {
+      margin-bottom: 160px;
    }
    .section--default .large-text-img .flex-block {
       flex-wrap: wrap
@@ -3094,6 +3121,12 @@ footer .footer-content__item .list-title {
    .section__content p {
       text-align: left!important;
       margin: 0 auto 14px 0!important
+   }
+   .section.title-block .address-block .item__address {
+      text-align: left;
+   }
+   .section.title-block .address-block .item__address img {
+      display: block;
    }
    .section--about--advantages .content-image-box .image-box {
       order: 2;

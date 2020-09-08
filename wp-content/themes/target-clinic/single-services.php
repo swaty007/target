@@ -32,7 +32,7 @@ the_post(); ?>
                           <?php while( have_rows('service_meta_info') ): the_row(); ?>
                             <div class="meta-page">
                               <span class="author-meta">Автор статьи: <?php the_sub_field('author'); ?></span>
-                              <span class="link-meta"><?php the_sub_field('link'); ?></span>
+                              <a href="<?php the_sub_field('link');?>" class="link-meta"><?php the_sub_field('link'); ?></a>
                             </div>
                           <?php endwhile; ?>
                       <?php endif; ?>
@@ -44,7 +44,7 @@ the_post(); ?>
 
                         <?php if(get_field('service_doctor')): ?>
                         <div class="service-doctors">
-                          <div class="title-box title-box-servies"><h3 class="mt-4">Наши врачи</h3></div>
+                          <div class="title-box title-box-servies"><p class="mt-4 h3">Наши врачи</p></div>
                           <div class="service-doctors-items">
 
                               <?php while(has_sub_field('service_doctor')): ?>
@@ -97,7 +97,7 @@ the_post(); ?>
 
                         </div>
                         <?php endif; ?>
-
+                        <?php get_template_part('template-parts/sections', 'contact-form-callback'); ?>
                         <div class="change-order-mob comment-single-page mt-5">
                           <div class="title-box title-box-servies flex-block mb-0"><h3 class="mb-0">Отзыв о услуге</h3></div>
                             <?php // get_template_part('template-parts/sections', 'contact-form-callback'); ?>

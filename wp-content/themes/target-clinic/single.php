@@ -6,9 +6,9 @@ the_post(); ?>
       <main class="content">
           <section class="section section--blog--list blog--list--item">
               <div class="wrapper">
-                  <h3 class="text--18 breadcrumb__alex">
+                  <div class="text--18 breadcrumb__alex">
                     <?php the_breadcrumb() ?>
-                  </h3>
+                  </div>
                   <div class="wrapper-920-left">
                       <h1>
                           <?php the_title() ?>
@@ -23,7 +23,7 @@ the_post(); ?>
 								  <?php while( have_rows('service_meta_info') ): the_row(); ?>
 									<div class="meta-page">
 									  <span class="author-meta">Автор статьи: <?php the_sub_field('author'); ?></span>
-									  <span class="link-meta"><?php the_sub_field('link'); ?></span>
+									  <a href="<?php the_sub_field('link');?>" class="link-meta"><?php the_sub_field('link'); ?></a>
 									</div>
 								  <?php endwhile; ?>
 							  <?php endif; ?>

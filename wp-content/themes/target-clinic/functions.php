@@ -748,9 +748,9 @@ function do_contact_form() {
         $phone = $_POST['phone'];
         $send_to = "eugene.subota1984@gmail.com,swaty0007@gmail.com,office@car.ua,info@car.ua";
         $subject = "Заказ консультации";
-        $message = "Пользователь сайта запросил консультацию менеджера.<br> Пользователь: " . $name . "<br>Номер телефона: " . $phone;
+        $message = "Пользователь сайта запросил консультацию менеджера.\n Пользователь: " . $name . "\nНомер телефона: " . $phone;
         if (isset($_POST['location'])) {
-            $message.=  "<br>Ссылка на страницу: " . $_POST['location'];
+            $message.=  "\nСсылка на страницу: " . $_POST['location'];
         }
         $headers = array('From: Car.ua <info@car.ua>', 'Content-Type: text/html; charset=UTF-8');
 
@@ -782,7 +782,7 @@ function do_question_form() {
         $subject = "Заказ консультации";
         $message = "Пользователь сайта задал вопрос онлайн. Пользователь: " . $name . " Email: " . $email ." Коментарий:". $comment;
         if (isset($_POST['location'])) {
-            $message.=  "<br>Ссылка на страницу: " . $_POST['location'];
+            $message.=  "\nСсылка на страницу: " . $_POST['location'];
         }
         $headers = array('From: Car.ua <info@car.ua>', 'Content-Type: text/html; charset=UTF-8');
 
@@ -808,41 +808,6 @@ function do_question_form() {
 
 
 
-
-
-add_action( 'wp_ajax_nopriv_buy_tire', 'do_buy_tire' );
-function do_buy_tire() {
-	if ( isset($_POST['tireName']) && isset($_POST['tirePhone']) ) {
-		$sezon = $_POST['tireSezon'];
-		$width = $_POST['tireWidth'];
-		$profile = $_POST['tireProfile'];
-		$diametr = $_POST['tireDiametr'];
-		$brand = $_POST['tireBrand'];
-		$name = $_POST['tireName'];
-		$phone = $_POST['tirePhone'];
-
-		$send_to = "eugene.subota1984@gmail.com,swaty0007@gmail.com,office@car.ua,info@car.ua";
-		$subject = "Шины";
-		$message = "Пользователь интересуется приобретением шин с характеристиками:";
-		$message .= "<br> Сезон: " . $sezon;
-		$message .= "<br> Ширина: " . $width;
-		$message .= "<br> Профиль: " . $profile;
-		$message .= "<br> Диаметр: " . $diametr;
-		$message .= "<br> Бренд: " . $brand;
-		$message .= "<br> Имя пользователя: " . $name;
-		$message .= "<br> Номер телефона: " . $phone;
-		$headers = array('From: Car.ua <info@car.ua>', 'Content-Type: text/html; charset=UTF-8');
-		$success = wp_mail($send_to,$subject,$message,$headers);
-		if ($success){
-			wp_send_json(true);
-		} else {
-			wp_send_json(false);
-		}
-	}
-}
-
-
-
 //pll_register_string ("Main","УЗНАТЬ БОЛЬШЕ","Custom");
 
 
@@ -862,84 +827,6 @@ add_action( 'rest_api_init', function (  ) {
     ));
 });
 
-
-
-function send_pre_order(WP_REST_Request $request){
-
-    $send_to = 'tkacenkoandrej240@gmail.com,swaty0007@gmail.com';
-    $subject = "Бронирование тура";
-    $headers = array('Content-Type: text/html; charset=UTF-8');
-//    $headers = array('From: Car.ua <info@car.ua>', 'Content-Type: text/html; charset=UTF-8');
-//    $request = json_decode($request);
-
-    if($request->offsetExists('name')
-        && $request->offsetExists('phone')
-        && $request->offsetExists('people_count')
-        && $request->offsetExists('tours')
-        && $request->offsetExists('date')){
-        $name         = htmlspecialchars(trim($request->get_param('name')));
-        $phone        = htmlspecialchars(trim($request->get_param('phone')));
-        $tours        = htmlspecialchars(trim($request->get_param('tours')));
-        $people_gringo = htmlspecialchars(trim($request->get_param('people_count')['gringo']));
-        $people_uk = htmlspecialchars(trim($request->get_param('people_count')['user']));
-
-        $date         = htmlspecialchars(trim($request->get_param('date')));
-        $message = "Отправленна форма бронирования тура:";
-        $message .= "<br>Имя: ".$name;
-        $message .= "<br>Телефон: ".$phone;
-        $message .= "<br>Выбран тур: ".$tours;
-        $message .= "<br>Граждан Украины: ".$people_uk;
-        $message .= "<br>Иностранцев: ".$people_gringo;
-        $message .= "<br>Дата: ".$date;
-        if ($request->offsetExists('comment') && $request->offsetExists('selected_menu')){
-            $comment  = htmlspecialchars(trim($request->get_param('comment')));
-            $menu     = implode(", ", $request->get_param('selected_menu'));
-            $message .= "<br>Меню: " . $menu . "<br>Коментар: " . $comment;
-        }
-
-        $success = wp_mail($send_to, $subject, $message, $headers);
-        if( $request->offsetExists('capctha') ){
-            $captcha = $request->get_param('capctha');
-            if($captcha !== ''){
-                $url = 'https://www.google.com/recaptcha/api/siteverify';
-                $params = [
-                    'secret' => '6Lf-kKwUAAAAADHWiasQbdRAFfvyOpAo6_bXOBEw',
-                    'response' => $captcha,
-                ];
-                $ch = curl_init($url);
-                curl_setopt($ch, CURLOPT_POST, 1);
-                curl_setopt($ch, CURLOPT_POSTFIELDS, $params);
-                curl_setopt($ch, CURLOPT_FOLLOWLOCATION, 1);
-                curl_setopt($ch, CURLOPT_HEADER, 0);
-                curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
-                curl_setopt($ch, CURLOPT_POSTFIELDS, http_build_query($params));
-                curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
-                $response = curl_exec($ch);
-                if(!empty($response)) $decoded_response = json_decode($response);
-
-
-                if ($decoded_response && $decoded_response->success)
-                {
-
-//                    $success = wp_mail($send_to, $subject, $message, $headers);
-                    if ($success) {
-                        wp_send_json(true);
-                    } else {
-                        wp_send_json(false);
-                    }
-                }
-                $result = $success ? 'Капча пройдена успешно!' : 'Неверная капча!';
-                curl_close($ch);
-
-                echo $result;
-            }
-        }
-
-    } else {
-
-        wp_send_json(false);
-    }
-}
 
 
 function vic_admin_menu()
@@ -977,3 +864,40 @@ function get_comments_form () {
     ));
     wp_send_json($comments);
 }
+
+
+//redirection uppercase to lower
+if(!is_admin()){
+    add_action( 'init', 'storm_force_lowercase' );
+}
+function storm_force_lowercase(){
+
+    $url = $_SERVER['REQUEST_URI'];
+
+    if(preg_match('/[\.]/', $url)){
+        return;
+    }
+
+    if(preg_match('/[A-Z]/', $url)){
+
+        $lc_url = strtolower($url);
+        header("Location: " . $lc_url);
+        exit(0);
+    }
+
+}
+
+//image pages disable
+function myprefix_redirect_attachment_page() {
+    if ( is_attachment() ) {
+        global $post;
+        if ( $post && $post->post_parent ) {
+            wp_redirect( esc_url( get_permalink( $post->post_parent ) ), 301 );
+            exit;
+        } else {
+            wp_redirect( esc_url( home_url( '/' ) ), 301 );
+            exit;
+        }
+    }
+}
+add_action( 'template_redirect', 'myprefix_redirect_attachment_page' );

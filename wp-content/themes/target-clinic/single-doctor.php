@@ -9,9 +9,9 @@ the_post();
              style="background:radial-gradient(59.52% 53.91% at 47.76% 56.2%, #FFFFFF 0%, #E3E3E3 100%)">
         <div class="wrapper">
             <div class="section__content">
-                <h3 class="text--18 breadcrumb__alex">
+                <div class="text--18 breadcrumb__alex">
                     <?php the_breadcrumb() ?>
-                </h3>
+                </div>
             </div>
             <div class="doc-presents doc-presents--main">
                 <div class="doc-text">

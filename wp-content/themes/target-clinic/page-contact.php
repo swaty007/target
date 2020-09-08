@@ -10,9 +10,9 @@ the_post();
                  style="background-image: url(<?php the_post_thumbnail_url() ?>);">
             <div class="wrapper">
                 <div class="section__content">
-                    <h3 class="text--18 breadcrumb__alex">
+                    <div class="text--18 breadcrumb__alex">
                     <?php the_breadcrumb() ?>
-                    </h3>
+                    </div>
                     <h1 class="text--48 default-title__text">
                         <?php the_title() ?>
                     </h1>
