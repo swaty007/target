@@ -24,27 +24,27 @@
     <div class="container">
       <div class="row">
         <div class="col-12">
-          <div class="comments-slug">
+<!--           <div class="comments-slug">
             <span>Клиника TARGET занимается диагностикой и комплексной терапией более 20 видов рака, а также оперативным лечением гинекологических, урологических и ряда других заболеваний. В штате клиники работают высококвалифицированные хирурги-онкологи, химиотерапевты, гинекологи, урологи, проктологи, с многолетним опытом и стажем работы.</span>
-          </div>
+          </div> -->
         </div>
         <div class="col-12">
           <ul class="nav nav-pills nav-comments" id="pills-tab" role="tablist">
             <li class="nav-item" role="presentation">
               <a class="nav-link active" id="pills-home-tab" data-toggle="pill" href="#pills-home"
-                role="tab" aria-controls="pills-home" aria-selected="true">Об онкоцентре</a>
+                role="tab" aria-controls="pills-home" aria-selected="true">Все отзывы</a>
             </li>
             <li class="nav-item" role="presentation">
               <a class="nav-link" id="pills-profile-tab" data-toggle="pill" href="#pills-profile"
-                role="tab" aria-controls="pills-profile" aria-selected="false">О врачах</a>
+                role="tab" aria-controls="pills-profile" aria-selected="false">Про врачей</a>
             </li>
             <li class="nav-item" role="presentation">
               <a class="nav-link" id="pills-contact-tab" data-toggle="pill" href="#pills-contact"
-                role="tab" aria-controls="pills-contact" aria-selected="false">О лечении</a>
+                role="tab" aria-controls="pills-contact" aria-selected="false">По услугам</a>
             </li>
             <li class="nav-item" role="presentation">
               <a class="nav-link" id="pills-services-tab" data-toggle="pill" href="#pills-services"
-                role="tab" aria-controls="pills-services" aria-selected="false">Услуги</a>
+                role="tab" aria-controls="pills-services" aria-selected="false">По локализациям</a>
             </li>
           </ul>
           <div class="tab-content" id="pills-tabContent">
@@ -96,7 +96,7 @@
                     <div class="doctor-item">
                       <img src="<?php the_post_thumbnail_url() ?>" alt="Clinic Target">
                       <div class="doctor-item__body">
-                        <h1><?php the_title(); ?></h1>
+                        <span><?php the_title(); ?></span>
                         <ul>
                           <li><?= get_post_meta($post->ID, 'position', true); ?></li>
                         </ul>
@@ -155,8 +155,8 @@
                   wp_reset_query(); ?>
               </div>
             </div>
-            <div class="tab-pane fade" id="pills-contact" role="tabpanel"
-              aria-labelledby="pills-contact-tab">
+            <div class="tab-pane fade" id="pills-services" role="tabpanel"
+              aria-labelledby="pills-services-tab">
               <ul class="nav nav-pills nav-comments nav-com mb-3" role="tablist">
                 <?php $loop = new WP_Query(array('post_type' => 'cancer', 'posts_per_page' => -1)); ?>
                 <?php $count = 0;
@@ -213,8 +213,8 @@
                   wp_reset_query(); ?>
               </div>
             </div>
-            <div class="tab-pane fade" id="pills-services" role="tabpanel"
-              aria-labelledby="pills-services-tab">
+            <div class="tab-pane fade" id="pills-contact" role="tabpanel"
+              aria-labelledby="pills-contact-tab">
               <ul class="nav nav-pills nav-comments nav-com mb-3" role="tablist">
                 <?php $loop = new WP_Query(array('post_type' => 'services', 'posts_per_page' => -1)); ?>
                 <?php $count = 0;

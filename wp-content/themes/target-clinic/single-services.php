@@ -52,8 +52,8 @@ the_post(); ?>
                                 <div class="doctor-item">
                                   <div class="doctor-item__header">
                                     <div class="doctor-item__header--first">
-                                      <h1 class="doctor-item--name"><?php the_sub_field('name'); ?></h1>
-                                      <h2 class="doctor-item--position"><?php the_sub_field('position'); ?></h2>
+                                      <p class="doctor-item--name"><?php the_sub_field('name'); ?></p>
+                                      <p class="doctor-item--position"><?php the_sub_field('position'); ?></p>
                                     </div>
                                     <div class="doctor-item__header--second">
                                       <a class="button button-doctor-service" href="<?php the_sub_field('link'); ?>">О враче</a>

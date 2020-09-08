@@ -3648,8 +3648,9 @@ header {
 .comment-doctor .doctor-item__body {
   margin-top: 15px;
   min-height: 130px;
+  text-align: center;
 }
-.comment-doctor .doctor-item__body h1 {
+.comment-doctor .doctor-item__body span {
   font-size: 18px;
   text-align: center;
   line-height: 24px;
@@ -3781,15 +3782,15 @@ header {
 .service-doctors .service-doctors-items .doctor-item--name {
   font-size: 20px;
   text-align: center;
-  color: #333333;
+  color: #333333!important;
   line-height: 27px;
-  margin-bottom: 15px;
+  margin-bottom: 0px;
 }
 .service-doctors .service-doctors-items .doctor-item--position {
   font-size: 14px;
   text-align: center;
-  margin-top: 15px;
-  color: #848484;
+  margin-top: 0px;
+  color: #848484!important;
 }
 .service-doctors .service-doctors-items .doctor-item__header {
   text-align: center;
