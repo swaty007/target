@@ -38,7 +38,7 @@ get_header();
                                         <?php the_excerpt(); ?>
                                     </p>
                                     <a class="button" href="<?php the_permalink();?>">
-                                        Читать статью
+                                        <?php pll_e('Читать статью');?>
                                     </a>
                                 </div>
                             </div>

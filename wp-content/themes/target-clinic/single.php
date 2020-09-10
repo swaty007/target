@@ -29,7 +29,7 @@ the_post(); ?>
 							  <?php endif; ?>
 
                               <div class="change-order-mob comment-single-page mt-5">
-								  <div class="title-box title-box-servies flex-block mb-0"><h3 class="mb-0" style="color: black;">Отзыв о услуге</h3></div>
+								  <div class="title-box title-box-servies flex-block mb-0"><h3 class="mb-0" style="color: black;"><?php pll_e('Отзыв о услуге');?></h3></div>
 									<?php // get_template_part('template-parts/sections', 'contact-form-callback'); ?>
 									<?php
 									// If comments are open or we have at least one comment, load up the comment template.
@@ -37,13 +37,13 @@ the_post(); ?>
 										comments_template();
 									endif; ?>
 									<div class="change-comments d-flex justify-content-center">
-									  <button data-toggle="modal" data-target="#modalCommentForm" type="button" class="button button--secondary button--green__all btn-single-do text--14">Оставить отзыв</button>
+									  <button data-toggle="modal" data-target="#modalCommentForm" type="button" class="button button--secondary button--green__all btn-single-do text--14"><?php pll_e('Оставить отзыв');?></button>
 									  <!-- <button onclick="window.location.href='/comments'" class="button button--secondary button--white__all btn-single-do text--14">Все отзывы</button> -->
 									</div>
 								</div>
 
                               <h2 class="mt-5 title--small">
-                                  Читайте также
+                                  <?php pll_e('Читайте также');?>
                               </h2>
                           </div>
                       </div>

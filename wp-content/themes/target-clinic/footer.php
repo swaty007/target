@@ -24,18 +24,18 @@
             <div class="footer-content__item item--info">
                 <div class="item__address">
                     <img src="<?= get_template_directory_uri(); ?>/img/fa-regular_clock-wh.svg" alt="location">
-                    Киев, п-р Воздухофлотский 71/3
+                    <?php pll_e('Киев, п-р Воздухофлотский 71/3');?>
                 </div>
                 <div class="item__address">
                     <img src="<?= get_template_directory_uri(); ?>/img/fa-solid_map-marker-alt.svg" alt="location">
-                    Пн-Пт с 08:00 до 17:00
+                    <?php pll_e('Пн-Пт с 08:00 до 17:00');?>
                 </div>
                 <div class="item__address">
                     <ul class="mt-3">
-                      <li>Троллейбус: №9, №22</li>
+                        <?php pll_e('<li>Троллейбус: №9, №22</li>
                       <li>Автобус: 78, 302, 368, 805</li>
                       <li>Маршрутное такси: 496, 499, 565.</li>
-                      <li>Остановка Аэропорт «Киев»</li>
+                      <li>Остановка Аэропорт «Киев»</li>');?>
                     </ul>
                 </div>
             </div>
@@ -54,7 +54,7 @@
                 ?>
             </div>
             <div class="footer-content__item">
-                <p class="list-title text--18">Лечение рака</p>
+                <p class="list-title text--18"><?php pll_e('Лечение рака');?></p>
                 <ul>
                     <?php $loop = new WP_Query(array('post_type' => 'services', 'posts_per_page' => -1)); ?>
                     <?php while ($loop->have_posts()) : $loop->the_post();
@@ -84,13 +84,13 @@
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
-                <h5 class="modal-title">Записаться на прием</h5>
+                <h5 class="modal-title"><?php pll_e('Записаться на прием');?></h5>
                 <input id="modal_page" type="hidden" name="page">
-                <input id="modal_name" type="text" name="name" placeholder="Имя">
-                <input id="modal_phone" type="text" name="tel" placeholder="Телефон" data-required="required" data-mask="+38 (000) 000 00 00">
+                <input id="modal_name" type="text" name="name" placeholder="<?php pll_e('Имя');?>">
+                <input id="modal_phone" type="text" name="tel" placeholder="<?php pll_e('Телефон');?>" data-required="required" data-mask="+38 (000) 000 00 00">
                 <!-- <button id="modal_contact_form" type="button" class="button--primary" data-dismiss="modal">Отправить</button> -->
-                <button id="modal_contact_form" type="button" class="button--primary">Отправить</button>
-                <div id="modal_contact_form_thank">Спасибо, Ваша заявка отправлена.</div>
+                <button id="modal_contact_form" type="button" class="button--primary"><?php pll_e('Отправить');?></button>
+                <div id="modal_contact_form_thank"><?php pll_e('Спасибо, Ваша заявка отправлена.');?></div>
             </div>
         </div>
     </div>
@@ -107,7 +107,7 @@
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
-                <h5 class="modal-title my-modal-h">Оставьте заявку и мы свяжемся в течении дня</h5>
+                <h5 class="modal-title my-modal-h"><?php pll_e('Оставьте заявку и мы свяжемся в течении дня');?></h5>
                 <input class="modal_page" type="hidden" name="page">
                 <input class="modal_height" type="text" name="height" placeholder="Рост">
                 <input class="modal_weight" type="text" name="weight" placeholder="Вес">
@@ -117,9 +117,9 @@
                 <input type="file" id="upload_file">
 -->
                 <input class="modal_phone" type="text" name="tel" placeholder="Телефон" data-required="required" data-mask="+38 (000) 000 00 00">
-                <button type="button" class="button--primary send-button modal_contact_form" id="form_chemical">Отправить</button>
-                <div class="modal_contact_form_thank">Спасибо, Ваша заявка отправлена.</div>
-                <p class="my-modal-p">Не знаете схему лечения? Оставьте заявку и мы подберем для Вас индивидуальный курс лечения.</p>
+                <button type="button" class="button--primary send-button modal_contact_form" id="form_chemical"><?php pll_e('Отправить');?></button>
+                <div class="modal_contact_form_thank"><?php pll_e('Спасибо, Ваша заявка отправлена.');?></div>
+                <p class="my-modal-p"><?php pll_e('Не знаете схему лечения? Оставьте заявку и мы подберем для Вас индивидуальный курс лечения.');?></p>
             </div>
         </div>
     </div>
@@ -134,14 +134,14 @@
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
-                <h5 class="modal-title my-modal-h">Напишите ваш вопрос химиотерапевту</h5>
+                <h5 class="modal-title my-modal-h"><?php pll_e('Напишите ваш вопрос химиотерапевту');?></h5>
                 <input class="modal_page" type="hidden" name="page">
                 <input class="modal_name" type="text" name="name" placeholder="Имя">
                 <input class="modal_email" type="text" name="email" placeholder="E-mail">
                 <input class="modal_phone" type="text" name="tel" placeholder="Телефон" data-required="required" data-mask="+38 (000) 000 00 00">
                 <textarea class="modal_message"  name="message" placeholder="Ваш вопрос"></textarea>
-                <button  type="button" class="button--primary send-button modal_contact_form">Отправить</button>
-                <div class="modal_contact_form_thank">Спасибо, Ваша заявка отправлена.</div>
+                <button  type="button" class="button--primary send-button modal_contact_form"><?php pll_e('Отправить');?></button>
+                <div class="modal_contact_form_thank"><?php pll_e('Спасибо, Ваша заявка отправлена.');?></div>
             </div>
         </div>
     </div>
@@ -155,14 +155,14 @@
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
-                <h5 class="modal-title my-modal-h">Запись на прием</h5>
+                <h5 class="modal-title my-modal-h"><?php pll_e('Запись на прием');?></h5>
                 <input class="modal_page" type="hidden" name="page">
-                <input class="modal_name" type="text" name="name" placeholder="ФИО">
-                <input class="modal_phone" type="text" name="tel" placeholder="Телефон" data-required="required" data-mask="+38 (000) 000 00 00">
-                <input class="modal_date" type="text" name="date" placeholder="Желаемая дата приема">
-                <textarea class="modal_message" name="message" placeholder="Комментарий"></textarea>
-                <button type="button" class="button--primary send-button modal_contact_form">Отправить</button>
-                <div class="modal_contact_form_thank">Спасибо, Ваша заявка отправлена.</div>
+                <input class="modal_name" type="text" name="name" placeholder="<?php pll_e('ФИО');?>">
+                <input class="modal_phone" type="text" name="tel" placeholder="<?php pll_e('Телефон');?>" data-required="required" data-mask="+38 (000) 000 00 00">
+                <input class="modal_date" type="text" name="date" placeholder="<?php pll_e('Желаемая дата приема');?>">
+                <textarea class="modal_message" name="message" placeholder="<?php pll_e('Комментарий');?>"></textarea>
+                <button type="button" class="button--primary send-button modal_contact_form"><?php pll_e('Отправить');?></button>
+                <div class="modal_contact_form_thank"><?php pll_e('Спасибо, Ваша заявка отправлена.');?></div>
             </div>
         </div>
     </div>
@@ -180,15 +180,15 @@
                 <div class="row">
                   <div class="col-md-6">
                     <div class="form-modal">
-                      <h5 class="modal-title my-modal-h">Оставить отзыв</h5>
+                      <h5 class="modal-title my-modal-h"><?php pll_e('Оставить отзыв');?></h5>
                       <div class="comments__form comments__form--modal">
                         <?php $comments_form_modal = array(
                             	'label_submit' => 'Отправить',
                             	'comment_notes_after' => '',
-                              'comment_field' => '<textarea id="comment" name="comment" cols="45" rows="8" aria-required="true" placeholder="Комментарий"></textarea>',
+                              'comment_field' => '<textarea id="comment" name="comment" cols="45" rows="8" aria-required="true" placeholder="'.pll__('Комментарий').'"></textarea>',
                               'fields' => array(
-                                'author' => '<label for="author"><input id="author" name="author" placeholder="Имя*" type="text" value="" size="30"></label>',
-                            		'email' => '<label for="email"><input id="email" name="email" placeholder="Email*" type="text" value="" size="30"></label>',
+                                'author' => '<label for="author"><input id="author" name="author" placeholder="'.pll__('Имя').'*" type="text" value="" size="30"></label>',
+                            		'email' => '<label for="email"><input id="email" name="email" placeholder="'.pll__('E-mail').'*" type="text" value="" size="30"></label>',
                                 'rating'  => ''
                               )
                             );

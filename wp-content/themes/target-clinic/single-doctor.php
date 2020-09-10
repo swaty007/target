@@ -17,15 +17,15 @@ the_post();
                 <div class="doc-text">
                     <h1 class="doc-name title--small"><?php the_title(); ?></h1>
                     <p class="doc-position text--14"><?= get_post_meta( $post->ID, 'position', true ) ;?></p>
-                    <p class="doc-experience text">Стаж: <span class="doc-ex-year"><?= get_post_meta( $post->ID, 'experience', true ) ;?> лет</span></p>
+                    <p class="doc-experience text"><?php pll_e('Стаж:');?> <span class="doc-ex-year"><?= get_post_meta( $post->ID, 'experience', true ) ;?> <?php pll_e('лет');?></span></p>
                     <div class="doc-about text">
                         <?php the_excerpt()?>
                     </div>
                     <button type="button" class="button button--secondary button--green text--14" data-toggle="modal" data-target="#modalContactForm">
-                        Записаться на прием
+                        <?php pll_e('Записаться на прием');?>
                     </button>
                     <button data-toggle="modal" data-target="#modalCommentForm" type="button" class="button button--secondary button--green__all btn-single-do text--14">
-                        Оставить отзыв
+                        <?php pll_e('Оставить отзыв');?>
                     </button>
                     <p><?php $post_obj = get_page_by_title( 'Привет, мир!', OBJECT, 'post' );
 print_r( $post_obj ); ?></p>
@@ -41,7 +41,7 @@ print_r( $post_obj ); ?></p>
                 <div class="section--large-text">
                     <?php the_content(); ?>
                     <h3 class="title--small">
-                        Сертификаты
+                        <?php pll_e('Сертификаты');?>
                     </h3>
                     <div class="certificates">
 <!--                        <div class="flex-block">-->
@@ -63,7 +63,7 @@ print_r( $post_obj ); ?></p>
                     </div>
 
                     <div class="change-order-mob comment-single-page">
-                      <div class="title-box title-box-servies flex-block mb-0"><h3 class="mb-0">Отзыв о Враче</h3></div>
+                      <div class="title-box title-box-servies flex-block mb-0"><h3 class="mb-0"><?php pll_e('');?>Отзыв о Враче</h3></div>
                         <?php // get_template_part('template-parts/sections', 'contact-form-callback'); ?>
                         <?php
                         // If comments are open or we have at least one comment, load up the comment template.

@@ -4,13 +4,13 @@
             <div class="header__item header--address">
                 <div class="item__address">
                     <img src="<?= get_template_directory_uri(); ?>/img/uil-clock.svg" alt="">
-                    Киев, п-р Воздухофлотский 71/3
+                    <?php pll_e('Киев, п-р Воздухофлотский 71/3');?>
                 </div>
                 <div class="item__address">
                     <img src="<?= get_template_directory_uri(); ?>/img/uil-map-marker.svg" alt="">
                     Пн-Пт с 08:00 до 17:00
                     <a href="/kontakty/" class="link">
-                        Как добраться
+                        <?php pll_e('Как добраться');?>
                     </a>
                 </div>
             </div>
@@ -21,7 +21,7 @@
                 <?php $count++; endwhile; ?>
             </div>
             <button type="button" class="button button--secondary button--green text--14" data-toggle="modal" data-target="#modalOrderForm">
-                Записаться на прием
+                <?php pll_e('Записаться на прием');?>
             </button>
         </div>
     </div>

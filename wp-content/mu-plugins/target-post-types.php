@@ -74,6 +74,7 @@ function target_post_types() {
     register_post_type('phones', array(
         'supports' => array('title'),
         'public' => true,
+        'publicly_queryable' => false,
         'labels' => array(
             'name' => 'Phones',
             'add_new_item' => 'Add New Phone',

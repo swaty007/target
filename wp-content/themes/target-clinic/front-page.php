@@ -24,16 +24,16 @@ the_post();
 
             <div class=""><!--flex-block-->
                 <button type="button" class="button button--secondary button--white" data-toggle="modal" data-target="#modalHimioForm">
-                    Задать вопрос онкологу
+                    <?php pll_e('Задать вопрос онкологу');?>
                 </button>
                 <div class="address-block text--14"><!--flex-block-->
                     <div class="item__address">
                         <img src="<?php bloginfo('template_url'); ?>/img/uil-clock.svg" alt="location">
-                        Киев, п-р Воздухофлотский 71/3
+                        <?php pll_e('Киев, п-р Воздухофлотский 71/3');?>
                     </div>
                     <div class="item__address">
                         <img src="<?php bloginfo('template_url'); ?>/img/uil-map-marker.svg" alt="location">
-                        Пн-Пт с 08:00 до 17:00
+                        <?php pll_e('Пн-Пт с 08:00 до 17:00');?>
                     </div>
                 </div>
             </div>
@@ -94,7 +94,7 @@ the_post();
                             <?php the_excerpt(); ?>
                         </div>
                         <a href="<?php the_permalink(); ?>" class="link green">
-                            Узнать детальнее
+                            <?php pll_e('Узнать детальнее');?>
                         </a>
                     </div>
                 <?php endwhile;
@@ -182,7 +182,7 @@ the_post();
                 <?php endwhile; wp_reset_query();?>
             </div>
             <a href="<?= get_permalink( get_option( 'page_for_posts' ) ); ?>" class="button button--secondary button--green">
-                Смотреть все статьи
+                <?php pll_e('Смотреть все статьи');?>
             </a>
             <?php get_template_part('template-parts/sections', 'dropdown-seo'); ?>
         </div>

@@ -48,7 +48,7 @@ the_post();
                             <?php the_excerpt(); ?>
                         </div>
                         <a href="<?php the_permalink(); ?>" class="link green">
-                            Узнать детальнее
+                            <?php pll_e('Узнать детальнее');?>
                         </a>
                     </div>
                 <?php endwhile;

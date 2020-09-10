@@ -32,19 +32,19 @@
           <ul class="nav nav-pills nav-comments" id="pills-tab" role="tablist">
             <li class="nav-item" role="presentation">
               <a class="nav-link active" id="pills-home-tab" data-toggle="pill" href="#pills-home"
-                role="tab" aria-controls="pills-home" aria-selected="true">Все отзывы</a>
+                role="tab" aria-controls="pills-home" aria-selected="true"><?php pll_e('Все отзывы');?></a>
             </li>
             <li class="nav-item" role="presentation">
               <a class="nav-link" id="pills-profile-tab" data-toggle="pill" href="#pills-profile"
-                role="tab" aria-controls="pills-profile" aria-selected="false">Про врачей</a>
+                role="tab" aria-controls="pills-profile" aria-selected="false"><?php pll_e('Про врачей');?></a>
             </li>
             <li class="nav-item" role="presentation">
               <a class="nav-link" id="pills-contact-tab" data-toggle="pill" href="#pills-contact"
-                role="tab" aria-controls="pills-contact" aria-selected="false">По услугам</a>
+                role="tab" aria-controls="pills-contact" aria-selected="false"><?php pll_e('По услугам');?></a>
             </li>
             <li class="nav-item" role="presentation">
               <a class="nav-link" id="pills-services-tab" data-toggle="pill" href="#pills-services"
-                role="tab" aria-controls="pills-services" aria-selected="false">По локализациям</a>
+                role="tab" aria-controls="pills-services" aria-selected="false"><?php pll_e('По локализациям');?></a>
             </li>
           </ul>
           <div class="tab-content" id="pills-tabContent">
@@ -107,7 +107,7 @@
                           data-post-id="<?= $post->ID; ?>"
                           data-offset="0"
                           aria-controls="pills-profile<?= $post->ID; ?>">
-                        Читать коментарии
+                            <?php pll_e('Читать коментарии');?>
                         </button>
                       </div>
                     </div>

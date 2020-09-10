@@ -1,6 +1,6 @@
 <div class="gallery__nav">
-    <div data-click="#mapUkraine" class="gallery__nav-item text active">Украина</div>
-    <div data-click="#mapEurope" class="gallery__nav-item text">Европа</div>
+    <div data-click="#mapUkraine" class="gallery__nav-item text active"><?php pll_e('Украина');?></div>
+    <div data-click="#mapEurope" class="gallery__nav-item text"><?php pll_e('Европа');?></div>
 </div>
 <div id="mapUkraine" class="gallery-content gallery-content--full show-gallery">
     <svg id="map_ukraine" width="830" height="551" viewBox="0 0 830 551" class="map_ukraine" fill="none" xmlns="https://www.w3.org/2000/svg">

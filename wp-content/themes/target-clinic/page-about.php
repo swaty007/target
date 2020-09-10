@@ -53,7 +53,7 @@ the_post();
         <section class="section about-clinic section--map">
             <div class="wrapper">
                 <h3 class="title--small">
-                    География наших пациентов
+                    <?php pll_e('География наших пациентов');?>
                 </h3>
                 <div class="map-group">
                     <?php get_template_part('template-parts/sections', 'maps'); ?>

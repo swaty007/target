@@ -2,10 +2,10 @@
     <img src="<?php bloginfo('template_url'); ?>/img/tablet.png" class="image"/>
     <div class="appointment__text">
         <p class="title--small">
-            Запись на консультацию в клинику 24/7
+            <?php pll_e('Запись на консультацию в клинику 24/7');?>
         </p>
         <button class="button button--primary" data-toggle="modal" data-target="#modalOrderForm">
-            Записаться на прием
+            <?php pll_e('Записаться на прием');?>
         </button>
         <p class="telephone">
             <img src="<?php bloginfo('template_url'); ?>/img/phone.svg"/>
