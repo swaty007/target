@@ -290,6 +290,7 @@ function kama_reorder_comment_fields( $fields ){
     $myorder = array('author','email','url','comment', 'rate'); // нужный порядок
 
     foreach( $myorder as $key ){
+        if (empty($new_fields[ $key ])) continue;
         $new_fields[ $key ] = $fields[ $key ];
         unset( $fields[ $key ] );
     }
@@ -804,63 +805,63 @@ function do_question_form() {
 
 }
 
+if( function_exists('pll_register_string') ) {
+    pll_register_string("Pages", "Записаться на прием", "Globals");
+    pll_register_string("Pages", "Запись на прием", "Globals");
+    pll_register_string("Pages", "Задайте вопрос онлайн", "Globals");
+    pll_register_string("Pages", "Имя", "Globals");
+    pll_register_string("Pages", "E-mail", "Globals");
+    pll_register_string("Pages", "Отправить", "Globals");
+    pll_register_string("Pages", "Запись на консультацию в клинику 24/7", "Globals");
+    pll_register_string("Pages", "Пн-Пт с 08:00 до 17:00", "Globals");
+    pll_register_string("Pages", "Имя", "Globals");
+    pll_register_string("Pages", "Телефон", "Globals");
+    pll_register_string("Pages", "Спасибо, Ваша заявка отправлена.", "Globals");
+    pll_register_string("Pages", "Оставьте заявку и мы свяжемся в течении дня", "Globals");
+    pll_register_string("Pages", "Не знаете схему лечения? Оставьте заявку и мы подберем для Вас индивидуальный курс лечения.", "Globals");
+    pll_register_string("Pages", "Напишите ваш вопрос химиотерапевту", "Globals");
+    pll_register_string("Pages", "ФИО", "Globals");
+    pll_register_string("Pages", "Телефон", "Globals");
+    pll_register_string("Pages", "Желаемая дата приема", "Globals");
+    pll_register_string("Pages", "Комментарий", "Globals");
+    pll_register_string("Pages", "Оставить отзыв", "Globals");
+    pll_register_string("Pages", "Отзыв о услуге", "Globals");
+    pll_register_string("Pages", "Смотреть все статьи", "Globals");
+    pll_register_string("Pages", "Задать вопрос онкологу", "Globals");
+    pll_register_string("Pages", "Читать статью", "Globals");
+    pll_register_string("Pages", "Все отзывы", "Globals");
+    pll_register_string("Pages", "Про врачей", "Globals");
+    pll_register_string("Pages", "По услугам", "Globals");
+    pll_register_string("Pages", "По локализациям", "Globals");
+    pll_register_string("Pages", "Читать коментарии", "Globals");
+    pll_register_string("Pages", "Узнать детальнее", "Globals");
+    pll_register_string("Pages", "Читайте также", "Globals");
+    pll_register_string("Pages", "Наши врачи", "Globals");
+    pll_register_string("Pages", "Автор статьи:", "Globals");
+    pll_register_string("Pages", "О враче", "Globals");
+    pll_register_string("Pages", "FAQ", "Globals");
 
-pll_register_string ("Pages","Записаться на прием","Globals");
-pll_register_string ("Pages","Запись на прием","Globals");
-pll_register_string ("Pages","Задайте вопрос онлайн","Globals");
-pll_register_string ("Pages","Имя","Globals");
-pll_register_string ("Pages","E-mail","Globals");
-pll_register_string ("Pages","Отправить","Globals");
-pll_register_string ("Pages","Запись на консультацию в клинику 24/7","Globals");
-pll_register_string ("Pages","Пн-Пт с 08:00 до 17:00","Globals");
-pll_register_string ("Pages","Имя","Globals");
-pll_register_string ("Pages","Телефон","Globals");
-pll_register_string ("Pages","Спасибо, Ваша заявка отправлена.","Globals");
-pll_register_string ("Pages","Оставьте заявку и мы свяжемся в течении дня","Globals");
-pll_register_string ("Pages","Не знаете схему лечения? Оставьте заявку и мы подберем для Вас индивидуальный курс лечения.","Globals");
-pll_register_string ("Pages","Напишите ваш вопрос химиотерапевту","Globals");
-pll_register_string ("Pages","ФИО","Globals");
-pll_register_string ("Pages","Телефон","Globals");
-pll_register_string ("Pages","Желаемая дата приема","Globals");
-pll_register_string ("Pages","Комментарий","Globals");
-pll_register_string ("Pages","Оставить отзыв","Globals");
-pll_register_string ("Pages","Отзыв о услуге","Globals");
-pll_register_string ("Pages","Смотреть все статьи","Globals");
-pll_register_string ("Pages","Задать вопрос онкологу","Globals");
-pll_register_string ("Pages","Читать статью","Globals");
-pll_register_string ("Pages","Все отзывы","Globals");
-pll_register_string ("Pages","Про врачей","Globals");
-pll_register_string ("Pages","По услугам","Globals");
-pll_register_string ("Pages","По локализациям","Globals");
-pll_register_string ("Pages","Читать коментарии","Globals");
-pll_register_string ("Pages","Узнать детальнее","Globals");
-pll_register_string ("Pages","Читайте также","Globals");
-pll_register_string ("Pages","Наши врачи","Globals");
-pll_register_string ("Pages","Автор статьи:","Globals");
-pll_register_string ("Pages","О враче","Globals");
-pll_register_string ("Pages","FAQ","Globals");
+    pll_register_string("Pages", "География наших пациентов", "About");
+    pll_register_string("Pages", "Украина", "About");
 
-pll_register_string ("Pages","География наших пациентов","About");
-pll_register_string ("Pages","Украина","About");
+    pll_register_string("Pages", "лет", "Doctor");
+    pll_register_string("Pages", "Стаж:", "Doctor");
+    pll_register_string("Pages", "Сертификаты", "Doctor");
 
-pll_register_string ("Pages","лет","Doctor");
-pll_register_string ("Pages","Стаж:","Doctor");
-pll_register_string ("Pages","Сертификаты","Doctor");
+    pll_register_string("Pages", "Страница не найдена!", "404");
+    pll_register_string("Pages", 'К сожалению, запрашиваемая Вами страница, не найдена.</p><p class="main-text">Вероятно, она была удалена автором.', "404");
+    pll_register_string("Pages", "Вернуться на главную", "404");
 
-pll_register_string ("Pages","Страница не найдена!","404");
-pll_register_string ("Pages",'К сожалению, запрашиваемая Вами страница, не найдена.</p><p class="main-text">Вероятно, она была удалена автором.',"404");
-pll_register_string ("Pages","Вернуться на главную","404");
-
-pll_register_string ("Pages","Лечение рака","Footer");
-pll_register_string ("Pages","<li>Троллейбус: №9, №22</li>
+    pll_register_string("Pages", "Лечение рака", "Footer");
+    pll_register_string("Pages", "<li>Троллейбус: №9, №22</li>
                       <li>Автобус: 78, 302, 368, 805</li>
                       <li>Маршрутное такси: 496, 499, 565.</li>
-                      <li>Остановка Аэропорт «Киев»</li>","Footer");
+                      <li>Остановка Аэропорт «Киев»</li>", "Footer");
 
 
-pll_register_string ("Pages","Как добраться","Main");
-pll_register_string ("Pages","Киев, п-р Воздухофлотский 71/3","Main");
-
+    pll_register_string("Pages", "Как добраться", "Main");
+    pll_register_string("Pages", "Киев, п-р Воздухофлотский 71/3", "Main");
+}
 
 
 // pll_e('');

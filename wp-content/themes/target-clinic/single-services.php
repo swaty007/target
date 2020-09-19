@@ -73,7 +73,7 @@ the_post(); ?>
                         <div class="accordion accordion-faq" id="accordionFaq">
                           <div class="title-box flex-block"><h3 class="mt-4"><?php pll_e('FAQ');?></h3></div>
 
-                        	<?php while(has_sub_field('faq')): $elem_faq = $elem_faq+1; ?>
+                        	<?php $elem_faq = 0; while(has_sub_field('faq')): $elem_faq = $elem_faq+1; ?>
 
 
                             <div class="card">

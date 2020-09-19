@@ -1,4 +1,5 @@
 <?php
+/* Template Name: Main Page */
 get_header();
 the_post();
 ?>
@@ -12,7 +13,7 @@ the_post();
         <div class="wrapper">
             <div class="section__content">
                 <h3 class="text--18">
-                    <?//= get_post_meta($post->ID,'clinic_title', true) ?>
+                    <?php //=get_post_meta($post->ID,'clinic_title', true);?>
                 </h3>
                 <h1 class="text--48">
                     <?php the_title();?>
