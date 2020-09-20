@@ -3,6 +3,7 @@
 //require get_theme_file_path('/inc/search-lots-route.php');
 require get_theme_file_path('/inc/custom-header.php');
 require get_theme_file_path('/inc/telegram.php');
+//require get_theme_file_path('/inc/polylang-slug.php');
 
 
 if ( ! function_exists( 'target_setup' ) ) :
@@ -415,33 +416,39 @@ function the_breadcrumb(){
     if( is_front_page() ){
 
         if( $pageNum > 1 ) {
-            echo '<a class="text--18" href="' . site_url() . '">Главная</a>' . $separator . $pageNum . '-я страница';
+            echo '<a class="text--18" href="' . site_url() . '">'.pll_e('Главная').'</a>' . $separator . $pageNum . '-я страница';
         } else {
             echo 'Вы находитесь на главной странице';
         }
 
     } else { // не главная
 
-        echo '<a class="text--18" href="' . site_url() . '">Главная</a>' . $separator;
+        echo '<a class="text--18" href="' . site_url() . '">'.pll_e('Главная').'</a>' . $separator;
 
 
         if( is_single() ){ // записи
             if (empty(get_the_category_list())) {
-//                get_post_type();
-//                var_dump(get_post_type());
-//                the_title();
-//                the_category(', ');
-//                switch (get_post_type()) {
-//                    case 'cancer':
-//                        break;
-//                }
+                switch (get_post_type()) {
+                    case 'cancer':
+                        echo '<a class="text--18" href="' . get_permalink(pll_get_post(42)) . '">'. get_the_title(pll_get_post(42)) .'</a>';
+                        echo $separator;
+                        break;
+                    case 'services':
+                        echo '<a class="text--18" href="' . get_permalink(pll_get_post(104)) . '">'. get_the_title(pll_get_post(104)) .'</a>';
+                        echo $separator;
+                        break;
+                    case 'doctor':
+                        echo '<a class="text--18" href="' . get_permalink(pll_get_post(122)) . '">'. get_the_title(pll_get_post(122)) .'</a>';
+                        echo $separator;
+                        break;
+                }
             } else {
                 the_category(', ');echo $separator;
             }
+
              the_title();
 
         } elseif ( is_page() ){ // страницы WordPress
-
             echo '<span class="cell-for-text">';the_title();echo'</span>';
 
         } elseif ( is_category() ) {
@@ -840,6 +847,7 @@ if( function_exists('pll_register_string') ) {
     pll_register_string("Pages", "Автор статьи:", "Globals");
     pll_register_string("Pages", "О враче", "Globals");
     pll_register_string("Pages", "FAQ", "Globals");
+    pll_register_string("Pages", "Главная", "Globals");
 
     pll_register_string("Pages", "География наших пациентов", "About");
     pll_register_string("Pages", "Украина", "About");

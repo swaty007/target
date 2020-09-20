@@ -1113,11 +1113,13 @@ p--14 {
    min-height: 509px
 }
 
+.section.default-title h3 {
+   color: #00a863;
+}
 .section.default-title .text--18,
 .section.default-title h3 {
    margin: 0;
    text-transform: none;
-   color: #00a863;
    max-width: none;
    text-decoration: none
 }
@@ -4158,4 +4160,20 @@ header {
 }
 .rating-area > label:active {
 	position: relative;
+}
+.lang__block {
+   position: fixed;
+   bottom: 0;
+   right: 20%;
+   list-style: none;
+   background-color: #212121;
+   border-radius: 5px 5px 0 0;
+   z-index: 9999999;
+   margin-bottom: 0;
+}
+.lang__block a{
+   text-decoration: none;
+   color: #BDBDBD;
+   padding: 10px 15px 5px 15px;
+   display: block;
 }

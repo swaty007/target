@@ -81,6 +81,17 @@
 <!-- <a href="#" id="toTop">
 
 </a> -->
+
+<ul class="lang__block">
+    <?php pll_the_languages([
+//                    'echo' => 0,
+//    'dropdown' => 1,
+    'show_flags' => 1,
+    'hide_current' => 1,
+    ]);?>
+</ul>
+
+
 		<?php wp_footer(); ?>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
         integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"

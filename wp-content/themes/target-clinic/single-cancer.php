@@ -60,6 +60,32 @@ the_post();
                       </div>
                     </div>
                     <?php endif; ?>
+                    <?php
+                    $doctors = get_post_meta( $post->ID, 'service_doctors', true );
+                    if(!empty($doctors)): ?>
+                        <div class="service-doctors">
+                            <div class="title-box title-box-servies"><p class="mt-4 h3"><?php pll_e('Наши врачи');?></p></div>
+                            <div class="service-doctors-items">
+
+                                <?php foreach($doctors as $doctor):?>
+                                    <div class="doctor-item">
+                                        <div class="doctor-item__header">
+                                            <div class="doctor-item__header--first">
+                                                <p class="doctor-item--name"><?= get_the_title($doctor); ?></p>
+                                                <p class="doctor-item--position"><?= get_post_meta( $doctor, 'position', true ); ?></p>
+                                            </div>
+                                            <div class="doctor-item__header--second">
+                                                <a class="button button-doctor-service" href="<?= get_permalink($doctor); ?>"><?php pll_e('О враче');?></a>
+                                            </div>
+                                        </div>
+                                        <div class="doctor-item__footer">
+                                            <img src="<?= get_the_post_thumbnail_url($doctor)?>" />
+                                        </div>
+                                    </div>
+                                <?php endforeach;?>
+                            </div>
+                        </div>
+                    <?php endif; ?>
                     <?php get_template_part('template-parts/sections', 'contact-form-callback'); ?>
                     <div class="change-order-mob comment-single-page mt-5">
                           <div class="title-box title-box-servies flex-block mb-0"><h3 class="mb-0"><?php pll_e('Отзыв о услуге');?></h3></div>
