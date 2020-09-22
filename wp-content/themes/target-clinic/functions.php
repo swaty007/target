@@ -3,7 +3,7 @@
 //require get_theme_file_path('/inc/search-lots-route.php');
 require get_theme_file_path('/inc/custom-header.php');
 require get_theme_file_path('/inc/telegram.php');
-//require get_theme_file_path('/inc/polylang-slug.php');
+require get_theme_file_path('/inc/polylang-slug.php');
 
 
 if ( ! function_exists( 'target_setup' ) ) :
@@ -269,6 +269,13 @@ function menuActivePage($pageslug){
 	if(is_page($pageslug)) {
 		return 'menu__list-item--active';
 	}
+}
+
+add_filter('get_the_excerpt', 'excerpt_remove_content');
+function excerpt_remove_content($string) {
+    global $post;
+    return $string;
+//    var_dump($post->post_content);
 }
 
 //create array of photos for lot

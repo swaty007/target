@@ -1113,7 +1113,7 @@ p--14 {
    min-height: 509px
 }
 
-.section.default-title h3 {
+.section.default-title h3, .section.default-title .breadcrumb__alex {
    color: #00a863;
 }
 .section.default-title .text--18,

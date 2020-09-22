@@ -15,7 +15,7 @@ the_post(); ?>
                     <?php the_title() ?>
                 </h1>
                 <div class="text--18 default-title__subtext">
-                    <?php the_excerpt() ?>
+                    <?php if (has_excerpt()) {the_excerpt();} ?>
                 </div>
             </div>
         </div>
