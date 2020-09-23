@@ -3810,9 +3810,11 @@ header {
 }
 .service-doctors .service-doctors-items .doctor-item:hover .doctor-item__header--first .doctor-item--position {
   opacity: 0;
+   display: none;
 }
 .service-doctors .service-doctors-items .doctor-item:hover .doctor-item__header--second {
   opacity: 1;
+   transition: .2s;
 }
 .service-doctors .service-doctors-items .doctor-item--name {
   font-size: 20px;
@@ -3834,7 +3836,6 @@ header {
   text-align: center;
   opacity: 0;
   margin: 0 auto;
-  transition: .2s;
   position: relative;
 }
 .service-doctors .service-doctors-items .doctor-item__header--second .button-doctor-service {
@@ -3849,7 +3850,7 @@ header {
   position: absolute;
   right: 0;
   left: 0;
-  top: -55px;
+  top: 15px;
 }
 .service-doctors .service-doctors-items .doctor-item__header--second .button-doctor-service:hover {
   text-decoration: none;
@@ -4089,7 +4090,7 @@ header {
     width: 100%;
     display: flex;
     justify-content: center;
-    bottom: -55px;
+    /*bottom: -55px;*/
     left: 0;
   }
 
