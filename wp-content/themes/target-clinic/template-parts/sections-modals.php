@@ -112,7 +112,7 @@
                                     'comment_field' => '<textarea id="comment" name="comment" cols="45" rows="8" aria-required="true" placeholder="'.pll__('Комментарий').'"></textarea>',
                                     'fields' => array(
                                         'author' => '<label for="author"><input id="author" name="author" placeholder="'.pll__('Имя').'*" type="text" value="" size="30"></label>',
-                                        'email' => '<label for="email"><input id="email" name="email" placeholder="'.pll__('E-mail').'*" type="text" value="" size="30"></label>',
+                                        'email' => '<label for="email"><input id="email" name="email" placeholder="'.pll__('E-mail').'" type="text" value="" size="30"></label>',
                                         'rating'  => ''
                                     )
                                 );

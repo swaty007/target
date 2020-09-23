@@ -34,32 +34,7 @@ the_post();
                          </div>
                        <?php endwhile; ?>
                     <?php endif; ?>
-                    <?php if(get_field('service_doctor')): ?>
-                    <div class="service-doctors">
-                      <div class="title-box title-box-servies"><p class="mt-4 h3"><?php pll_e('Наши врачи');?></p></div>
-                      <div class="service-doctors-items">
 
-                          <?php while(has_sub_field('service_doctor')): ?>
-
-                            <div class="doctor-item">
-                              <div class="doctor-item__header">
-                                <div class="doctor-item__header--first">
-                                  <p class="doctor-item--name"><?php the_sub_field('name'); ?></p>
-                                  <p class="doctor-item--position"><?php the_sub_field('position'); ?></p>
-                                </div>
-                                <div class="doctor-item__header--second">
-                                  <a class="button button-doctor-service" href="<?php the_sub_field('link'); ?>"><?php pll_e('О враче');?></a>
-                                </div>
-                              </div>
-                              <div class="doctor-item__footer">
-                                <img src="<?php the_sub_field('photo'); ?>" alt="Doctor">
-                              </div>
-                            </div>
-
-                          <?php endwhile; ?>
-                      </div>
-                    </div>
-                    <?php endif; ?>
                     <?php
                     $doctors = get_post_meta( $post->ID, 'service_doctors', true );
                     if(!empty($doctors)): ?>

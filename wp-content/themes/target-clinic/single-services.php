@@ -41,34 +41,6 @@ the_post(); ?>
 
                     <?php get_template_part('template-parts/sections', 'dropdown-seo'); ?>
 
-                    <?php if (get_field('service_doctor')): ?>
-                        <div class="service-doctors">
-                            <div class="title-box title-box-servies"><p
-                                        class="mt-4 h3"><?php pll_e('Наши врачи'); ?></p></div>
-                            <div class="service-doctors-items">
-
-                                <?php while (has_sub_field('service_doctor')): ?>
-
-                                    <div class="doctor-item">
-                                        <div class="doctor-item__header">
-                                            <div class="doctor-item__header--first">
-                                                <p class="doctor-item--name"><?php the_sub_field('name'); ?></p>
-                                                <p class="doctor-item--position"><?php the_sub_field('position'); ?></p>
-                                            </div>
-                                            <div class="doctor-item__header--second">
-                                                <a class="button button-doctor-service"
-                                                   href="<?php the_sub_field('link'); ?>"><?php pll_e('О враче'); ?></a>
-                                            </div>
-                                        </div>
-                                        <div class="doctor-item__footer">
-                                            <img src="<?php the_sub_field('photo'); ?>" alt="Doctor">
-                                        </div>
-                                    </div>
-
-                                <?php endwhile; ?>
-                            </div>
-                        </div>
-                    <?php endif; ?>
                     <?php
                     $doctors = get_post_meta( $post->ID, 'service_doctors', true );
                     if(!empty($doctors)): ?>
@@ -98,7 +70,7 @@ the_post(); ?>
 
                     <?php if (get_field('faq')): ?>
                         <div class="accordion accordion-faq" id="accordionFaq">
-                            <div class="title-box flex-block"><h3 class="mt-4"><?php pll_e('FAQ'); ?></h3></div>
+                            <div class="title-box flex-block"><h2 class="mt-4"><?php pll_e('FAQ'); ?></h2></div>
 
                             <?php $elem_faq = 0;
                             while (has_sub_field('faq')): $elem_faq = $elem_faq + 1; ?>
@@ -106,7 +78,7 @@ the_post(); ?>
 
                                 <div class="card">
                                     <div class="card-header" id="heading<?php echo $elem_faq; ?>">
-                                        <h5 class="mb-0">
+                                        <h2 class="mb-0">
                                             <button class="btn btn-link" type="button" data-toggle="collapse"
                                                     data-target="#collapse<?php echo $elem_faq; ?>"
                                                     aria-expanded="false"
@@ -114,7 +86,7 @@ the_post(); ?>
                                                 <?php the_sub_field('faq-title'); ?>
                                             </button>
                                             <i class="accordion-icon fas fa-chevron-down"></i>
-                                        </h5>
+                                        </h2>
                                     </div>
 
                                     <div id="collapse<?php echo $elem_faq; ?>" class="collapse"

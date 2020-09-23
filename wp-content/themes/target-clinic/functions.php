@@ -423,14 +423,14 @@ function the_breadcrumb(){
     if( is_front_page() ){
 
         if( $pageNum > 1 ) {
-            echo '<a class="text--18" href="' . site_url() . '">'.pll_e('Главная').'</a>' . $separator . $pageNum . '-я страница';
+            echo '<a class="text--18" href="' . site_url() . '">'.pll__('Главная').'</a>' . $separator . $pageNum . '-я страница';
         } else {
             echo 'Вы находитесь на главной странице';
         }
 
     } else { // не главная
 
-        echo '<a class="text--18" href="' . site_url() . '">'.pll_e('Главная').'</a>' . $separator;
+        echo '<a class="text--18" href="' . site_url() . '">'.pll__('Главная').'</a>' . $separator;
 
 
         if( is_single() ){ // записи

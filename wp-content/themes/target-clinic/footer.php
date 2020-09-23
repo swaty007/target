@@ -54,7 +54,7 @@
                 ?>
             </div>
             <div class="footer-content__item">
-                <p class="list-title text--18"><?php pll_e('Лечение рака');?></p>
+<!--                <p class="list-title text--18">--><?php //pll_e('Лечение рака');?><!--</p>-->
                 <ul>
                     <?php $loop = new WP_Query(array('post_type' => 'services', 'posts_per_page' => -1)); ?>
                     <?php while ($loop->have_posts()) : $loop->the_post();
