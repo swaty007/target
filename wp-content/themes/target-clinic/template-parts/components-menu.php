@@ -33,9 +33,17 @@
 <nav id="nav" class="nav <?=is_front_page() || is_page_template('page-doctors.php' )|| is_page_template('page-about.php' )?'nav--transparent':'';?>">
     <div class="wrapper flex-block">
         <a href="<?= pll_home_url();?>">
-            <img class="logo logo-default" src="<?= get_url_from_img_id(get_theme_mod( 'custom_logo' ));?>" />
+            <?php switch (pll_current_language()) {
+                case 'ru':
+                    echo '<img class="logo logo-default" src="'.get_url_from_img_id(get_theme_mod( 'custom_logo' )).'" />';
+                    echo '<img class="logo logo-color" src="'.get_theme_mod( 'your_theme_color_logo' ).'" />';
+                    break;
+                case 'uk':
+                    echo '<img class="logo logo-default" src="'.get_url_from_img_id(get_theme_mod( 'your_theme_logo_ua' )).'" />';
+                    echo '<img class="logo logo-color" src="'.get_theme_mod( 'your_theme_color_logo_ua' ).'" />';
+                    break;
+            }; ?>
             <img class="logo logo-scroll" src="<?= get_theme_mod( 'your_theme_scroll_logo' );?>" />
-            <img class="logo logo-color" src="<?= get_theme_mod( 'your_theme_color_logo' );?>" />
         </a>
         <div id="profile-menu-mob" class="container-for-move">
             <div id="nav-menu-mob">
