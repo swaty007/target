@@ -246,12 +246,12 @@ function target_files()
 {
 //  wp_enqueue_script('main-target-js', get_template_directory_uri() .'/js/scripts-bundled.js','','',true);
     wp_enqueue_script('slick-js', get_template_directory_uri() . '/js/slick.min.js', '', '', true);
-    wp_enqueue_script('fancybox-js', 'https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js', ['jquery'], '', true);
+    wp_enqueue_script('fancybox-js', '//cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js', ['jquery'], '', true);
     wp_enqueue_script('owlcarousel-js', '//cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js', '', '', true);
     wp_enqueue_script('main-target-js', get_template_directory_uri() . '/js/main.js', '', '', true);
     wp_enqueue_style('target_main_styles', get_stylesheet_uri(), [], 2);
     wp_enqueue_style('target-style', get_template_directory_uri() . '/css/master.css');
-    wp_enqueue_style('fancybox-css', 'https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css');
+    wp_enqueue_style('fancybox-css', '//cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css');
     wp_enqueue_style('owlcarousel-css', '//cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.css');
     wp_localize_script('main-target-js', 'targetData', array(
         'root_url' => get_site_url(),
@@ -553,7 +553,7 @@ add_action("wp_enqueue_scripts", "my_jquery_enqueue", 11);
 function my_jquery_enqueue()
 {
     wp_deregister_script('jquery');
-    wp_register_script('jquery', "//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js", false, null);
+    wp_register_script('jquery', "//code.jquery.com/jquery-1.12.4.min.js", false, null);
     wp_enqueue_script('jquery');
 }
 
@@ -955,7 +955,7 @@ function add_recaptcha()
 //    wp_enqueue_script('theme-helper-js', get_stylesheet_directory_uri() . '/assets/js/helper.js', [], 1.0, true);
 }
 
-add_action('wp_enqueue_scripts', 'add_recaptcha');
+//add_action('wp_enqueue_scripts', 'add_recaptcha');
 
 
 add_action('rest_api_init', function () {
