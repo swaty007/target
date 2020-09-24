@@ -107,7 +107,7 @@
                             <h5 class="modal-title my-modal-h"><?php pll_e('Оставить отзыв');?></h5>
                             <div class="comments__form comments__form--modal">
                                 <?php $comments_form_modal = array(
-                                    'label_submit' => 'Отправить',
+                                    'label_submit' => pll__('Отправить'),
                                     'comment_notes_after' => '',
                                     'comment_field' => '<textarea id="comment" name="comment" cols="45" rows="8" aria-required="true" placeholder="'.pll__('Комментарий').'"></textarea>',
                                     'fields' => array(

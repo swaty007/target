@@ -55,6 +55,7 @@
                     // 'number'		=> 5,
                     'orderby' => 'comment_date',
                     'order' => 'DESC',
+                    //'lang' => pll_languages_list(),
                     'type' => '', // только комментарии, без пингов и т.д...
 
                 );
@@ -125,7 +126,8 @@
                         'orderby' => 'comment_date',
                         'order' => 'DESC',
                     //                    'number' => 10,
-                        'post_id' => $post->ID,
+                        //'post_id' => $post->ID,
+                        'post__in' => [pll_get_post($post->ID, 'ru'), pll_get_post($post->ID, 'uk')],
                         'type' => '', // только комментарии, без пингов и т.д...
                     );
 
@@ -183,7 +185,8 @@
                         'orderby' => 'comment_date',
                         'order' => 'DESC',
                     //                    'number' => 10,
-                        'post_id' => $post->ID,
+                        //'post_id' => $post->ID,
+                        'post__in' => [pll_get_post($post->ID, 'ru'), pll_get_post($post->ID, 'uk')],
                         'type' => '', // только комментарии, без пингов и т.д...
                     );
 
@@ -241,7 +244,8 @@
                         'orderby' => 'comment_date',
                         'order' => 'DESC',
                     //                    'number' => 10,
-                        'post_id' => $post->ID,
+                        //'post_id' => $post->ID,
+                        'post__in' => [pll_get_post($post->ID, 'ru'), pll_get_post($post->ID, 'uk')],
                         'type' => '', // только комментарии, без пингов и т.д...
                     );
 

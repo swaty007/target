@@ -4,6 +4,7 @@
 require get_theme_file_path('/inc/custom-header.php');
 require get_theme_file_path('/inc/telegram.php');
 require get_theme_file_path('/inc/polylang-slug.php');
+require get_theme_file_path('/inc/polylang-comments-merger.php');
 
 
 if ( ! function_exists( 'target_setup' ) ) :
@@ -423,14 +424,14 @@ function the_breadcrumb(){
     if( is_front_page() ){
 
         if( $pageNum > 1 ) {
-            echo '<a class="text--18" href="' . site_url() . '">'.pll__('Главная').'</a>' . $separator . $pageNum . '-я страница';
+            echo '<a class="text--18" href="' . pll_home_url() . '">'.pll__('Главная').'</a>' . $separator . $pageNum . '-я страница';
         } else {
             echo 'Вы находитесь на главной странице';
         }
 
     } else { // не главная
 
-        echo '<a class="text--18" href="' . site_url() . '">'.pll__('Главная').'</a>' . $separator;
+        echo '<a class="text--18" href="' . pll_home_url() . '">'.pll__('Главная').'</a>' . $separator;
 
 
         if( is_single() ){ // записи
@@ -855,6 +856,7 @@ if( function_exists('pll_register_string') ) {
     pll_register_string("Pages", "О враче", "Globals");
     pll_register_string("Pages", "FAQ", "Globals");
     pll_register_string("Pages", "Главная", "Globals");
+    pll_register_string("Pages", "Мы в социальных сетях:", "Globals");
 
     pll_register_string("Pages", "География наших пациентов", "About");
     pll_register_string("Pages", "Украина", "About");
@@ -929,8 +931,10 @@ function get_comments_form () {
         'orderby' => 'comment_date',
         'order' => 'DESC',
         'offset' => $offset,
+        //'lang' => pll_languages_list(),
         'number' => 2,
-        'post_id' => $post_id,
+        //'post_id' => $post_id,
+        'post__in' => [pll_get_post($post_id, 'ru'), pll_get_post($post_id, 'uk')],
         'type' => '',
     ));
     wp_send_json($comments);

@@ -8,8 +8,8 @@
                 </div>
                 <div class="item__address">
                     <img src="<?= get_template_directory_uri(); ?>/img/uil-map-marker.svg" alt="">
-                    Пн-Пт с 08:00 до 17:00
-                    <a href="/kontakty/" class="link">
+                    <?php pll_e('Пн-Пт с 08:00 до 17:00');?>
+                    <a href="<?= get_permalink(pll_get_post(27));?>" class="link">
                         <?php pll_e('Как добраться');?>
                     </a>
                 </div>
@@ -32,7 +32,7 @@
 ?>
 <nav id="nav" class="nav <?=is_front_page() || is_page_template('page-doctors.php' )|| is_page_template('page-about.php' )?'nav--transparent':'';?>">
     <div class="wrapper flex-block">
-        <a href="/">
+        <a href="<?= pll_home_url();?>">
             <img class="logo logo-default" src="<?= get_url_from_img_id(get_theme_mod( 'custom_logo' ));?>" />
             <img class="logo logo-scroll" src="<?= get_theme_mod( 'your_theme_scroll_logo' );?>" />
             <img class="logo logo-color" src="<?= get_theme_mod( 'your_theme_color_logo' );?>" />
