@@ -54,7 +54,8 @@ $( function () {
         verticalSwiping: true,
         slidesToShow: 1,
         autoplay: true,
-        autoplaySpeed: 5000,
+      adaptiveHeight: true,
+        // autoplaySpeed: 5000,
         responsive: [
             {
                 breakpoint: 991,
@@ -126,6 +127,13 @@ $( function () {
             }
         ]
     })
+
+  let el = $('.slick-vertical .slick-list.draggable');
+    el.find('.slick-slide img').attr('style', 'height:' + el.css('height'))
+  $(window).resize(function () {
+    let el = $('.slick-vertical .slick-list.draggable');
+    el.find('.slick-slide img').attr('style', 'height:' + el.css('height'))
+  })
 });
 
 //Move blocks on resize to mob

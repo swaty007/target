@@ -101,6 +101,9 @@ a.link-meta:hover {
    height: auto
 }
 
+.slick-vertical .slick-slide img {
+   object-fit: cover;
+}
 .slick-slide.slick-loading img {
    display: none
 }
