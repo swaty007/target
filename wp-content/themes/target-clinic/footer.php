@@ -49,7 +49,7 @@
                     'menu_id'        => '',
                     'container'      => 'ul',
                     'menu_class'     => 'footer__menu',
-                    'exclude'        => '{40}'
+                    'exclude'        => '{40,916}'
                 ) );
                 ?>
             </div>
@@ -58,7 +58,7 @@
                 <ul>
                     <?php $loop = new WP_Query(array('post_type' => 'services', 'posts_per_page' => -1)); ?>
                     <?php while ($loop->have_posts()) : $loop->the_post();
-	                    if($post->ID != 174){
+	                    if($post->ID != 174 || $post->ID != 934){
                     ?>
                         <li>
                             <a href="<?php the_permalink(); ?>" class="link green">
