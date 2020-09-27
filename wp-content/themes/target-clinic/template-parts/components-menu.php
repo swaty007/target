@@ -39,7 +39,7 @@
                     echo '<img class="logo logo-color" src="'.get_theme_mod( 'your_theme_color_logo' ).'" />';
                     break;
                 case 'uk':
-                    echo '<img class="logo logo-default" src="'.get_url_from_img_id(get_theme_mod( 'your_theme_logo_ua' )).'" />';
+                    echo '<img class="logo logo-default" src="'.get_theme_mod( 'your_theme_logo_ua' ).'" />';
                     echo '<img class="logo logo-color" src="'.get_theme_mod( 'your_theme_color_logo_ua' ).'" />';
                     break;
             }; ?>
