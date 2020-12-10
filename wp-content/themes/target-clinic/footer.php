@@ -6,7 +6,7 @@
                 <?php if(get_field('footer_social', 'options')): ?>
                   <div class="social-footer">
                 	<?php while(has_sub_field('footer_social', 'options')): ?>
-                    <h3 class="social-title"><?php pll_e('Мы в социальных сетях:');?></h3>
+                    <h3 class="social-title"><?php pll_e(' ');?></h3>
                     <?php if(get_sub_field('social-items', 'options')): ?>
                       <div class="social-items">
                       <?php while(has_sub_field('social-items', 'options')): ?>

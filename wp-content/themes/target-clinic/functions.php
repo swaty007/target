@@ -921,13 +921,20 @@ if (function_exists('pll_register_string')) {
     pll_register_string("Pages", "FAQ", "Globals");
     pll_register_string("Pages", "Главная", "Globals");
     pll_register_string("Pages", "Мы в социальных сетях:", "Globals");
+    pll_register_string("Pages", "Бесплатная консультация", "Globals");
 
     pll_register_string("Pages", "География наших пациентов", "About");
     pll_register_string("Pages", "Украина", "About");
 
+    pll_register_string("Pages", "Эффективная химиотерапия", "Services New");
+    pll_register_string("Pages", "Виды химиотерапии", "Services New");
+    pll_register_string("Pages", "Реальный шанс на выздоровление", "Services New");
+
     pll_register_string("Pages", "лет", "Doctor");
+    pll_register_string("Pages", "лет опыта", "Doctor");
     pll_register_string("Pages", "Стаж:", "Doctor");
     pll_register_string("Pages", "Сертификаты", "Doctor");
+    pll_register_string("Pages", "Наши специалисты", "Doctor");
 
     pll_register_string("Pages", "Страница не найдена!", "404");
     pll_register_string("Pages", 'К сожалению, запрашиваемая Вами страница, не найдена.</p><p class="main-text">Вероятно, она была удалена автором.', "404");
@@ -946,6 +953,22 @@ if (function_exists('pll_register_string')) {
 
 
 // pll_e('');
+
+function get_page_id_by_template($template)
+{
+    $args = [
+        'post_type' => 'page',
+        'fields' => 'ids',
+        'nopaging' => true,
+        'meta_key' => '_wp_page_template',
+        'meta_value' => $template
+    ];
+    $pages = get_posts($args);
+    if (empty($pages)) {
+        return '/';
+    }
+    return $pages[0];
+}
 
 
 function add_recaptcha()

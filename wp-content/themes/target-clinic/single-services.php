@@ -1,7 +1,12 @@
 <?php
 
 get_header();
-the_post(); ?>
+the_post();
+if ($post->ID == 705 || $post->ID == 929) {
+    require_once get_theme_file_path('/template-parts/page-single-services.php');
+    die();
+}
+ ?>
 <?php get_template_part('template-parts/sections', 'color'); ?>
 <main class="content">
     <section class="section content--bg-img title-block default-title default-title-small bg-img-chemotherapy"
@@ -68,12 +73,12 @@ the_post(); ?>
                         </div>
                     <?php endif; ?>
 
-                    <?php if (get_field('faq')): ?>
+                    <?php if (have_rows('faq')): ?>
                         <div class="accordion accordion-faq" id="accordionFaq">
                             <div class="title-box flex-block"><h2 class="mt-4"><?php pll_e('FAQ'); ?></h2></div>
 
                             <?php $elem_faq = 0;
-                            while (has_sub_field('faq')): $elem_faq = $elem_faq + 1; ?>
+                            while (have_rows('faq')):the_row(); $elem_faq = $elem_faq + 1; ?>
 
 
                                 <div class="card">
