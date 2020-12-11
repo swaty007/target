@@ -2,7 +2,7 @@
 
 get_header();
 the_post();
-if ($post->ID == 705 || $post->ID == 929) {
+if (get_post_meta($post->ID, 'new_template', true)) {
     require_once get_theme_file_path('/template-parts/page-single-services.php');
     die();
 }

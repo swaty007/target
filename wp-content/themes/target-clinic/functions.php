@@ -926,7 +926,6 @@ if (function_exists('pll_register_string')) {
     pll_register_string("Pages", "География наших пациентов", "About");
     pll_register_string("Pages", "Украина", "About");
 
-    pll_register_string("Pages", "Эффективная химиотерапия", "Services New");
     pll_register_string("Pages", "Виды химиотерапии", "Services New");
     pll_register_string("Pages", "Реальный шанс на выздоровление", "Services New");
 

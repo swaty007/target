@@ -5,11 +5,11 @@
     <div class="container">
         <div class="col-lg-7">
             <h1 class="services_new--sub-title mb-4">
-                Химиотерапия — эффективное оружие против раковых клеток
+                <?php the_title();?>
             </h1>
-            <p class="text--18 default-title__subtext mb-4">
-                Проводим действенное лечение для взрослых и детей, больных раком, с помощью препаратов, убивающих раковые клетки
-            </p>
+            <div class="text--18 default-title__subtext mb-4">
+                <?php the_excerpt();?>
+             </div>
             <button class="button button--primary" data-toggle="modal" data-target="#modalOrderForm">
                 <?php pll_e('Записаться на прием');?>
             </button>
@@ -25,7 +25,7 @@
            <div class="col-lg-6">
                <div class="services_new__col services_new__col--right">
                    <h2 class="services_new--sub-title mb-4">
-                       <?php pll_e('Эффективная химиотерапия');?>
+                       <?= get_post_meta($post->ID, 'block1_title', true);?>
                    </h2>
                </div>
                    <div class="row hidden--desctop mb-3">
@@ -33,13 +33,7 @@
                    </div>
                <div class="services_new__col services_new__col--right">
                    <div class="mb-4">
-                       Химиотерапия - это метод лечения онкологических заболеваний при помощи препаратов, которые воздействуют на раковые клетки, уничтожая их, или останавливая рост и способность к делению.
-                       <br>
-                       Схема лечения назначается индивидуально, в зависимости от особенностей конкретного пациента. Препараты или комбинации препаратов чаще всего вводятся в виде внутривенных инфузий,
-                       но некоторые цитостатики имеют таблетированную форму.
-                       <br>
-                       Химиотерапию обычно назначаются в виде курсов (циклов), которые повторяют, соблюдая определенные интервалы. Длительность курсов
-                       и интервалов между ними назначает врач-химиотерапевт. Пациент может получать химиотерапевтическое лечение как в качестве самостоятельного вида лечения, так и в сочетании с хирургической операцией и/или лучевой терапией.
+                       <?= get_post_meta($post->ID, 'block1_content', true);?>
                    </div>
                    <button class="button button--primary" data-toggle="modal" data-target="#modalOrderForm">
                        <?php pll_e('Бесплатная консультация');?>
@@ -49,6 +43,7 @@
        </div>
    </div>
 </section>
+<?php if (have_rows('items')): ?>
     <section class="services_new__items--wrap">
         <div class="container">
             <div class="row">
@@ -59,34 +54,32 @@
                 </div>
             </div>
             <div class="row">
-                <div class="col-lg-4">
-                    <div class="services_new__items">
-                        <div class="services_new__items--img">
-                            <img src="" />
-                        </div>
-                        <h4 class="services_new__items--title">
-                            Лучшие специалисты
-                        </h4>
-                        <div class="services_new__items--desc">
-                            Химиотерапию в нашей клинике
-                            проводят высококлассные специалисы,
-                            постоянно повышающие свою квалификацию, а так же участвующие
-                            в международных профильных конференциях. Отлично осведомлённые в современных тенденциях лечения,
-                            мы минимизируем вред на организм
-                            человека и побочные эффекты.
+                <?php while (have_rows('items')): the_row();?>
+                    <div class="col-lg-4">
+                        <div class="services_new__items">
+                            <div class="services_new__items--img">
+                                <img src="<?php the_sub_field('img'); ?>" />
+                            </div>
+                            <h4 class="services_new__items--title">
+                                <?php the_sub_field('title'); ?>
+                            </h4>
+                            <div class="services_new__items--desc">
+                                <?php the_sub_field('text'); ?>
+                            </div>
                         </div>
                     </div>
-                </div>
+                <?php endwhile; ?>
             </div>
         </div>
     </section>
+<?php endif; ?>
     <section class="services_new__block services_new__block--two">
         <div class="container-fluid">
             <div class="row align-items-center">
                 <div class="col-lg-6">
                     <div class="services_new__col services_new__col--left">
                         <h2 class="services_new--sub-title mb-4">
-                            Персонализированная химиотерапия – основа нашего метода
+                            <?= get_post_meta($post->ID, 'block2_title', true);?>
                         </h2>
                     </div>
                     <div class="row hidden--desctop mb-3">
@@ -94,7 +87,7 @@
                     </div>
                     <div class="services_new__col services_new__col--left">
                         <div class="mb-4">
-                            К нам поступают пациенты, которым поставил диагноз или уже прошли один или несколько курсов в государственных или частных клиниках.
+                            <?= get_post_meta($post->ID, 'block2_content', true);?>
                         </div>
                         <button class="button button--primary" data-toggle="modal" data-target="#modalOrderForm">
                             <?php pll_e('Бесплатная консультация');?>
@@ -148,6 +141,9 @@
     <?php endwhile; ?>
     </div>
 <?php endif; ?>
+<div class="container">
+    <?php get_template_part('template-parts/sections', 'dropdown-seo'); ?>
+</div>
 <?php
 $doctors = get_post_meta( $post->ID, 'service_doctors', true );
 if(!empty($doctors)): ?>
