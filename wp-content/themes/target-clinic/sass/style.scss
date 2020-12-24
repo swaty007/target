@@ -4311,7 +4311,28 @@ header {
     box-shadow: 0px 4px 30px rgba(0, 0, 0, 0.05);
     border-radius: 10px;
     &--img {
-      background-image: url(./img/vector_line_bg.png);
+      //background-image: url(./img/vector_line_bg.png);
+      background: linear-gradient(180deg, #23DC90 0%, #00A862 100%);
+      box-shadow: 0px 4px 71px rgba(0, 0, 0, 0.2);
+      border-radius: 50%;
+      width: 162px;
+      height: 162px;
+      margin-left: auto;
+      margin-right: auto;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      @media(max-width: 991px) {
+        width: 60px;
+        height: auto;
+        margin-right: 20px;
+        margin-left: unset;
+        background: transparent;
+        box-shadow: none;
+      }
+      img {
+        height: 83px;
+      }
     }
     &--title {
       font-weight: bold;
@@ -4319,6 +4340,10 @@ header {
       font-size: 22px;
       line-height: 33px;
       margin-bottom: 20px;
+      @media(max-width: 991px) {
+        display: flex;
+        align-items: center;
+      }
     }
     &--desc {
       color: #313131;
@@ -4351,17 +4376,27 @@ header {
           font-size: 22px;
           color: #313131;
           text-decoration: none;
+          @media(max-width:991px) {
+            padding-left: 48px;
+            font-size: 16px;
+          }
           &:before {
             content: "";
             width: 40px;
             height: 40px;
             background-image: url(./img/card_close.svg);
+            background-size: contain;
             position: absolute;
             left: 20px;
             top: 50%;
             transform: translateY(-50%);
             display: inline-block;
+            @media(max-width:991px) {
+              width: 28px;
+              height: 28px;
+            }
           }
+
           &.collapsed {
             &:before {
               background-image: url(./img/card_open.svg);

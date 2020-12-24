@@ -57,11 +57,11 @@
                 <?php while (have_rows('items')): the_row();?>
                     <div class="col-lg-4">
                         <div class="services_new__items">
-                            <div class="services_new__items--img">
+                            <div class="services_new__items--img mb-4 hidden--mobile">
                                 <img src="<?php the_sub_field('img'); ?>" />
                             </div>
                             <h4 class="services_new__items--title">
-                                <?php the_sub_field('title'); ?>
+                                <img class="services_new__items--img hidden--desctop" src="<?php the_sub_field('img_mob'); ?>" /> <?php the_sub_field('title'); ?>
                             </h4>
                             <div class="services_new__items--desc">
                                 <?php the_sub_field('text'); ?>
@@ -83,7 +83,7 @@
                         </h2>
                     </div>
                     <div class="row hidden--desctop mb-3">
-                        <img src="<?php bloginfo('template_url'); ?>/img/UI_Doctor2.png"/>
+                        <img src="<?php bloginfo('template_url'); ?>/img/UI_Doctor2_mob.png"/>
                     </div>
                     <div class="services_new__col services_new__col--left">
                         <div class="mb-4">
