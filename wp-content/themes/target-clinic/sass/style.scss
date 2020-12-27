@@ -4238,6 +4238,10 @@ header {
     line-height: 50px;
     margin-bottom: 50px;
     //text-align: center;
+    @media(max-width:991px) {
+      font-size: 24px;
+      line-height: 34px;
+    }
   }
   &__block {
     &--one {
@@ -4420,6 +4424,9 @@ header {
     width: 500px;
     padding: 20px 100px 20px 20px;
     margin-bottom: 30px;
+    @media(max-width:991px) {
+      padding-right: 70px;
+    }
     &:hover {
       text-decoration: none;
     }
@@ -4438,6 +4445,10 @@ header {
       line-height: 27px;
       color: #fff;
       text-decoration: none;
+      @media(max-width:991px) {
+        font-size: 12px;
+        line-height: 18px;
+      }
     }
     &--name {
       font-weight: bold;
@@ -4445,6 +4456,10 @@ header {
       line-height: 33px;
       color: #fff;
       text-decoration: none;
+      @media(max-width:991px) {
+        font-size: 14px;
+        line-height: 24px;
+      }
     }
   }
   &__doctor {
@@ -4591,5 +4606,49 @@ header {
   }
   &__form {
     padding-top: 200px;
+    background-image: url(./img/contact_form_background.png);
+    padding-bottom: 150px;
+    background-position: 50% 0%;
+    @media(max-width:991px) {
+      background-image: url(./img/contact_form_background_mob.png);
+      background-size: cover;
+      text-align: center;
+      background-position: 50% 50%;
+      padding-top: 70px;
+      padding-bottom: 80px;
+    }
+    &--phone {
+      font-weight: bold;
+      font-size: 34px;
+      line-height: 52px;
+      color: #00A863;
+      @media(max-width:991px) {
+        margin-bottom: 150px;
+        display: inline-block;
+      }
+    }
+    &--label {
+      display: block;
+      color: #FFFFFF;
+      input {
+        display: block;
+        line-height: 50px;
+        padding: 0 15px;
+        box-shadow: 0px 4px 8px rgba(44, 39, 56, 0.04);
+        border-radius: 6px;
+        background: #FFFFFF;
+        border: 1px solid #DBE2EA;
+        width: 100%;
+      }
+    }
+    &--btn {
+      line-height: 48px;
+      font-size: 14px;
+      color: #fff;
+      background: #313131;
+      box-shadow: 0px 10px 10px rgba(33, 120, 84, 0.06);
+      border-radius: 4px;
+      padding: 0 50px;
+    }
   }
 }

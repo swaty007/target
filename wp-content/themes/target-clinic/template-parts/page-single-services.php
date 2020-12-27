@@ -223,6 +223,8 @@ if(!empty($doctors)): ?>
         </div>
     </section>
 
+<?php get_template_part('template-parts/section', 'contact-form-new'); ?>
+
 <?php
 get_footer();
 

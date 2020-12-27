@@ -858,9 +858,19 @@ function do_question_form()
         $name = $_POST['name'];
         $email = $_POST['email'];
         $comment = $_POST['comment'];
+        $phone = $_POST['phone'];
         $send_to = "eugene.subota1984@gmail.com,swaty0007@gmail.com,office@car.ua,info@car.ua";
         $subject = "Заказ консультации";
-        $message = "Пользователь сайта задал вопрос онлайн. Пользователь: " . $name . " Email: " . $email . " Коментарий:" . $comment;
+        $message = "Пользователь сайта задал вопрос онлайн. Пользователь: " . $name;
+        if (!empty($email)) {
+            $message .= " Email: " . $email;
+        }
+        if (!empty($comment)) {
+            $message .= " Коментарий:" . $comment;
+        }
+        if (!empty($phone)) {
+            $message .= "Номер Телефона:" . $phone;
+        }
         if (isset($_POST['location'])) {
             $message .= "\nСсылка на страницу: " . $_POST['location'];
         }
@@ -928,6 +938,10 @@ if (function_exists('pll_register_string')) {
 
     pll_register_string("Pages", "Виды химиотерапии", "Services New");
     pll_register_string("Pages", "Реальный шанс на выздоровление", "Services New");
+    pll_register_string("Pages", "Оставить заявку", "Services New");
+    pll_register_string("Pages", "ФИО", "Services New");
+    pll_register_string("Pages", "Позвоните нам или оставьте заявку", "Services New");
+    pll_register_string("Pages", "Наши менеджеры Вам перезвонят в кратчайшие сроки", "Services New");
 
     pll_register_string("Pages", "лет", "Doctor");
     pll_register_string("Pages", "лет опыта", "Doctor");

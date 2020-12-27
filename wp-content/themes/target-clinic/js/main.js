@@ -260,6 +260,7 @@ $(document).on('click', '#modal_contact_form', function () {
 $(document).on('click', '#question_form', function () {
     let name = $('#question_name'),
         email = $('#question_email'),
+      phone = $('#question_phone'),
         comment = $('#question_comment');
 
     $.ajax({
@@ -269,6 +270,7 @@ $(document).on('click', '#question_form', function () {
             action: "question_form",
             name: name.val(),
             email: email.val(),
+            phone: phone.val(),
             comment: comment.val(),
             location: location.href
         },
