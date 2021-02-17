@@ -4359,7 +4359,7 @@ header {
             content: "";
             width: 40px;
             height: 40px;
-            background-image: url(./img/card_close.svg);
+            background-image: url(./img/card_open.svg);
             background-size: contain;
             position: absolute;
             left: 20px;
@@ -4369,7 +4369,7 @@ header {
           }
           &.collapsed {
             &:before {
-              background-image: url(./img/card_open.svg);
+              background-image: url(./img/card_close.svg);
             }
           }
         }
