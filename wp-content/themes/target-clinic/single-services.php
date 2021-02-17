@@ -16,10 +16,10 @@ if (get_post_meta($post->ID, 'new_template', true)) {
                 <div class="text--18 breadcrumb__alex">
                     <?php the_breadcrumb() ?>
                 </div>
-                <h1 class="text--48 default-title__text">
+                <h1 class="text--48 default-title__text" style="display:#000!important;">
                     <?php the_title() ?>
                 </h1>
-                <div class="text--18 default-title__subtext">
+                <div class="text--18 default-title__subtext" style="display:#000!important;">
                     <?php if (has_excerpt()) {the_excerpt();} ?>
                 </div>
             </div>
