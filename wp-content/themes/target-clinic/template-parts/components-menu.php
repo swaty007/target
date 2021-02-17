@@ -13,6 +13,7 @@
                         <?php pll_e('Как добраться');?>
                     </a>
                 </div>
+
             </div>
             <div class="header__item header--phones flex-block">
                 <?php $count = 0; $loop = new WP_Query(array('post_type' => 'phones', 'posts_per_page' => -1)); ?>

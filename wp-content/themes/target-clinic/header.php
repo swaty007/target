@@ -24,7 +24,7 @@ src="https://www.facebook.com/tr?id=1006407412852453&ev=PageView&noscript=1"
 new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
 j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-})(window,document,'script','dataLayer','GTM-PQDCFQW');</script>
+})(window,document,'script','dataLayer','GTM-5TDRCRH');</script>
 <!-- End Google Tag Manager -->
     <meta charset="<?php bloginfo( 'charset' ); ?>">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -39,14 +39,19 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet"
           integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <?php wp_head(); ?>
-<meta name="google-site-verification" content="J6XLRpg2OYvHtJ1-XifID9-Btr-k3TlI5mrsrZhb_dQ" />
+
+<meta name="google-site-verification" content="TyPA_ACaErVleSv421k6Ncc2KZYAdet_0foFVdKTrp0" />
 </head>
 <body <?php body_class(); ?> >
+
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5TDRCRH"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+
 <?php //get_template_part('template-parts/components', 'preloader'); ?>
 <?php get_template_part('template-parts/components', 'menu'); ?>
     <!--START TOP AREA-->
-	<!-- Google Tag Manager (noscript) -->
-<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PQDCFQW"
-height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-<!-- End Google Tag Manager (noscript) -->
+
 

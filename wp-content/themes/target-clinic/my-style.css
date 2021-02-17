@@ -1,0 +1,43 @@
+.social-ico-block{
+	text-align: left;
+	margin-bottom: 34px;
+}
+
+@media (max-width: 600px){
+	.social-ico-block{
+	text-align: center !important;
+	}
+}
+
+.social-ico-block a{
+	padding:10px;
+}
+.social-ico-block a>img{
+	width:30px;
+	height:30px;
+	border-radius: 50px;
+}
+
+.contact-info {
+    max-width: 80% !important;
+}
+.contact-info .address-block {
+    max-width: 100% !important;
+}
+
+.social-ico-footer .social-item {
+	display: inline-block;
+    font-size: 20px;
+    background: rgba(255,255,255,.3);
+    transition: .2s;
+    padding: 0px 10px;
+    border-radius: 50px;
+	margin: 0 5px;	
+}
+.social-ico-footer .social-item:hover{
+	background: #ffffff40;
+}
+.social-ico-footer{
+	text-align: center;
+	margin-top: 25px;
+}

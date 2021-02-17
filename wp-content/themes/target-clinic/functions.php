@@ -251,6 +251,7 @@ function target_files()
     wp_enqueue_script('main-target-js', get_template_directory_uri() . '/js/main.js', '', '', true);
     wp_enqueue_style('target_main_styles', get_stylesheet_uri(), [], 2);
     wp_enqueue_style('target-style', get_template_directory_uri() . '/css/master.css');
+	wp_enqueue_style('target-my-style', get_template_directory_uri() . '/my-style.css');
     wp_enqueue_style('fancybox-css', '//cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css');
     wp_enqueue_style('owlcarousel-css', '//cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.css');
     wp_localize_script('main-target-js', 'targetData', array(
@@ -858,19 +859,9 @@ function do_question_form()
         $name = $_POST['name'];
         $email = $_POST['email'];
         $comment = $_POST['comment'];
-        $phone = $_POST['phone'];
         $send_to = "eugene.subota1984@gmail.com,swaty0007@gmail.com,office@car.ua,info@car.ua";
         $subject = "Заказ консультации";
-        $message = "Пользователь сайта задал вопрос онлайн. Пользователь: " . $name;
-        if (!empty($email)) {
-            $message .= " Email: " . $email;
-        }
-        if (!empty($comment)) {
-            $message .= " Коментарий:" . $comment;
-        }
-        if (!empty($phone)) {
-            $message .= "Номер Телефона:" . $phone;
-        }
+        $message = "Пользователь сайта задал вопрос онлайн. Пользователь: " . $name . " Email: " . $email . " Коментарий:" . $comment;
         if (isset($_POST['location'])) {
             $message .= "\nСсылка на страницу: " . $_POST['location'];
         }

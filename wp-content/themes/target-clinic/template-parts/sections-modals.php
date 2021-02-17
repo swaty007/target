@@ -35,8 +35,8 @@
                 <input class="modal_page" type="hidden" name="page">
                 <input class="modal_height" type="text" name="height" placeholder="Рост">
                 <input class="modal_weight" type="text" name="weight" placeholder="Вес">
-                <input class="modal_pils" type="text" name="pils" placeholder="Схема лечения">
-                <!--
+                <!--			<input class="modal_pils" type="text" name="pils" placeholder="Схема лечения">
+
                                 <label for="upload_file" class="upload_file_button">Загрузить файл</label>
                                 <input type="file" id="upload_file">
                 -->

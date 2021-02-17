@@ -20,6 +20,15 @@
                 <a class="binct-phone-number-3" href="tel:+380443392221">+38 (044) 339 2221</a>
                 <a class="binct-phone-number-2" href="tel:+380506967311">+38 (050) 696 7311</a>
                 <a class="binct-phone-number-1" href="tel:+380982334019">+38 (098) 233 4019</a>
+				<a  href="mailto:info@clinic-target.com">info@clinic-target.com</a>
+				<div class="social-ico-footer">
+                      <a class="social-item" href="viber://chat?number=%2B380992060701" target="_blank">
+					  <i class="fab fa-viber"></i></a>
+					  <a class="social-item" href="tg://resolve?domain=clinictarget" target="_blank">
+					  <i class="fab fa-telegram-plane"></i></a>
+					  <a class="social-item" href="https://wa.me/380992060701" target="_blank">
+					  <i class="fab fa-whatsapp"></i></i></a>
+                </div>
             </div>
             <div class="footer-content__item item--info">
                 <div class="item__address">
@@ -168,5 +177,10 @@ ctw.src = '//widgets.binotel.com/calltracking/widgets/'+ widgetHash +'.js';
 var sn = d.getElementsByTagName(s)[0]; sn.parentNode.insertBefore(ctw, sn);
 })(document, window, 'script');
 </script>
+
+
+
+<script type="text/javascript" src="//api.venyoo.ru/wnew.js?wc=venyoo/default/science&widget_id=6755342139789080"></script> 
+
 </body>
 </html>
